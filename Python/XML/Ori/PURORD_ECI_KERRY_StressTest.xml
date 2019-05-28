@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PurchaseOrder>
+	<Envelope>
+		<SenderIdentification>ECI</SenderIdentification>
+		<ReceiverIdentification>KERRY</ReceiverIdentification>
+		<MessageType>PURORD</MessageType>
+		<MessageVersion>01.00</MessageVersion>
+		<EnvelopeIdentification>S0001</EnvelopeIdentification> <!-- Change this value for different XML -->
+		<TransmissionDateTime>
+			<Date>2017-09-05</Date>
+			<Time>09:47:00</Time>
+		</TransmissionDateTime>
+	</Envelope>
+	<!-- Start of each PO level: PurchaseOrderMessage -->
+	<PurchaseOrderMessage>
+		<MessageFunctionCode>N</MessageFunctionCode>
+		<PurchaseOrderHeader>
+			<PurchaseOrderNumber>
+				<TypeOfReference>ON</TypeOfReference>
+				<Reference>SST2017090501</Reference> <!-- Change this value for different PO -->
+			</PurchaseOrderNumber>
+			<FOBDate>2017-09-05</FOBDate>
+			<OtherHeaderReference>
+				<TypeOfReference>OR2</TypeOfReference>
+				<Reference>31</Reference>
+			</OtherHeaderReference>
+			<OtherHeaderReference>
+				<TypeOfReference>OR4</TypeOfReference>
+				<Reference>0062</Reference>
+			</OtherHeaderReference>
+			<OtherHeaderReference>
+				<TypeOfReference>OR5</TypeOfReference>
+				<Reference>576</Reference>
+			</OtherHeaderReference>
+			<OtherHeaderReference>
+				<TypeOfReference>OR8</TypeOfReference>
+				<Reference>N</Reference>
+			</OtherHeaderReference>
+			<DateTimeInformation>
+				<TypeOfDateTime>4</TypeOfDateTime>
+				<Date>2017-09-05</Date>
+			</DateTimeInformation>
+			<BuyerParty>
+				<BuyerPartyIdentification>01</BuyerPartyIdentification>
+				<BuyerPartyAddress>
+					<Name1>ECI</Name1>
+				</BuyerPartyAddress>
+			</BuyerParty>
+			<SupplierParty>
+				<SupplierPartyIdentification>STSCODE</SupplierPartyIdentification> <!-- Use this company created for stress test for all PO -->
+				<SupplierPartyAddress>
+					<Name1>STRESS TEST SUPPLIER</Name1>
+				</SupplierPartyAddress>
+			</SupplierParty>
+			<TransportAndRoutingInformation>
+				<ModeOfTransport>10</ModeOfTransport>
+				<Location>
+					<TypeOfLocation>9</TypeOfLocation>
+					<LocationCoded>HKHKG</LocationCoded>
+					<LocationFullName>HONG KONG</LocationFullName>
+				</Location>
+				<CountryOfOriginCoded/>
+				<CountryOfDestinationCoded/>
+			</TransportAndRoutingInformation>
+			<TermsOfDelivery>
+				<Incoterm>FCA</Incoterm>
+			</TermsOfDelivery>
+			<ControlValues>
+				<TotalNumberOfPackages>12</TotalNumberOfPackages>
+				<TotalGrossWeight>
+					<Value>108.2</Value>
+					<MeasureUnit>K</MeasureUnit>
+				</TotalGrossWeight>
+				<TotalVolume>
+					<Value>0.36</Value>
+					<MeasureUnit>M</MeasureUnit>
+				</TotalVolume>
+			</ControlValues>
+		</PurchaseOrderHeader>
+		<!-- Start of each PO item level: PurchaseOrderItem -->
+		<PurchaseOrderItem>
+			<ItemIdentification>
+				<TypeOfItemIdentification>OR6</TypeOfItemIdentification>
+				<Identification>1233</Identification> <!-- use SKUs under ECI "SELECT SKU FROM TB_SKU WHERE COMPANY_ID = 11136" -->
+			</ItemIdentification>
+			<ItemIdentification>
+				<TypeOfItemIdentification>OR7</TypeOfItemIdentification>
+				<Identification>SKU Details</Identification>
+			</ItemIdentification>
+			<ProcessIndicator>N</ProcessIndicator>
+			<ItemDescription>Item description - Stress test item1</ItemDescription>
+			<Quantity>
+				<Value>111.00</Value>
+				<MeasureUnit/>
+			</Quantity>
+		</PurchaseOrderItem>
+		<!-- End of each PO item level -->
+	</PurchaseOrderMessage>
+	<!-- End of each PO level -->
+</PurchaseOrder>

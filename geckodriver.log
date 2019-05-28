@@ -1,0 +1,377 @@
+1487831653332	geckodriver	INFO	Listening on 127.0.0.1:57986
+1487831655229	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.rZ9tJimYJXkE
+1487831655232	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487831655239	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57994
+1487831659080	Marionette	INFO	Listening on port 57994
+[Child 19640] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487831788417	geckodriver	INFO	Listening on 127.0.0.1:58085
+1487831790357	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.JaXUjPtUYS8U
+1487831790359	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487831790365	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58092
+1487831792203	Marionette	INFO	Listening on port 58092
+1487831795369	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 18344] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 18344] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487832101934	geckodriver	INFO	Listening on 127.0.0.1:58284
+1487832103851	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.7dGs5KK3lvv9
+1487832103853	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487832103859	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58293
+1487832105541	Marionette	INFO	Listening on port 58293
+1487832109271	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487832484930	geckodriver	INFO	Listening on 127.0.0.1:58515
+1487832486830	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.olp61ZgtPLgM
+1487832486853	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487832486861	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58529
+1487832488774	Marionette	INFO	Listening on port 58529
+1487832492117	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 16088] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 16088] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+onnecting to Marionette on localhost:58639
+1487832668070	Marionette	INFO	Listening on port 58639
+1487832671633	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 20368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487832907281	geckodriver	INFO	Listening on 127.0.0.1:58862
+1487832909168	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.2LJEMWg56gTz
+1487832909170	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487832909177	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58870
+1487832910632	Marionette	INFO	Listening on port 58870
+1487832913509	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 18368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 18368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+onnecting to Marionette on localhost:58995
+1487833042051	Marionette	INFO	Listening on port 58995
+1487833045223	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 18348] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 18348] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833093297	geckodriver	INFO	Listening on 127.0.0.1:59066
+1487833095221	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.9DTp1M7tndx9
+1487833095223	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833095230	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59074
+1487833096760	Marionette	INFO	Listening on port 59074
+1487833099813	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 10708] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 10708] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833171572	geckodriver	INFO	Listening on 127.0.0.1:59147
+1487833173521	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.GI3dh1DgmuVN
+1487833173524	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833173530	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59153
+1487833175076	Marionette	INFO	Listening on port 59153
+1487833178168	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487833238327	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+[Child 18264] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 18264] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833267668	geckodriver	INFO	Listening on 127.0.0.1:59233
+1487833269412	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.0L60ziM09MfB
+1487833269415	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833269421	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59240
+1487833270934	Marionette	INFO	Listening on port 59240
+1487833273980	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 10620] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833403095	geckodriver	INFO	Listening on 127.0.0.1:59372
+1487833405027	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.92Jm2cdiv6TQ
+1487833405030	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833405037	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59383
+1487833406296	Marionette	INFO	Listening on port 59383
+1487833409244	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 5664] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5664] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833691411	geckodriver	INFO	Listening on 127.0.0.1:59646
+1487833693336	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.QHoTmiHWauST
+1487833693340	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833693349	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59654
+1487833694987	Marionette	INFO	Listening on port 59654
+1487833699446	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 18724] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833868948	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Files\Mozilla Firefox\firefox.exe
+1487833835096	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59769
+1487833839014	Marionette	INFO	Listening on port 59769
+1487833842529	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 17944] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 17944] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833901762	geckodriver	INFO	Listening on 127.0.0.1:59849
+1487833903672	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.LNc4hPYBDvAD
+1487833903675	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833903681	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59857
+1487833905225	Marionette	INFO	Listening on port 59857
+1487833908280	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 21028] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487833946578	geckodriver	INFO	Listening on 127.0.0.1:59907
+1487833948534	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.iJu0dntNaPzg
+1487833948536	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487833948543	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59914
+1487833949819	Marionette	INFO	Listening on port 59914
+1487833953294	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 15996] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834105591	geckodriver	INFO	Listening on 127.0.0.1:60100
+1487834107515	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.TRiuZflP9uJq
+1487834107517	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487834107523	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60107
+1487834108662	Marionette	INFO	Listening on port 60107
+1487834111952	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 16524] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 16524] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834249731	geckodriver	INFO	Listening on 127.0.0.1:60191
+1487834251660	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.l0hnv0rd9svT
+1487834251663	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487834251669	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60198
+1487834252865	Marionette	INFO	Listening on port 60198
+1487834255925	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 12228] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 12228] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834312861	geckodriver	INFO	Listening on 127.0.0.1:60266
+1487834314802	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.wrx9nf8286J3
+1487834314805	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487834314811	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60272
+1487834315893	Marionette	INFO	Listening on port 60272
+1487834319397	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487834400173	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 21060] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21060] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834400196	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487834400198	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+ld/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13096] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834404273	geckodriver	INFO	Listening on 127.0.0.1:60391
+1487834406215	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.eE2oJebQp3HO
+1487834406218	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487834406224	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60399
+1487834407861	Marionette	INFO	Listening on port 60399
+1487834411285	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487834745627	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487834745639	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 1428] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 1428] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834745652	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+834561795	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487834561803	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 16212] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 16212] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487834667108	geckodriver	INFO	Listening on 127.0.0.1:60611
+1487834669002	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.vMgdGazJVzSA
+1487834669004	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487834669010	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60617
+1487834670795	Marionette	INFO	Listening on port 60617
+1487834673944	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 8764] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487835771410	geckodriver	INFO	Listening on 127.0.0.1:63793
+1487835773343	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.9oPIDOyDKApB
+1487835773346	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487835773352	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63801
+1487835775144	Marionette	INFO	Listening on port 63801
+1487835779313	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 11780] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487835957253	geckodriver	INFO	Listening on 127.0.0.1:49531
+1487835959163	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.eJ8Cf5Ej8vEO
+1487835959166	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487835959172	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49537
+1487835960776	Marionette	INFO	Listening on port 49537
+1487835963863	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487836013202	geckodriver	INFO	Listening on 127.0.0.1:49630
+1487836015155	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.zhsfsgJ9AbG3
+1487836015158	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487836015163	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49637
+1487836016662	Marionette	INFO	Listening on port 49637
+1487836020435	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 13276] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13276] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487836134575	geckodriver	INFO	Listening on 127.0.0.1:49790
+1487836136497	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.jXKjYd6uaYzm
+1487836136500	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487836136506	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49796
+1487836137949	Marionette	INFO	Listening on port 49796
+1487836141880	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 17520] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 17520] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4A00C3,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+e for setting timeouts
+[Child 7284] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 7284] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+	Connecting to Marionette on localhost:50310
+1487836458810	Marionette	INFO	Listening on port 50310
+1487836462723	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 13680] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13680] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487836627991	geckodriver	INFO	Listening on 127.0.0.1:50553
+1487836629916	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.Ta2SJVKFQa5P
+1487836629919	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487836629925	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50559
+1487836631418	Marionette	INFO	Listening on port 50559
+1487836635055	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 21436] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21436] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487836760871	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487836760877	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487836760882	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+ 20432] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20432] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487836759263	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487836759269	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487837115697	geckodriver	INFO	Listening on 127.0.0.1:51291
+1487837117585	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.KVSZfmypB2RR
+1487837117588	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487837117594	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51299
+1487837119293	Marionette	INFO	Listening on port 51299
+1487837121901	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 21012] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21012] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487837348015	geckodriver	INFO	Listening on 127.0.0.1:51551
+1487837349936	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.nocjbCvdyniC
+1487837349938	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487837349944	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51560
+1487837351205	Marionette	INFO	Listening on port 51560
+1487837354471	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 19380] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19380] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487838115709	geckodriver	INFO	Listening on 127.0.0.1:52506
+1487838117652	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.7yUsOIqvr3Z0
+1487838117655	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487838117662	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52512
+1487838118902	Marionette	INFO	Listening on port 52512
+1487838122639	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 21192] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+ofile.bqVilxRIDDc0
+1487838324426	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487838324433	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52819
+1487838326070	Marionette	INFO	Listening on port 52819
+1487838329581	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487838601869	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 20648] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20648] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487838601878	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487838601880	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+ld/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 10732] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487838658916	geckodriver	INFO	Listening on 127.0.0.1:53432
+1487838660811	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.rx3WDmustU9w
+1487838660814	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487838660823	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53441
+1487838662773	Marionette	INFO	Listening on port 53441
+1487838666186	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487838759071	geckodriver	INFO	Listening on 127.0.0.1:53618
+1487838761010	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.yCZdecmt4ksK
+1487838761013	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487838761019	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53625
+1487838762432	Marionette	INFO	Listening on port 53625
+1487838766435	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 18284] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 18284] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+onnecting to Marionette on localhost:53936
+1487838923025	Marionette	INFO	Listening on port 53936
+1487838926554	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 19412] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487839010335	geckodriver	INFO	Listening on 127.0.0.1:54083
+1487839012113	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.2KT0RFrRZ3q9
+1487839012116	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487839012123	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54090
+1487839013704	Marionette	INFO	Listening on port 54090
+1487839016819	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 20056] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20056] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+onnecting to Marionette on localhost:54207
+1487839066553	Marionette	INFO	Listening on port 54207
+1487839069590	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 12112] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+ofile.iyFo7NiznMh5
+1487839120176	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487839120182	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54351
+1487839121466	Marionette	INFO	Listening on port 54351
+1487839124422	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 16428] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+ofile.3R5PozN2dGgW
+1487839376327	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487839376333	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54862
+1487839378065	Marionette	INFO	Listening on port 54862
+1487839381814	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 21992] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487839488818	geckodriver	INFO	Listening on 127.0.0.1:55059
+1487839490748	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.Fv1N91PCaPjq
+1487839490750	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487839490757	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55066
+1487839506148	Marionette	INFO	Listening on port 55066
+1487839513102	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 8852] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 8852] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+	Connecting to Marionette on localhost:55296
+1487839611255	Marionette	INFO	Listening on port 55296
+1487839614236	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 16964] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 16964] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487839937507	geckodriver	INFO	Listening on 127.0.0.1:55819
+1487839939441	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.EZ81CrhQieuS
+1487839939444	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487839939450	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55827
+1487839940672	Marionette	INFO	Listening on port 55827
+1487839943657	Marionette	WARN	Using deprecated data structure for setting timeouts
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+5	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487839993701	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55951
+1487839994881	Marionette	INFO	Listening on port 55951
+1487839998060	Marionette	WARN	Using deprecated data structure for setting timeouts
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 14064] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 14064] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+********
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 19440] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19440] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+NING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487841947703	geckodriver	INFO	Listening on 127.0.0.1:58445
+1487841949607	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.jWFm6sPWg3Si
+1487841949610	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487841949616	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58452
+1487841951720	Marionette	INFO	Listening on port 58452
+1487841954337	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487842097010	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 21644] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21644] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487842097021	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487842097022	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+ld/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 16804] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487842095666	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487842095693	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487842095697	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487842207747	geckodriver	INFO	Listening on 127.0.0.1:58863
+1487842209662	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.EOeQeCCSf8Im
+1487842209665	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487842209671	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58870
+1487842211254	Marionette	INFO	Listening on port 58870
+1487842213971	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487842292626	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 22112] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 22112] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487842292646	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487842292650	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487843293392	geckodriver	INFO	Listening on 127.0.0.1:59915
+1487843295312	mozprofile::profile	INFO	Using profile path C:\Users\ELDEN~1.ZHE\AppData\Local\Temp\rust_mozprofile.MxHpBMptNax8
+1487843295315	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1487843295321	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59921
+1487843296540	Marionette	INFO	Listening on port 59921
+1487843299725	Marionette	WARN	Using deprecated data structure for setting timeouts
+1487843405714	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 14776] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1487843405749	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487843405755	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+rionette	WARN	Using deprecated data structure for setting timeouts
+1487843406780	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487843406782	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1487843406795	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 21596] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21596] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346

@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.0 on win32)" generated="20170714 15:51:59.529">
+<suite id="s1" name="Test" source="D:\百度云同步盘\项目\自动化测试\Python\Automaticaion Traninning\EX1_TC1_By_Module\test.robot">
+<test id="s1-t1" name="Use Mouse Click Calculator">
+<kw name="Launch App" library="EX1_TC1_Library">
+<doc>Launch the specified ``application``.</doc>
+<arguments>
+<arg>calc</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:51:59.651" endtime="20170714 15:52:01.668"></status>
+</kw>
+<kw name="Title Should Be" library="EX1_TC1_Library">
+<doc>Verifies that the opened Application is expected``.</doc>
+<arguments>
+<arg>Calculator</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:52:01.670" endtime="20170714 15:52:01.670"></status>
+</kw>
+<kw name="Open CSV" library="EX1_TC1_Library">
+<doc>Open the specified CSV file``.</doc>
+<arguments>
+<arg>Sample.csv</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:52:01.671" endtime="20170714 15:52:01.672"></status>
+</kw>
+<kw name="Load Row" library="EX1_TC1_Library">
+<doc>Load data from the specified Row of CSV file``.</doc>
+<arguments>
+<arg>All</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:52:01.674" endtime="20170714 15:52:01.674"></status>
+</kw>
+<kw name="Get Total Number Length" library="EX1_TC1_Library">
+<assign>
+<var>${Num}</var>
+</assign>
+<msg timestamp="20170714 15:52:01.676" level="INFO">${Num} = 25</msg>
+<status status="PASS" starttime="20170714 15:52:01.675" endtime="20170714 15:52:01.676"></status>
+</kw>
+<kw name="${Index} IN RANGE [ 0 | ${Num} ]" type="for">
+<kw name="${Index} = 0" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:01.683" level="INFO">0</msg>
+<status status="PASS" starttime="20170714 15:52:01.679" endtime="20170714 15:52:01.683"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:04.688" level="INFO">Readed element is 3
+Clicked 3</msg>
+<status status="PASS" starttime="20170714 15:52:01.684" endtime="20170714 15:52:04.688"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:01.678" endtime="20170714 15:52:04.688"></status>
+</kw>
+<kw name="${Index} = 1" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:04.688" level="INFO">1</msg>
+<status status="PASS" starttime="20170714 15:52:04.688" endtime="20170714 15:52:04.689"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:07.689" level="INFO">Readed element is =
+Clicked =</msg>
+<status status="PASS" starttime="20170714 15:52:04.689" endtime="20170714 15:52:07.689"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:04.688" endtime="20170714 15:52:07.689"></status>
+</kw>
+<kw name="${Index} = 2" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:07.689" level="INFO">2</msg>
+<status status="PASS" starttime="20170714 15:52:07.689" endtime="20170714 15:52:07.690"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:07.690" level="INFO">The current result in the Calculator is 3
+And the excepted result in the CSV file is 3</msg>
+<status status="PASS" starttime="20170714 15:52:07.690" endtime="20170714 15:52:07.690"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:07.689" endtime="20170714 15:52:07.690"></status>
+</kw>
+<kw name="${Index} = 3" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:07.690" level="INFO">3</msg>
+<status status="PASS" starttime="20170714 15:52:07.690" endtime="20170714 15:52:07.690"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:10.690" level="INFO">Readed element is 3
+Clicked 3</msg>
+<status status="PASS" starttime="20170714 15:52:07.691" endtime="20170714 15:52:10.690"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:07.690" endtime="20170714 15:52:10.690"></status>
+</kw>
+<kw name="${Index} = 4" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:10.691" level="INFO">4</msg>
+<status status="PASS" starttime="20170714 15:52:10.690" endtime="20170714 15:52:10.691"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:13.697" level="INFO">Readed element is +
+Clicked +</msg>
+<status status="PASS" starttime="20170714 15:52:10.691" endtime="20170714 15:52:13.697"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:10.690" endtime="20170714 15:52:13.697"></status>
+</kw>
+<kw name="${Index} = 5" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:13.700" level="INFO">5</msg>
+<status status="PASS" starttime="20170714 15:52:13.698" endtime="20170714 15:52:13.700"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:16.714" level="INFO">Readed element is 8
+Clicked 8</msg>
+<status status="PASS" starttime="20170714 15:52:13.705" endtime="20170714 15:52:16.714"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:13.698" endtime="20170714 15:52:16.714"></status>
+</kw>
+<kw name="${Index} = 6" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:16.715" level="INFO">6</msg>
+<status status="PASS" starttime="20170714 15:52:16.714" endtime="20170714 15:52:16.715"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:19.714" level="INFO">Readed element is -
+Clicked -</msg>
+<status status="PASS" starttime="20170714 15:52:16.715" endtime="20170714 15:52:19.715"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:16.714" endtime="20170714 15:52:19.715"></status>
+</kw>
+<kw name="${Index} = 7" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:19.717" level="INFO">7</msg>
+<status status="PASS" starttime="20170714 15:52:19.716" endtime="20170714 15:52:19.717"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:25.753" level="INFO">Readed element is 7
+Clicked 7
+Readed element is 5
+Clicked 5</msg>
+<status status="PASS" starttime="20170714 15:52:19.717" endtime="20170714 15:52:25.753"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:19.715" endtime="20170714 15:52:25.753"></status>
+</kw>
+<kw name="${Index} = 8" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:25.754" level="INFO">8</msg>
+<status status="PASS" starttime="20170714 15:52:25.753" endtime="20170714 15:52:25.754"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:28.754" level="INFO">Readed element is /
+Clicked /</msg>
+<status status="PASS" starttime="20170714 15:52:25.754" endtime="20170714 15:52:28.754"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:25.753" endtime="20170714 15:52:28.755"></status>
+</kw>
+<kw name="${Index} = 9" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:28.756" level="INFO">9</msg>
+<status status="PASS" starttime="20170714 15:52:28.755" endtime="20170714 15:52:28.756"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:34.756" level="INFO">Readed element is 4
+Clicked 4
+Readed element is 5
+Clicked 5</msg>
+<status status="PASS" starttime="20170714 15:52:28.757" endtime="20170714 15:52:34.756"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:28.755" endtime="20170714 15:52:34.756"></status>
+</kw>
+<kw name="${Index} = 10" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:34.757" level="INFO">10</msg>
+<status status="PASS" starttime="20170714 15:52:34.757" endtime="20170714 15:52:34.757"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:37.761" level="INFO">Readed element is *
+Clicked *</msg>
+<status status="PASS" starttime="20170714 15:52:34.757" endtime="20170714 15:52:37.761"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:34.756" endtime="20170714 15:52:37.761"></status>
+</kw>
+<kw name="${Index} = 11" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:37.762" level="INFO">11</msg>
+<status status="PASS" starttime="20170714 15:52:37.761" endtime="20170714 15:52:37.762"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:46.776" level="INFO">Readed element is 3
+Clicked 3
+Readed element is 9
+Clicked 9
+Readed element is 9
+Clicked 9</msg>
+<status status="PASS" starttime="20170714 15:52:37.762" endtime="20170714 15:52:46.776"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:37.761" endtime="20170714 15:52:46.776"></status>
+</kw>
+<kw name="${Index} = 12" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:46.777" level="INFO">12</msg>
+<status status="PASS" starttime="20170714 15:52:46.776" endtime="20170714 15:52:46.777"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:49.776" level="INFO">Readed element is =
+Clicked =</msg>
+<status status="PASS" starttime="20170714 15:52:46.777" endtime="20170714 15:52:49.776"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:46.776" endtime="20170714 15:52:49.776"></status>
+</kw>
+<kw name="${Index} = 13" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:49.777" level="INFO">13</msg>
+<status status="PASS" starttime="20170714 15:52:49.776" endtime="20170714 15:52:49.777"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:49.777" level="INFO">The current result in the Calculator is -567.4666666666667
+And the excepted result in the CSV file is 383</msg>
+<status status="PASS" starttime="20170714 15:52:49.777" endtime="20170714 15:52:49.777"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:49.776" endtime="20170714 15:52:49.777"></status>
+</kw>
+<kw name="${Index} = 14" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:49.778" level="INFO">14</msg>
+<status status="PASS" starttime="20170714 15:52:49.777" endtime="20170714 15:52:49.778"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:52.778" level="INFO">Readed element is 4
+Clicked 4</msg>
+<status status="PASS" starttime="20170714 15:52:49.778" endtime="20170714 15:52:52.778"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:49.777" endtime="20170714 15:52:52.778"></status>
+</kw>
+<kw name="${Index} = 15" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:52.780" level="INFO">15</msg>
+<status status="PASS" starttime="20170714 15:52:52.779" endtime="20170714 15:52:52.781"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:55.782" level="INFO">Readed element is -
+Clicked -</msg>
+<status status="PASS" starttime="20170714 15:52:52.781" endtime="20170714 15:52:55.782"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:52.779" endtime="20170714 15:52:55.782"></status>
+</kw>
+<kw name="${Index} = 16" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:55.784" level="INFO">16</msg>
+<status status="PASS" starttime="20170714 15:52:55.783" endtime="20170714 15:52:55.785"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:58.786" level="INFO">Readed element is 3
+Clicked 3</msg>
+<status status="PASS" starttime="20170714 15:52:55.785" endtime="20170714 15:52:58.786"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:55.783" endtime="20170714 15:52:58.786"></status>
+</kw>
+<kw name="${Index} = 17" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:52:58.788" level="INFO">17</msg>
+<status status="PASS" starttime="20170714 15:52:58.786" endtime="20170714 15:52:58.788"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.793" level="INFO">Readed element is =
+Clicked =</msg>
+<status status="PASS" starttime="20170714 15:52:58.789" endtime="20170714 15:53:01.793"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:58.786" endtime="20170714 15:53:01.793"></status>
+</kw>
+<kw name="${Index} = 18" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.794" level="INFO">18</msg>
+<status status="PASS" starttime="20170714 15:53:01.794" endtime="20170714 15:53:01.794"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.796" level="INFO">The current result in the Calculator is 1
+And the excepted result in the CSV file is 1</msg>
+<status status="PASS" starttime="20170714 15:53:01.795" endtime="20170714 15:53:01.796"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.793" endtime="20170714 15:53:01.796"></status>
+</kw>
+<kw name="${Index} = 19" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.797" level="INFO">19</msg>
+<status status="PASS" starttime="20170714 15:53:01.796" endtime="20170714 15:53:01.797"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:53:01.797" endtime="20170714 15:53:01.797"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.796" endtime="20170714 15:53:01.798"></status>
+</kw>
+<kw name="${Index} = 20" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.799" level="INFO">20</msg>
+<status status="PASS" starttime="20170714 15:53:01.798" endtime="20170714 15:53:01.799"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:53:01.799" endtime="20170714 15:53:01.800"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.798" endtime="20170714 15:53:01.800"></status>
+</kw>
+<kw name="${Index} = 21" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.801" level="INFO">21</msg>
+<status status="PASS" starttime="20170714 15:53:01.800" endtime="20170714 15:53:01.801"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:53:01.801" endtime="20170714 15:53:01.802"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.800" endtime="20170714 15:53:01.802"></status>
+</kw>
+<kw name="${Index} = 22" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.802" level="INFO">22</msg>
+<status status="PASS" starttime="20170714 15:53:01.802" endtime="20170714 15:53:01.803"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:53:01.803" endtime="20170714 15:53:01.803"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.802" endtime="20170714 15:53:01.803"></status>
+</kw>
+<kw name="${Index} = 23" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.803" level="INFO">23</msg>
+<status status="PASS" starttime="20170714 15:53:01.803" endtime="20170714 15:53:01.803"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:53:01.803" endtime="20170714 15:53:01.805"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.803" endtime="20170714 15:53:01.805"></status>
+</kw>
+<kw name="${Index} = 24" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.807" level="INFO">24</msg>
+<status status="PASS" starttime="20170714 15:53:01.806" endtime="20170714 15:53:01.807"></status>
+</kw>
+<kw name="Use Mouse Click" library="EX1_TC1_Library">
+<doc>Control Mouse move and click the number/operation button</doc>
+<arguments>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" starttime="20170714 15:53:01.807" endtime="20170714 15:53:01.807"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:53:01.805" endtime="20170714 15:53:01.808"></status>
+</kw>
+<status status="PASS" starttime="20170714 15:52:01.678" endtime="20170714 15:53:01.808"></status>
+</kw>
+<kw name="Get Excepted Result" library="EX1_TC1_Library">
+<assign>
+<var>${Excpeted}</var>
+</assign>
+<msg timestamp="20170714 15:53:01.810" level="INFO">${Excpeted} = ['3', '383', '1']</msg>
+<status status="PASS" starttime="20170714 15:53:01.808" endtime="20170714 15:53:01.810"></status>
+</kw>
+<kw name="Get Displayed Result" library="EX1_TC1_Library">
+<assign>
+<var>${Displayed}</var>
+</assign>
+<msg timestamp="20170714 15:53:01.814" level="INFO">${Displayed} = ['3', '-567.4666666666667', '1']</msg>
+<status status="PASS" starttime="20170714 15:53:01.813" endtime="20170714 15:53:01.814"></status>
+</kw>
+<kw name="Resut Should Equals" library="EX1_TC1_Library">
+<arguments>
+<arg>${Excpeted}</arg>
+<arg>${Displayed}</arg>
+</arguments>
+<msg timestamp="20170714 15:53:01.823" level="FAIL">['3', '383', '1'] != ['3', '-567.4666666666667', '1']</msg>
+<status status="FAIL" starttime="20170714 15:53:01.816" endtime="20170714 15:53:01.823"></status>
+</kw>
+<kw name="Close App" library="EX1_TC1_Library" type="teardown">
+<status status="PASS" starttime="20170714 15:53:01.827" endtime="20170714 15:53:01.829"></status>
+</kw>
+<status status="FAIL" starttime="20170714 15:51:59.649" endtime="20170714 15:53:01.837" critical="yes">['3', '383', '1'] != ['3', '-567.4666666666667', '1']</status>
+</test>
+<doc>Test.</doc>
+<status status="FAIL" starttime="20170714 15:51:59.538" endtime="20170714 15:53:01.843"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
