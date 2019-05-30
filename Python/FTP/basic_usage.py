@@ -54,3 +54,5 @@ if __name__ == "__main__":
             remotefoldername_exists = 1
             break
 
+    conn.quit()
+
