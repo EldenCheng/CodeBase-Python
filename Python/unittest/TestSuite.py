@@ -9,6 +9,7 @@ def suite():
     #suite.addTest(TestStringMethods('test_widget_resize'))
     suite.addTest(TestStringMethods("test_upper"))
     suite.addTest(TestStringMethods("test_isupper"))
+    suite.addTest(TestStringMethods())
     return suite
 
 if __name__ == '__main__':

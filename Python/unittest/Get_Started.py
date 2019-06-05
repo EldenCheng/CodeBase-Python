@@ -26,6 +26,9 @@ class TestStringMethods(unittest.TestCase):
     def test_print(self):
         print("Force fail")
 
+    def runTest(self):
+        print("Run test!")
+
 
 if __name__ == '__main__':
     unittest.main()
