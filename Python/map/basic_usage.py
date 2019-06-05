@@ -28,3 +28,35 @@ if __name__ == "__main__":
     files = ("a.com", "b.bat", "c.jpg")
     suffixs = list(map(suffix, files))
     print(suffixs)
+
+    # 如果方法f需要有多个参数, 实际上可以传对应多个迭代器
+    l2 = map(lambda x, y: x ** y, [1, 2, 3], [1, 2, 3])
+    print(list(l2))
+
+    # 当然与传参进方法是一样, 参数过少或者过多都会出错
+    try:
+        l3 = map(lambda x, y: (x ** y, x + y), [1, 2, 3])
+        print(list(l3))
+    except Exception as msg:
+        print(msg)
+
+    try:
+        l3 = map(lambda x, y: (x ** y, x + y), [1, 2, 3], [1, 2, 3], [1, 2, 3])
+        print(list(l3))
+    except Exception as msg:
+        print(msg)
+
+    # 但如果传入的迭代器元素个数不一致的话, 以最短的那一个为基准
+    l4 = map(lambda x, y: (x ** y, x + y), [1, 2, 3], [1, 2])
+    print(list(l4))
+
+    # 如果传入的迭代器元素类型不一样的话, 而又没有在方法中作专门的处理的话, 会报错
+    try:
+        l4 = map(lambda x, y: (x ** y, x + y), [1, 2, 3], [1, 2, '3'])
+        for i in l4:
+            print(i)
+    except Exception as msg:
+        print(msg)
+
+    l5 = map(lambda x, y: (x ** int(y), x + int(y)), [1, 2, 3], [1, 2, '3'])
+    print(list(l5))
