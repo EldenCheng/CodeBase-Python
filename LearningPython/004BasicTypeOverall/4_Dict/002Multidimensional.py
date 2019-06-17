@@ -1,6 +1,6 @@
-'''
+"""
 字典也可以多重嵌套的
-'''
+"""
 
 rec = {"name": {"first": "elden", "last": "elden"}, "job": ["dev","mgr"], "age": 40.5}
 

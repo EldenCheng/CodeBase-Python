@@ -2,7 +2,7 @@
 
 s = "1,495"
 
-s = s.replace(",","")
+s = s.replace(",", "")
 
 i = int(s)
 

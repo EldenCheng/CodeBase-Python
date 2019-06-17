@@ -1,6 +1,6 @@
 
 
-d = {"food": "Egg", "num": 4, "proudct": ["GD","GZ"]}
+d = {"food": "Egg", "num": 4, "product": ["GD", "GZ"]}
 
 try:
     print(d["key"])

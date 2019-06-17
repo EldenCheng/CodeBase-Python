@@ -29,7 +29,7 @@ if __name__ == "__main__":
     s3 = "-".join(l2)
     print("join方法把列表的元素合成一个字符串: ", s3)
 
-    #split方法
-    #split方法是把一个字符串按照分隔符来拆分成一个列表
+    # split方法
+    # split方法是把一个字符串按照分隔符来拆分成一个列表
     l3 = s3.split("-")
     print("split方法把一个字符串拆分成一个列表: ", l3)
