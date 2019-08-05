@@ -1,19 +1,8 @@
 import os
 
-from PIL import Image,ImageChops,ImageDraw
-from functools import reduce
-
-# 使用pip install opencv-python
-# 使用pip install opencv-contrib-python 安装opencv的一些附属方法
-import cv2
-import numpy as np
-
-# 使用python -mpip install -U matplotlib
-from matplotlib import pyplot as plt
+from PIL import Image
 
 import imagehash
-
-PATH = lambda p: os.path.abspath(p)
 
 
 class Image_Compare(object):
@@ -45,12 +34,35 @@ class Image_Compare(object):
         except Exception as e:
             print('Problem:', e, 'with', image_path)
 
+    @staticmethod
+    def same_as_by_hash(target_image, sample_image, percent, hashtype="ahash"):
+
+        hash1 = str(Image_Compare.get_image_hash(hashtype, target_image))
+        hash2 = str(Image_Compare.get_image_hash(hashtype, sample_image))
+
+        n = 0
+        # hash长度不同则返回-1代表传参出错
+        if len(hash1) != len(hash2):
+            print("Hash code occurred error!")
+            return False
+        # 遍历判断
+        for i in range(len(hash1)):
+            # 不相等则n计数+1，n最终为相似度
+            if hash1[i] != hash2[i]:
+                n = n + 1
+        print("The difference percentage of \"" + hashtype + "\" between two images are: %d%%" % int(n/(len(hash1))*100))
+
+        if int(n/(len(hash1))*100) <= percent:
+            return True
+        else:
+            return False
 
 
 if __name__ == "__main__":
 
-    print("The hash of first image: ", Image_Compare.get_image_hash("ahash", r".\testimages\0.png"))
-    print("The hash of second image: ", Image_Compare.get_image_hash("ahash", r".\testimages\1_2.png"))
+    # print("The hash of first image: ", Image_Compare.get_image_hash("ahash", r".\testimages\0.png"))
+    # print("The hash of second image: ", Image_Compare.get_image_hash("ahash", r".\testimages\1_2.png"))
+    Image_Compare.same_as_by_hash(r".\testimages\0.png", r".\testimages\1.png", 90, "phash")
 
 
 
