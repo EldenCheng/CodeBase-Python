@@ -15,7 +15,7 @@ print("方便地从每个元素中获取特定位置的元素:", col)
 col = [row[1] + 1 for row in l1]  # 对获取到的元素+1
 print("对获取到的元素进行运算:", col)
 
-col = [row[1] for row in l if row[1] % 2 == 0]  # 使用条件判断对获得的元素进行筛选
+col = [row[1] for row in l1 if row[1] % 2 == 0]  # 使用条件判断对获得的元素进行筛选
 print("使用条件判断对获得的元素进行筛选:", col)
 
 # 按顺序汇总各项
