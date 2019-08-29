@@ -15,7 +15,13 @@ if __name__ == '__main__':
     html = requests.get("https://www.wine.com/")
     bs = BeautifulSoup(html.text, 'html5lib')
 
-    # find all 方法
+    # find 方法获取第一个符合条件的html内容
+    # find 方法可用的参数与find_all完全一样, 可以参考下面的内容
+    # 支持直接写标签名字
+    tab = bs.find('span')
+    print(tab.text)
+
+    # find all 方法获取所有符合条件的html内容
     # name参数
     # 支持直接写标签名字
     tabs = bs.find_all('span')
