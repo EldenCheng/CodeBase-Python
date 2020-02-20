@@ -72,12 +72,14 @@ try:
 except Exception as msg:
     print(msg)
 
-#CSS Selector的类名查找可以支持不完全查找，比如完全类名为Classname, 可以使用标签{class$=assname}, 或者标签[class^=class], 又或者标签[class*=lass]作为关键字查找到对应的节点
-#其实这里的class可以替换成id,或者任何标签里面有写的属性
+'''
+CSS Selector的类名查找可以支持不完全查找，比如完全类名为Classname, 可以使用标签{class$=assname}, 或者标签[class^=class], 又或者标签[class*=lass]作为关键字查找到对应的节点
+其实这里的class可以替换成id,或者任何标签里面有写的属性
+'''
 try:
-    Node1 = driver.find_element(By.CSS_SELECTOR, "div[class$=html-caption]") #以html-caption结尾的div
-    Node2 =driver.find_element(By.CSS_SELECTOR, "div[class^=nivo-html-c]") #以nivo-html-c开头的div
-    Node3 = driver.find_element(By.CSS_SELECTOR, "div[class*=html-c]") #包含html-c的div
+    Node1 = driver.find_element(By.CSS_SELECTOR, "div[class$=html-caption]")  # 以html-caption结尾的div
+    Node2 = driver.find_element(By.CSS_SELECTOR, "div[class^=nivo-html-c]")  # 以nivo-html-c开头的div
+    Node3 = driver.find_element(By.CSS_SELECTOR, "div[class*=html-c]")  # 包含html-c的div
     print("Find by end of Node 1: " + Node1.get_attribute("id"))
     print("Find by begin of Node 2: " + Node2.get_attribute("id"))
     print("Find by any place of Node 3: " + Node3.get_attribute("id"))
