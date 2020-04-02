@@ -83,9 +83,9 @@ class Image_Compare(object):
                 for pixel in range(width):
                     if img1[line][pixel] != img2[line][pixel]:
                         n = n + 1
-
-            print("The difference percentage of pixcel between two images are: %d%%" % int(n/(height*width)*100))
-            if int(n/(height*width)*100) <= percent:
+            # print(float((n/(height*width))))
+            print("The difference percentage of pixcel between two images are: %f%%" % float(n/(height*width)*100))
+            if float(n/(height*width)*100) <= percent:
                 return True
             else:
                 return False
@@ -138,14 +138,14 @@ class Image_Compare(object):
         image1 = cv2.imread(target_image)
         image2 = cv2.imread(sample_image)
 
-        difference = cv2.subtract(image1,image2)
+        difference = cv2.subtract(image1, image2)
 
-        result = not np.any(difference) # if difference is all rece it will return False
+        result = not np.any(difference)  # if difference is all rece it will return False
 
         if result is True:
             return result
         else:
-            cv2.imwrite("result_OpenCV.png",difference)
+            cv2.imwrite("result_OpenCV.png", difference)
             return result
 
     '''
@@ -468,8 +468,8 @@ if __name__ == "__main__":
 
 
     # By Pixel, must with the same resolution
-    #print("By using Pixel:")
-    #print(Image_Compare.same_as_by_pixel(r".\testimages\Screenshot1080P.png",r".\testimages\resize1080P.png", 0))
+    # print("By using Pixel:")
+    # print(Image_Compare.same_as_by_pixel(r".\testimages\0942.png",r".\testimages\0943.png", 0))
 
     # By Pillow internal method
     #print("By using Pillow:")
@@ -477,10 +477,11 @@ if __name__ == "__main__":
     #print(Image_Compare.same_as_by_pixel2(r".\testimages\Screenshot1080P.png", r".\testimages\Other_Screenshot1080P.png", 0))
 
     # By OpenCV internal method
-    #print("By using OpenCV:")
-    #print(Image_Compare.same_as_by_OpenCV(r".\testimages\Screenshot1080P.png",r".\testimages\resize1080P.png"))
-    #print(Image_Compare.same_as_by_OpenCV(r".\testimages\Screenshot1080P.png", r".\testimages\Screenshot720P.png"))
-    #print(Image_Compare.same_as_by_OpenCV(r".\testimages\Screenshot1440P.png", r".\testimages\Screenshot1080P.png"))
+    # print("By using OpenCV:")
+    # print(Image_Compare.same_as_by_OpenCV(r".\testimages\Screenshot1080P.png",r".\testimages\resize1080P.png"))
+    # print(Image_Compare.same_as_by_OpenCV(r".\testimages\Screenshot1080P.png", r".\testimages\Screenshot720P.png"))
+    # print(Image_Compare.same_as_by_OpenCV(r".\testimages\Screenshot1440P.png", r".\testimages\Screenshot1080P.png"))
+    # print(Image_Compare.same_as_by_OpenCV(r".\testimages\0942.png",r".\testimages\0943.png"))
 
     '''
     # By aHash
@@ -520,25 +521,25 @@ if __name__ == "__main__":
     print(Image_Compare.same_as_by_hash(r".\testimages\Elementshot_big.png", r".\testimages\Elementshot_small.png", 0, "phash"))
     '''
 
-    print("By using pHash:")
-    print("登录成功:登录中:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\0.png", 5,
-                                        "phash"))
-
-    print("登录成功:登录成功带圈:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\1_1.png", 5,
-                                        "phash"))
-
-    print("By using dHash:")
-    print("登录成功:登录中:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\0.png", 10,
-                                        "dhash"))
-
-    print("登录成功:登录成功带圈:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\1_1.png", 10,
-                                        "dhash"))
-
-    print("By using aHash:")
-    print("登录成功:登录中:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\0.png", 5,
-                                        "ahash"))
-    print("登录成功:登录成功带圈:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\1_1.png", 5,
-                                        "ahash"))
+    # print("By using pHash:")
+    # print("登录成功:登录中:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\0.png", 5,
+    #                                     "phash"))
+    #
+    # print("登录成功:登录成功带圈:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\1_1.png", 5,
+    #                                     "phash"))
+    #
+    # print("By using dHash:")
+    # print("登录成功:登录中:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\0.png", 10,
+    #                                     "dhash"))
+    #
+    # print("登录成功:登录成功带圈:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\1_1.png", 10,
+    #                                     "dhash"))
+    #
+    # print("By using aHash:")
+    # print("登录成功:登录中:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\0.png", 5,
+    #                                     "ahash"))
+    # print("登录成功:登录成功带圈:", Image_Compare.same_as_by_hash(r".\testimages\screen_ele2.png", r".\testimages\1_1.png", 5,
+    #                                     "ahash"))
     #print("By using bfmatch:")
     #print("1. Using the same screen capture in different resolution:")
     #print("1440:1080", Image_Compare.kaze_bfmatch(r".\testimages\Screenshot1440P.png", r".\testimages\Screenshot1080P.png"))
@@ -550,14 +551,14 @@ if __name__ == "__main__":
     #print("Ele:Full:",
     #      Image_Compare.kaze_bfmatch(r".\testimages\Elementshot_big.png", r".\testimages\Screenshot1440P.png"))
 
-    print("4. Using an element and compare with some mask on it:")
-    print("登录成功:登录中:",
-          Image_Compare.same_as_by_kaze_bfmatch(r".\testimages\screen_ele2.png", r".\testimages\0.png",30))
-    print("登录成功:登录成功带圈:",
-          Image_Compare.same_as_by_kaze_bfmatch(r".\testimages\screen_ele2.png", r".\testimages\1_1.png",30))
-
-
-    print("By using flmatch:")
+    # print("4. Using an element and compare with some mask on it:")
+    # print("登录成功:登录中:",
+    #       Image_Compare.same_as_by_kaze_bfmatch(r".\testimages\screen_ele2.png", r".\testimages\0.png",30))
+    # print("登录成功:登录成功带圈:",
+    #       Image_Compare.same_as_by_kaze_bfmatch(r".\testimages\screen_ele2.png", r".\testimages\1_1.png",30))
+    #
+    #
+    # print("By using flmatch:")
     #print("1. Using the same screen capture in different resolution:")
     #print("1440:1080:",
     #      Image_Compare.kaze_flmatch(r".\testimages\Screenshot1080P.png", r".\testimages\Screenshot1440P.png", m))
@@ -573,14 +574,14 @@ if __name__ == "__main__":
     #print("3. Using an element of the screen capture in same resolution:")
     #print("Ele:Full:",
     #      Image_Compare.kaze_flmatch(r".\testimages\Elementshot_big.png", r".\testimages\Screenshot1440P.png", m))
-    print("登录成功:登录中-sift:",
-          Image_Compare.same_as_by_sift_flmatch(r".\testimages\screen_ele2.png", r".\testimages\0.png",30))
-    print("登录成功:登录成功带圈-sift:",
-          Image_Compare.same_as_by_sift_flmatch(r".\testimages\screen_ele2.png", r".\testimages\1_1.png",30))
-    print("登录成功:登录中-surf:",
-          Image_Compare.same_as_by_surf_flmatch(r".\testimages\screen_ele2.png", r".\testimages\0.png",30))
-    print("登录成功:登录成功带圈-surf:",
-          Image_Compare.same_as_by_surf_flmatch(r".\testimages\screen_ele2.png", r".\testimages\1_1.png",30))
+    # print("登录成功:登录中-sift:",
+    #       Image_Compare.same_as_by_sift_flmatch(r".\testimages\screen_ele2.png", r".\testimages\0.png",30))
+    # print("登录成功:登录成功带圈-sift:",
+    #       Image_Compare.same_as_by_sift_flmatch(r".\testimages\screen_ele2.png", r".\testimages\1_1.png",30))
+    # print("登录成功:登录中-surf:",
+    #       Image_Compare.same_as_by_surf_flmatch(r".\testimages\screen_ele2.png", r".\testimages\0.png",30))
+    # print("登录成功:登录成功带圈-surf:",
+    #       Image_Compare.same_as_by_surf_flmatch(r".\testimages\screen_ele2.png", r".\testimages\1_1.png",30))
 
 
 

@@ -39,7 +39,6 @@ class PropertyTest:
     @field.deleter
     def field(self):
         self._field = 0
-        return self._field
 
     '''
     python中的@classmetho的作用是不用实例化类都可以调用这个方法, 而且还有一个cls指针是指向当前类的
@@ -52,7 +51,8 @@ class PropertyTest:
     @classmethod
     def create_method(cls, value):
         if isinstance(value, int):
-            cls.from_outside = "It is set from a classmethod"  # 这句话写入后, 所有属于这个类的实例中对应的字段都会是被修改
+            # 这句话写入后, 所有属于这个类的实例中对应的字段都会是被修改,实际作用就是约等于Jave的类静态变量
+            cls.from_outside = "It is set from a classmethod"
             # 由cls是类的指针,所以cls()就等于是PropertyTest(), 这句的作用是实例化PropertyTest并返回
             return cls(value)
         else:
