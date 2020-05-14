@@ -9,7 +9,10 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-driver =webdriver.Chrome(".\\Webdrivers\\chromedriver.exe")
-driver.implicitly_wait(10)
+if __name__ == '__main__':
+    driver =webdriver.Chrome(".\\Webdrivers\\chromedriver.exe")
+    driver.implicitly_wait(10)
 
-driver.get("http://192.168.8.253")
+    driver.get("https://www.baidu.com")
+
+    print(driver)

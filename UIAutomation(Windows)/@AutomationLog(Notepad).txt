@@ -1,0 +1,10 @@
+UIAutomation 2.0.3 (Python 3.6.4, 64 bit)
+UIAutomation 2.0.3 (Python 3.6.4, 64 bit)
+2020-04-07 17:28:54.623 automation.py[75] main -> Starts, Current Cursor Position: (831, 200)
+ControlType: PaneControl    ClassName: #32769    AutomationId:     Rect: (0,0,1920,1080)[1920x1080]    Name: Desktop 1    Handle: 0x10010(65552)    Depth: 0    SupportedPattern: LegacyIAccessiblePattern
+    ControlType: WindowControl    ClassName: Notepad    AutomationId:     Rect: (503,180,1795,945)[1292x765]    Name: Untitled - Notepad    Handle: 0x170858(1509464)    Depth: 1    SupportedPattern: LegacyIAccessiblePattern TransformPattern WindowPattern
+        ControlType: EditControl    ClassName: Edit    AutomationId: 15    Rect: (511,231,1787,937)[1276x706]    Name: Text Editor    Handle: 0x3C07F6(3934198)    Depth: 2    ScrollPattern.HorizontalScrollPercent: 0.0    ScrollPattern.VerticalScrollPercent: 0.0    ValuePattern.Value:     SupportedPattern: LegacyIAccessiblePattern ScrollPattern ValuePattern
+        ControlType: TitleBarControl    ClassName:     AutomationId:     Rect: (527,183,1787,211)[1260x28]    Name:     Handle: 0x0(0)    Depth: 2    ValuePattern.Value: Untitled - Notepad    SupportedPattern: LegacyIAccessiblePattern ValuePattern
+        ControlType: MenuBarControl    ClassName:     AutomationId: MenuBar    Rect: (511,211,1787,230)[1276x19]    Name: Application    Handle: 0x0(0)    Depth: 2    SupportedPattern: LegacyIAccessiblePattern
+2020-04-07 17:28:55.159 automation.py[110] main -> Ends
+
