@@ -37,8 +37,26 @@ print(utf)
 print(gb2312.decode('gb2312'))
 
 # 字符串转换为十进制数字
-str = "123"
-print(int("123") + int(str))
+strs = "123"
+print(int("123") + int(strs))
 
 # 字符串转换为浮点数
-print(float("123") + float(str))
+print(float("123") + float(strs))
+
+# 字符串转换为ascii格式bytes
+print(bytes(strs, encoding='ascii'))
+
+# 字符串转换为utf-8格式bytes
+print(bytes(strs, encoding='utf-8'))
+
+# 将bytes转换成ascii/utf-8字符串
+
+bytes_char = bytes('1234', encoding='ascii')
+
+strs_ascii = bytes_char.decode(encoding='ascii')
+
+strs_utf8 = bytes_char.decode(encoding='utf-8')
+
+print(strs_ascii)
+print(strs_utf8)
+
