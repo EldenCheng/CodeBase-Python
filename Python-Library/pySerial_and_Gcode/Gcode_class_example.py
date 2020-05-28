@@ -64,7 +64,7 @@ class AutoMachine:
         gcode_init_commands2 = (
             'G21',  # set mm units
             'G90',  # set absolute coordinates
-            'G28',  # home all axes
+            # 'G28',  # home all axes
         )
 
         for gic2 in gcode_init_commands2:
@@ -169,10 +169,14 @@ class AutoMachine:
         """
         # G28 用于使笔归位, 默认是回到原点(0.0,0.0,0.0), 但也可以仅仅回复X, Y或者Z
         gcode_pen_reset_command = {'all': 'G28',
-                                   'x': 'G28 X',
-                                   'y': 'G28 Y',
-                                   'z': 'G28 Z'
+                                   'x': 'G1X0F1000',
+                                   'y': 'G1Y0F1000',
+                                   'z': 'G1Z0F1000'
                                    }
+        if reset_pattern.lower() in ('x', 'y', 'z'):  # Reset单一轴的话, 先将坐标设置绝对坐标, 再让Pen回到对应0位
+            self.serial.write(bytes('G90' + '\n', encoding='ascii'))
+            time.sleep(2)
+
         self.serial.write(bytes(gcode_pen_reset_command[reset_pattern.lower()] + '\n', encoding='ascii'))
         time.sleep(2)
         if self.recv() != b'ok\r\n':
@@ -193,6 +197,8 @@ if __name__ == '__main__':
     time.sleep(5)
     am.pen_up_down(position=0.0)
     time.sleep(5)
-    am.pen_reset()
+    am.pen_up_down(position=15.0)  # Reset之前先抬起笔
+    time.sleep(5)
+    am.pen_reset()  # 关闭电源之前应该先Reset回原点以免再次打开时原点与之前不一样
     time.sleep(5)
     am.close_serial()
