@@ -67,3 +67,6 @@ WebCrawler/Python-WebCrawler/Chapter2/001a_Scrapy_basic/chinanews_crawler/__pyca
 WebCrawler/Python-WebCrawler/Chapter2/001a_Scrapy_basic/chinanews_crawler/spiders/__pycache__/__init__.cpython-36.pyc
 WebCrawler/Python-WebCrawler/Chapter2/001a_Scrapy_basic/chinanews_crawler/spiders/__pycache__/chinanews_spider.cpython-36.pyc
 .idea/.gitignore
+Python-Library/pytest_learning/__pycache__/__init__.cpython-38.pyc
+Python-Library/pytest_learning/__pycache__/get_start_test.cpython-38-pytest-6.2.4.pyc
+Python-Library/pytest_learning/__pycache__/test1.cpython-38-pytest-6.2.4.pyc
