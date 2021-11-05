@@ -1,9 +1,8 @@
 import tempfile
 
-file = tempfile.mktemp()
+if __name__ == '__main__':
 
-print(file)
-
-file2 = tempfile.NamedTemporaryFile(suffix='screenshot', prefix='png')
-
-print(file2.name)
+    file = tempfile.mktemp()
+    print(file)
+    file2 = tempfile.NamedTemporaryFile(prefix='screenshot', suffix='png',)
+    print(file2.name)
