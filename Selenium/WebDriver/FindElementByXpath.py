@@ -10,25 +10,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-'''
-XPath轴(XPath Axes)可定义某个相对于当前节点的节点集： 
-1、child 选取当前节点的所有子元素 
-2、parent 选取当前节点的父节点 
-3、descendant 选取当前节点的所有后代元素（子、孙等） 
-4、ancestor 选取当前节点的所有先辈（父、祖父等） 
-5、descendant-or-self 选取当前节点的所有后代元素（子、孙等）以及当前节点本身 
-6、ancestor-or-self 选取当前节点的所有先辈（父、祖父等）以及当前节点本身 
-7、preceding-sibling 选取当前节点之前的所有同级节点 
-8、following-sibling 选取当前节点之后的所有同级节点 
-9、preceding 选取文档中当前节点的开始标签之前的所有节点 
-10、following 选取文档中当前节点的结束标签之后的所有节点 
-11、self 选取当前节点 
-12、attribute 选取当前节点的所有属性 
-13、namespace 选取当前节点的所有命名空间节点
-'''
-
-
-
 if __name__ == '__main__':
 
     driver = webdriver.Firefox(executable_path="../WebDriver/geckodriver.exe")
@@ -87,6 +68,15 @@ if __name__ == '__main__':
     except Exception as msg:
         print(msg)
 
+    # 下标[]中表达式中使用not()加属性就代表找所有不带这个属性的标签
+    try:
+        Div3 = driver.find_elements(By.XPATH, "/html/body/div[not(@id)]")  # 查找所有不带id属性的div
+        for i in Div3:
+            print(i.get_attribute("id"))
+
+    except Exception as msg:
+        print(msg)
+
     # 下标[]中表达式中可以使用一些内置方法, 比如text()
     try:
         a_with_text = driver.find_element(By.XPATH, '//a[text()="地图"]')  # 查找显示的文字为"地图"的a元素
@@ -110,6 +100,53 @@ if __name__ == '__main__':
         # 依靠子节点定位
         body_with_sub_div = driver.find_element(By.XPATH, '//body[div[@id="wrapper"]]')
         print(body_with_sub_div)
+
+    except Exception as msg:
+        print(msg)
+
+    # 下标[]中表达式中可以指定兄元素(前一个)或者弟元素(后一个), 作为表达式的兄弟元素本身也可以使用[]来筛选
+    try:
+        a_with_text = driver.find_element(By.XPATH, '//a[preceding-sibling::div[@id="u1"]]')  # 查找a元素, 它的兄节点(前一个)是id为u1的div元素
+        print(a_with_text.text)
+
+        # 查找是id为u1的div元素与id为u2的div元素之间存在的a元素
+        a_with_text = driver.find_element(By.XPATH, '//a[preceding-sibling::div[@id="u1"] and following-sibling::div[@id="u2"]]')
+        print(a_with_text)
+
+        # 查找后面只有一个id为u2的div元素的a元素 (如果有a元素后面跟着两个id为u2的div元素的话, 就不符合条件)
+        a_with_text = driver.find_element(By.XPATH, '//a[count(following-sibling::div[@id="u2"])=1]')
+        print(a_with_text)
+
+    except Exception as msg:
+        print(msg)
+
+    # 查找一个元素后, 可以通过关键字来获得它的父, 子, 兄弟节点
+    try:
+        # 先查找一个包括文字包括"术"的a元素, 再通过它来获得id为u1的兄元素div元素(注意结果是div元素而不是a元素)
+        div_with_text = driver.find_element(By.XPATH, '//a[contains(text(),"术")]/preceding-sibling::div[@id="u1"]]')
+        print(div_with_text.text)
+
+        # 先查找一个包括文字包括"术"的a元素, 再通过它来获得上一层元素的子元素中id为u1的兄元素div元素(注意结果是div元素而不是a元素)
+        div_with_text = driver.find_element(By.XPATH, '//a[contains(text(),"术")]/../preceding-sibling::div[@id="u1"]]')
+        print(div_with_text)
+
+        '''
+        相对关系的关键字收集如下
+        XPath轴(XPath Axes)可定义某个相对于当前节点的节点集： 
+        1、child 选取当前节点的所有子元素 
+        2、parent 选取当前节点的父节点 
+        3、descendant 选取当前节点的所有后代元素（子、孙等） 
+        4、ancestor 选取当前节点的所有先辈（父、祖父等） 
+        5、descendant-or-self 选取当前节点的所有后代元素（子、孙等）以及当前节点本身 
+        6、ancestor-or-self 选取当前节点的所有先辈（父、祖父等）以及当前节点本身 
+        7、preceding-sibling 选取当前节点之前的所有同级节点 
+        8、following-sibling 选取当前节点之后的所有同级节点 
+        9、preceding 选取文档中当前节点的开始标签之前的所有节点 
+        10、following 选取文档中当前节点的结束标签之后的所有节点 
+        11、self 选取当前节点 
+        12、attribute 选取当前节点的所有属性 
+        13、namespace 选取当前节点的所有命名空间节点
+        '''
 
     except Exception as msg:
         print(msg)
