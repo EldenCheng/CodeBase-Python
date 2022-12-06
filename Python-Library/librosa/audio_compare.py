@@ -7,8 +7,8 @@ from numpy.linalg import norm
 if __name__ == '__main__':
     # 代码来源 https://github.com/pollen-robotics/dtw/blob/master/examples/MFCC%20%2B%20DTW.ipynb
     # Loading audio files
-    y1, sr1 = librosa.load('pink_noise_po2_re1.m4a')
-    y2, sr2 = librosa.load('ocean_po2_re1.m4a')
+    y1, sr1 = librosa.load('song1_re1.m4a')
+    y2, sr2 = librosa.load('song2_po2_re1.m4a')
 
     # Try to remove silent of the beginning / ending of the audio files
     y1 = librosa.effects.trim(y1, top_db=10)[0]
@@ -45,7 +45,8 @@ if __name__ == '__main__':
     '''
     就算完全相同的一段音频, 由于每次录音都会有一定差异, 所以需要设置一个临界值来判断两个音频是否相同
     而不是直接使用0(无差异)来判断
-    经过一些音频的对比, 发现相同音频的差异一般在万级(10000)以下, 不同音频的差异会比相同音频的差异大几倍, 所以暂定临界值为10000 
+    经过一些音频的对比, 发现相同音频的差异一般在十万级(100000)以下, 不同音频的差异会比相同音频的差异大几倍, 所以暂定临界值为100000
+    注意, 这个阈值要根据实际环境测试后确定, 不同环境可能不能使用同一个阈值 
     '''
     threshold = 100000
     if int(dist) > threshold:
