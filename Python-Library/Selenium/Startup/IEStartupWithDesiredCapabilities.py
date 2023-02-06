@@ -19,7 +19,7 @@ for i in DS:
     print(i + " value is: " + str(DS[i]))
 
 
-driver =webdriver.Ie(executable_path=".\\Webdrivers\\IEDriverServer.exe", capabilities=DS)
+driver =webdriver.Ie(executable_path="Webdrivers/IEDriverServer.exe", capabilities=DS)
 driver.implicitly_wait(10)
 
 driver.get("https://www.ap506.p2g.netd2.hsbc.com.hk/")

@@ -18,7 +18,7 @@ for d in devices:
     device_name = temp[1][:-2]
     device_info += serial_number + "," + device_name + "\n"
 
-f = open("./device_info.csv","w")
+f = open("device_info.csv", "w")
 f.write(device_info)
 f.close()
 
