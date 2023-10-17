@@ -1,0 +1,11 @@
+[server]
+port = 5557
+
+[node]
+detect-drivers = false
+
+[relay]
+url = "http://localhost:4722"
+status-endpoint = "/status"
+configs = [
+    "1", "{\"platformName\": \"Android\", \"appium:deviceName\": \"Galaxy S9+\", \"appium:platformVersion\": \"8\", \"appium:udid\": \"192.168.19.61:5555\",	\"appium:appPackage\": \"com.android.settings\", \"appium:appActivity\": \"com.android.settings.Settings\", \"appium:automationName\": \"uiautomator2\", \"appium:noReset\": true, \"appium:newCommandTimeout\": 3600}"]

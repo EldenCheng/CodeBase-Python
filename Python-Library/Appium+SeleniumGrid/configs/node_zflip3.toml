@@ -1,0 +1,11 @@
+[server]
+port = 5601
+
+[node]
+detect-drivers = false
+
+[relay]
+url = "http://localhost:4726"
+status-endpoint = "/status"
+configs = [
+    "1", "{\"platformName\": \"Android\", \"appium:deviceName\": \"Galaxy ZFlip3\", \"appium:platformVersion\": \"11\", \"appium:udid\": \"192.168.19.72:5555\",	\"appium:appPackage\": \"com.google.android.gm\", \"appium:appActivity\": \".ConversationListActivityGmail\", \"appium:automationName\": \"uiautomator2\", \"appium:noReset\": true, \"appium:newCommandTimeout\": 3600}"]

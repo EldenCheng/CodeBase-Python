@@ -1,0 +1,5 @@
+# Galaxy Note10.yml
+server:
+  port: 4722  # using different port when using multi appium
+  use-drivers:
+    - uiautomator2

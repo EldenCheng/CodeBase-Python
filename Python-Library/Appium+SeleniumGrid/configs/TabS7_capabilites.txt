@@ -1,0 +1,11 @@
+{
+  "platformName": "Android",
+  "platformVersion": "13",
+  "deviceName": "Galaxy Tab S7 Plus",
+  "udid": "192.168.19.36:5555",
+  "appPackage": "com.android.settings",
+  "appActivity": "com.android.settings.Settings",
+  "automationName": "uiautomator2",
+  "noReset": true,
+  "newCommandTimeout": 3600
+}

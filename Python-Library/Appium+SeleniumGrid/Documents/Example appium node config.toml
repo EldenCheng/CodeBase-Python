@@ -1,0 +1,27 @@
+# node1.toml
+[server]
+port = 5555  # This port should be different in each  toml files
+
+[node]
+detect-drivers = false
+
+[relay]
+url = "http://localhost:4723"  #  The appium server port is from related server port of appium config.yaml
+status-endpoint = "/status"
+configs = [
+    "1", "{\"platformName\": \"iOS\", \"appium:platformVersion\": \"15.5\", \"appium:deviceName\": \"iPhone 13\", \"appium:automationName\": \"XCUITest\"}"
+]  # The device desiredCapabilities define here
+
+# node2.toml, this should be 2 toml files, but for compare, I put them into one text
+[server]
+port = 5565
+
+[node]
+detect-drivers = false
+
+[relay]
+url = "http://localhost:4733"  #  The appium server port is from related server port of appium config.yaml
+status-endpoint = "/status"
+configs = [
+    "1", "{\"platformName\": \"iOS\", \"appium:platformVersion\": \"15.5\", \"appium:deviceName\": \"iPhone 12\", \"appium:automationName\": \"XCUITest\"}"
+]

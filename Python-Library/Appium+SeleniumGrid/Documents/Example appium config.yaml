@@ -1,0 +1,9 @@
+# appium1.yml
+server:
+  port: 4723  # using different port when using multi appium
+  use-drivers:
+    - xcuitest
+  default-capabilities:
+    appium:wdaLocalPort: 8100  # using different port when using multi appium
+    appium:mjpegServerPort: 9100  # using different port when using multi appium
+    appium:mjpegScreenshotUrl: "http://localhost:9100"  # using different port when using multi appium
