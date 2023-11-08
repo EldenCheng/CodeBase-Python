@@ -1,3 +1,5 @@
+import time
+
 from appium.options.android import UiAutomator2Options
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver.support import expected_conditions as ec
@@ -75,3 +77,38 @@ class MobileOperations(object):
         except Exception as msg:
             raise Exception(msg)
         return flag
+
+    def is_element_text_appear(self, locator, check_text, approach=None, timeout=10, interval=1):
+
+        start_time = time.time()
+        if approach == 'p':
+            locator = locator + (approach,)
+
+        for i in range(0, int(timeout / interval)):
+            if self.is_element_text_contains(locator, check_text, approach):
+                return True
+            if round(time.time() - start_time) > timeout:
+                # print("Wait too long")
+                return False
+            time.sleep(interval)
+        else:
+            return False
+
+    def is_element_text_contains(self, locator, check_text, approach=None, debug=False):
+
+        if approach == 'p':
+            locator = locator + (approach,)
+        if debug:
+            # logger.info(self.driver.page_source)
+            display_text = self.element_text(locator).strip()
+            # print("The text want to check is ", check_text)
+            print("The text on the device is ", display_text)
+            return True if check_text in display_text else False
+        else:
+            return True if check_text in self.element_text(locator).strip() else False
+
+    def element_text(self, locator):
+
+        element = self.get_element(*locator)
+        text = element.text.strip()
+        return text

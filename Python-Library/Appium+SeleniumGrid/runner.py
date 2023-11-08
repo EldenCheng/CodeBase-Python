@@ -2,10 +2,10 @@ import multiprocessing
 import time
 from multiprocessing import Process
 
+from data.constant import result_csv_path
 from data.data_by_group import data_group
-from data.mobile_info import *
-from common.utility import simple_thread
-
+from data.mobile_by_group import devices_group1, devices_group2, devices_group3
+from common.utility import thread_creator, save_to_csv
 
 if __name__ == '__main__':
 
@@ -22,6 +22,17 @@ if __name__ == '__main__':
         data_queue.put(dg)
 
     """
+    各个线程的运行结果应该汇聚在一起, 尝试让各个线程共享使用一个queue去保存结果
+    但Python中好像进程Queue与线程Queue不能混用, 即进程Queue只能用于多进程, 不
+    能用于进程里面的多线程, 而线程Queue只能用于同一个进程里的各个线程, 不能用于
+    其它进程
+    所以这里使用一个csv文件来汇总各个线程的运行结果, 现在只是简单做一次碰撞回避
+    如果有很多线程需要同时写入到这个文件时, 可能要使用线程锁来实现竞争使用
+    """
+    csv_tile = ["Time", "Action", "Result", "Response Time(s)"]
+    save_to_csv(result_csv_path, csv_tile, True)
+
+    """
     由于Python有GIL, 所以只使用多线程, 性能方面不够, 但多进程又受CPU核心数限制, 数量不够
     所以这里采用多进程, 然后在每一个进程中开多线程的方法, 希望可以控制更多设备的同时
     能尽量利用更多的CPU核心来提高性能
@@ -29,13 +40,13 @@ if __name__ == '__main__':
     根据参数数组元素的数量来开进程, 在这里比较不方便, 所以下面使用了手工逐一开启进程的方式来
     开启多进程
     """
-    p1 = Process(target=simple_thread, args=(devices_group1, data_queue))
-    # p2 = Process(target=simple_thread, args=(devices_group2, idcard_queue))
+    p1 = Process(target=thread_creator, args=(devices_group2, data_queue))
+    p2 = Process(target=thread_creator, args=(devices_group3, data_queue))
     p1.start()
     # time.sleep(600)  TODO As not all the VU will be started at the same time, maybe we can start the process not at the same time
-    # p2.start()
+    p2.start()
     p1.join()
-    # p2.join()
+    p2.join()
 
 
 

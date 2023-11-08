@@ -20,7 +20,7 @@ with open("./data/chat_list.txt", "r") as text_file:
         # itertools.islice可以读取迭代器中指定范围的数据
         # 注意读取过的数据就会从迭代器中删除
         for line in itertools.islice(text_file, 0, data_of_every_group):  # 每次从文件中读取N行数据
-            data_list.append(line)
+            data_list.append(line.replace("\n", ""))
         data_group.append(data_list)
 text_file.close()
 
