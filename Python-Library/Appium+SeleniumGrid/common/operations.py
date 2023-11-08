@@ -1,3 +1,4 @@
+from appium.options.android import UiAutomator2Options
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
@@ -6,12 +7,8 @@ from appium.webdriver.common.appiumby import AppiumBy
 
 
 class MobileOperations(object):
-    """
 
-    """
-
-    def __init__(self, device_name, url, ops):
-        self.device_name = device_name
+    def __init__(self, url, ops):
         self.remote_url = url
         self.options = ops
         self.driver = None
@@ -21,7 +18,7 @@ class MobileOperations(object):
         :return: driver
         """
         try:
-            self.driver = webdriver.Remote(self.remote_url, options=self.options)
+            self.driver = webdriver.Remote(self.remote_url, options=UiAutomator2Options().load_capabilities(self.options))
             return self.driver
         except Exception as msg:
             print(msg)
@@ -51,4 +48,30 @@ class MobileOperations(object):
         except Exception as msg:
             raise Exception(msg)
 
-
+    def find_element(self, locator_type: str, element_locator: str, approach: str = None, timeout: float = 3, direct_find = False) -> bool:
+        """
+        判断元素是否存在
+        :param element_locator: 元素的id，name等
+        :param locator_type: 定位的方式
+        :param timeout : 等待时间，默认为10s
+        :param approach: 检查元素的方式
+        :return: flag(True or False)
+        """
+        try:
+            if direct_find:
+                self.driver.find_element(locator_type, element_locator)
+            else:
+                if approach == 'p':
+                    WebDriverWait(self.driver, timeout, 0.5).until(ec.presence_of_element_located(
+                        (locator_type, element_locator)))
+                else:
+                    WebDriverWait(self.driver, timeout, 0.5).until(ec.visibility_of_element_located(
+                        (locator_type, element_locator)))
+            flag = True
+        except TimeoutException:
+            flag = False
+        except WebDriverException as webmsg:
+            raise Exception(webmsg)
+        except Exception as msg:
+            raise Exception(msg)
+        return flag

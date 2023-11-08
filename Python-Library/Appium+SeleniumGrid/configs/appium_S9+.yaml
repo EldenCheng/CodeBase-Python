@@ -1,5 +1,0 @@
-# Galaxy S9+.yml
-server:
-  port: 4724  # using different port when using multi appium
-  use-drivers:
-    - uiautomator2

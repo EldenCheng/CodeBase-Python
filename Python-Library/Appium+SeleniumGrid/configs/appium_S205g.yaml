@@ -1,5 +1,0 @@
-# Galaxy S20FE.yaml
-server:
-  port: 4726  # using different port when using multi appium
-  use-drivers:
-    - uiautomator2

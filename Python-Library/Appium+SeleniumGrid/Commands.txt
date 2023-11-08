@@ -13,6 +13,7 @@ java -jar ./Tools/selenium-server-4.13.0.jar hub
 启动n个appium server: 
 
 appium --config ./configs/appium_note10.yaml
+(appium --use-drivers uiautomator2 --port 4722)
 
 启动n个node: 
 

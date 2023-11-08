@@ -1,5 +1,0 @@
-# Galaxy S10.yml
-server:
-  port: 4723  # using different port when using multi appium
-  use-drivers:
-    - uiautomator2
