@@ -1,5 +1,5 @@
 import argparse
-from ffmpeg import compress
+import compress
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Please input video name.')

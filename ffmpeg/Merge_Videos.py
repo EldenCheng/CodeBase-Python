@@ -1,5 +1,5 @@
 import argparse
-from ffmpeg import merge
+import merge
 
 
 if __name__ == '__main__':
