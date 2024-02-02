@@ -10,9 +10,10 @@ from pathlib import Path
 def merge_video(vname):
 
     merge_str = '"concat:'
-    ffmpeg_path = str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
+    ffmpeg_install = False
+    ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
     temp_list = list()
-    print("The params:", vname)
+    # print("The params:", vname)
 
     if len(vname) == 1:
 
