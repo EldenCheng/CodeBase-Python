@@ -1,0 +1,7 @@
+1. adb wifi连接手机
+2. 配置好n台手机的yml和toml
+3. 启动hub: `java -jar /path/to/selenium.jar hub`
+4. 启动n个appium server: `appium --config appium1.yml`
+5. 启动n个node: `java -jar /path/to/selenium.jar node --config node1.toml`
+6. 浏览器打开http://127.0.0.1:4444检查各个node是否启动注册成功
+7. 脚本中使用使用webdriver.Remote("http://127.0.0.1:4444")连接手机

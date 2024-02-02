@@ -1,0 +1,21 @@
+开启adb tcpip模式:
+
+adb tcpip 5555
+
+使用wifi 连接adb:
+
+adb connect 手机IP
+
+启动hub: 
+
+java -jar ./Tools/selenium-server-4.13.0.jar hub
+
+启动n个appium server: 
+
+appium --config ./configs/appium_note10.yaml
+(appium --use-drivers uiautomator2 --port 4722)
+
+启动n个node: 
+
+java -jar ./Tools/selenium-server-4.13.0.jar node --config ./configs/node_note10.toml --hub http://192.168.16.50:4444
+

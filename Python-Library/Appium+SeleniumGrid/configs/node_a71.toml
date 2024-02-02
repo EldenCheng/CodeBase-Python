@@ -1,0 +1,11 @@
+[server]
+port = 5581
+
+[node]
+detect-drivers = false
+
+[relay]
+url = "http://localhost:4723"
+status-endpoint = "/status"
+configs = [
+    "1", "{\"platformName\": \"Android\", \"appium:deviceName\": \"Galaxy A71\", \"appium:platformVersion\": \"10\", \"appium:udid\": \"192.168.19.66:5555\",	\"appium:appPackage\": \"com.android.settings\", \"appium:appActivity\": \"com.android.settings.Settings\", \"appium:automationName\": \"uiautomator2\", \"appium:noReset\": true, \"appium:newCommandTimeout\": 3600}"]

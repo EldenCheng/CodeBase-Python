@@ -17,7 +17,7 @@ if __name__ == '__main__':
     #"test-type"参数可以避免一些警告，比如Https对不上证书错误
     Options.add_argument("start-maximized")
     Options.add_argument("test-type")
-    driver =webdriver.Chrome(executable_path=".\\Webdrivers\\chromedriver.exe", chrome_options=Options)
+    driver =webdriver.Chrome(executable_path="Webdrivers/chromedriver.exe", chrome_options=Options)
     driver.implicitly_wait(10)
 
     driver.get("https://www.baidu.com/")
