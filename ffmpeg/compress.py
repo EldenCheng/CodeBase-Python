@@ -1,12 +1,13 @@
 import os
 from pathlib import Path
+from re import T
 
 
 def compress_video(vname):
 
     # vname是从命令行获得的要转换的video的路径, 支持相对路径与绝对路径, 支持通配符
     # 要注意的是如果要使用路径的话, 最后文件名之前的分隔符要使用"/"以便程序分析出那个是文件名
-    path_string = vname.split(r'/')  
+    path_string = vname.split(r'/')
 
     if len(path_string) > 1:  # 如果在vname中能找到"/"的话, split函数会把路径分为两部分
         file_filter = path_string[-1]  # 文件名是split后最后一个元素
@@ -51,21 +52,24 @@ def compress_video(vname):
              '1/4': '-vf scale=trunc(iw/8)*2:trunc(ih/8)*2',  # One-quarter
              '1/5': '-vf scale=trunc(iw/10)*2:trunc(ih/10)*2' # One-Fifth
         }
-        ffmpeg_install = False
-        cuba = True
-        bit_rate = "1400K"
-        crf = "30"
+        ffmpeg_install = True
+        cuba = False
+        bit_rate = "400K"
+        crf = "29"
         convert_resolution = "1"
-        multi_audio = False
+        multi_audio = True
+        hdr = False
         final_convert_mp4 = False
 
         ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
-        stream_map = "-map 0" if multi_audio else ""
+        # stream_map = "-map 0" if multi_audio else ""
+        stream_map = "-map 0:v -map 0:a" if multi_audio else ""  # 有些字幕ffmpeg不支持, 就要去除字幕
+        hdr_setting = "-color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le" if hdr else ""  # 未试验HDR效果
 
         if cuba:
             cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -b {bit_rate} {stream_map}  {resolution[convert_resolution]} "{desc_file}"'  # Nv GPU加速, 需要指定码率
         else:
-            cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {crf} {stream_map}  {resolution[convert_resolution]} "{desc_file}"'  # 压缩比较大而质量损失少, 但没有GPU加速, 慢
+            cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"'  # 压缩比较大而质量损失少, 但没有GPU加速, 慢
 
         os.system(cmd)
 
