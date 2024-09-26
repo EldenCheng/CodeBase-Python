@@ -53,32 +53,47 @@ def compress_video(vname):
              '1/5': '-vf scale=trunc(iw/10)*2:trunc(ih/10)*2' # One-Fifth
         }
         ffmpeg_install = True
-        cuba = False
-        bit_rate = "400K"
-        crf = "29"
+        ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
+
+        h265 = False
         convert_resolution = "1"
         multi_audio = True
-        hdr = False
-        final_convert_mp4 = False
 
-        ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
+        cuba = False
+        bit_rate = "400K"
+
+        crf = "29"
+        hdr = False
+        # final_convert_mp4 = False
         # stream_map = "-map 0" if multi_audio else ""
+
         stream_map = "-map 0:v -map 0:a" if multi_audio else ""  # 有些字幕ffmpeg不支持, 就要去除字幕
         hdr_setting = "-color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le" if hdr else ""  # 未试验HDR效果
 
         if cuba:
-            cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -b {bit_rate} {stream_map}  {resolution[convert_resolution]} "{desc_file}"'  # Nv GPU加速, 需要指定码率
+            if h265:
+                cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -b {bit_rate} {stream_map} {resolution[convert_resolution]} "{desc_file}"'  # Nv GPU加速, 需要指定码率
+            else:
+                cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec h264_nvenc -b {bit_rate} {stream_map} {resolution[convert_resolution]} "{desc_file}"'  # Nv GPU加速, 需要指定码率
         else:
-            cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"'  # 压缩比较大而质量损失少, 但没有GPU加速, 慢
+            if h265:
+                cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"'  # 压缩比较大而质量损失少, 但没有GPU加速, 慢
+            else:
+                cmd = f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx264 -crf {crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"'  # 压缩比较大而质量损失少, 但没有GPU加速, 慢
 
         os.system(cmd)
 
-        if not desc_file.endswith(".mp4") and not desc_file.endswith(".MP4") and final_convert_mp4:
+        # if not desc_file.endswith(".mp4") and not desc_file.endswith(".MP4") and final_convert_mp4:
+        #
+        #     converted_name = desc_file[:-3] + "mp4"
+        #
+        #     cmd = '{0} -i {1} -y -vcodec copy -acodec copy "{2}"'.format(ffmpeg_path, desc_file, converted_name)
+        #
+        #     os.system(cmd)
+        #
+        #     os.system('del "{0}"'.format(desc_file))
 
-            converted_name = desc_file[:-3] + "mp4"
 
-            cmd = '{0} -i {1} -y -vcodec copy -acodec copy "{2}"'.format(ffmpeg_path, desc_file, converted_name)
-
-            os.system(cmd)
-
-            os.system('del "{0}"'.format(desc_file))
+if __name__ == '__main__':
+    video_name = r"./*.mp4"
+    compress_video(video_name)
