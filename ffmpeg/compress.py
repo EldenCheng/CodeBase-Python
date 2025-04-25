@@ -32,8 +32,29 @@ def compress_video(vname):
         -i 输入文件名
         -movflags 将原视频的metadata复制到新视频中
         -map_metadata 尝试使用视频的metadata作为新视频的基本信息
-        -vcodec 编码器, hevc_nvenc H265(Nv GPU加速), libx265 H265, H265具有更高的压缩比率, h264_nvenc H264(Nv GPU加速) libx264 H264, H264有更好的兼容性
-        -crf libx265, libx264专用固定码率因子, 取值可以是0 ~ 51之间,  其中, 数值越小, 比特率越高, H264默认是23, 推荐值是18 ~ 28, H265默认值是28, 推荐为31
+        -vcodec 编码器, H265具有更高的压缩比率, H264有更好的兼容性, av1较新, 但不是所有GPU都支持
+                另外, ffmpeg支持的编码器名称可以使用ffmpeg -encoders | grep [编码器标记] 来查看, 比如cuda的标记就是nvenc
+                查找出可用的编码器后, 可以使用ffmpeg -h encoder=[编码器名称]来查看编码器支持的参数
+                下面列出各个常用的编码器名称 (各编码器的用法可以参考https://trac.ffmpeg.org/wiki/HWAccelIntro#libmfxIntelMediaSDK):
+            cuda (NV) 
+             - hevc_nvenc (H265)
+             - h264_nvenc (H264) 
+             - av1_nvenc (av1)
+            qsv (Intel Quick Sync Video)
+             - hevc_qsv (H265)
+             - h264_qsv (H264)
+             - av1_qsv (av1)
+            amf (AMD)
+             - hevc_amf (H265)
+             - h264_amf (H264)
+             - av1_amf (av1)
+            VideoToolBox (Apple) 只在苹果电脑上才能使用
+             - hevc_videotoolbox (H265)
+             - h264_videotoolbox (H264)
+            libx (CPU软压缩)
+             - libx265 (H265)
+             - libx264 (H264)
+
         -map 指定输入的流, 格式为-map input_file_index:stream_type_specifier:stream_index
              其中input_file_index为输入文件的顺序, 从0开始, 如果只有一个文件就为0
              stream_type_specifier中, v代表video, a代表audio
@@ -42,6 +63,13 @@ def compress_video(vname):
         -b 直接指定视频的比特率
         -s 直接指定视频的分辨率, 注意竖屏视频使用横屏分辨率会拉伸视频, 分辨率可以是480X240(16:9) 640X360(16:9), 848X480(16:9), 720X480(3:2), 1280X720, 1920X1080, 2560X1440, 3840X2160
         -vf video filter, 这里用来按比例分割垂直分辨率与水平分辨率, 这样竖屏视频就不会被拉伸
+        
+        另外, 除了ffmpeg通用的码率控制之外, 不同的解码器支持一些专用的质量控制选项
+        cuda (NV)
+         -profile
+        libx (CPU软压缩)
+         -crf libx265, libx264专用固定码率因子, 取值可以是0 ~ 51之间,  其中, 数值越小, 比特率越高, H264默认是23, 推荐值是18 ~ 28, H265默认值是28, 推荐为31
+        
         """
         # cmd = '{0} -i "{1}" -b:v 500k -s  "{2}"'.format(ffmpeg_path, source_file, desc_file)
         # cmd = '{0} -i "{1}" -c:v hevc_nvenc -b:v 1000k -s 1280X720 "{2}"'.format(ffmpeg_path, source_file, desc_file)
