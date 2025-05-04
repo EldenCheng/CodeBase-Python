@@ -1,4 +1,5 @@
 import os
+import subprocess
 import time
 from pathlib import Path
 from re import T
@@ -110,6 +111,9 @@ def compress_video(vname):
         "cpu": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx264 -crf {cpu_crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"'
     }
 
+    # 通过ffprobe命令获取视频信息, 这里为了准确获取特定的视频信息, 指定了要获取的tab名称
+    video_specify_info = lambda tab_name, source_file: subprocess.check_output(f"ffprobe -v error -print_format csv -select_streams v -show_entries stream={tab_name} {source_file}", shell=True).decode()
+
     for e in all_files:
         # print(e.absolute())
         # print(e.name)
@@ -118,7 +122,14 @@ def compress_video(vname):
         desc_file = str(e.name)
 
         if h265:
-            cmd = h265_compress_cmd[encoder](source_file, desc_file)
+            # if source_file.lower().find("hdr") != -1:  # 尝试能识别到视频名字中有HDR字样的, 自动使用hdr设置进行压缩
+            # 获取视频的color space的类型, 一般HDR视频的color space为bt2020nc, SDR视频color space为bt709
+            if video_specify_info("color_space", source_file).find('bt2020nc') != -1:
+                hdr = True
+                cmd = h265_compress_cmd['cpu'](source_file, desc_file)
+                hdr = False
+            else:
+                cmd = h265_compress_cmd[encoder](source_file, desc_file)
         else:
             cmd = h264_compress_cmd[encoder](source_file, desc_file)
 
