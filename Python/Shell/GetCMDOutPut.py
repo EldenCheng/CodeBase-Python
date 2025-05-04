@@ -2,8 +2,21 @@ import subprocess
 
 if __name__ == '__main__':
 
-    proc4 = subprocess.Popen("dir *.*", stdout=subprocess.PIPE, shell=True)
-    (out4, err4) = proc4.communicate()
+    # Python 3.6
+    process = subprocess.check_output(['dir'], shell=True)
+    print(process.decode('latin-1'))
 
-    print(out4)
-    print(err4)
+    proc = subprocess.Popen("dir *.*", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, text=True)
+    (out, err) = proc.communicate()
+
+    print(out)
+    print(err)
+
+    # result = subprocess.run("dir *.*", shell=True, capture_output=True, text=True)
+    result = subprocess.run("dir *.*", shell=True, text=True)
+
+    # print(result.stdout)
+    result_txt = result.stdout
+    print(result_txt)
+
+
