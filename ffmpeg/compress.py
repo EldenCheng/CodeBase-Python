@@ -100,7 +100,8 @@ def compress_video(vname):
         "apple": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_videotoolbox -b:v {bit_rate} {stream_map} {resolution[convert_resolution]} "{desc_file}"',
         "apple_m": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_videotoolbox -q:v {apple_m_cq} {stream_map} {resolution[convert_resolution]} "{desc_file}"',
         "amd": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_amf -b:v {bit_rate} {stream_map} {resolution[convert_resolution]} "{desc_file}"',
-        "cpu": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {cpu_crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"'
+        "cpu": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {cpu_crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"',
+        "cpu_hdr": lambda source_file, desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {cpu_crf} {stream_map} -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
     }
 
     h264_compress_cmd = {
@@ -112,7 +113,7 @@ def compress_video(vname):
     }
 
     # 通过ffprobe命令获取视频信息, 这里为了准确获取特定的视频信息, 指定了要获取的tab名称
-    video_specify_info = lambda tab_name, source_file: subprocess.check_output(f"ffprobe -v error -print_format csv -select_streams v -show_entries stream={tab_name} {source_file}", shell=True).decode()
+    video_specify_info = lambda tab_name, source_file: subprocess.check_output(f'ffprobe -v error -print_format csv -select_streams v -show_entries stream={tab_name} "{source_file}"', shell=True).decode()
 
     for e in all_files:
         # print(e.absolute())
@@ -124,10 +125,8 @@ def compress_video(vname):
         if h265:
             # if source_file.lower().find("hdr") != -1:  # 尝试能识别到视频名字中有HDR字样的, 自动使用hdr设置进行压缩
             # 获取视频的color space的类型, 一般HDR视频的color space为bt2020nc, SDR视频color space为bt709
-            if video_specify_info("color_space", source_file).find('bt2020nc') != -1:
-                hdr = True
-                cmd = h265_compress_cmd['cpu'](source_file, desc_file)
-                hdr = False
+            if video_specify_info("color_space", source_file).find('bt2020nc') != -1 or source_file.lower().find("hdr") != -1 or hdr:
+                cmd = h265_compress_cmd['cpu_hdr'](source_file, desc_file)
             else:
                 cmd = h265_compress_cmd[encoder](source_file, desc_file)
         else:
