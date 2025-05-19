@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 if __name__ == "__main__":
-    img_path = "slidbar_authcode_pic5.PNG"
+    img_path = "Pics/slidbar_authcode_pic5.PNG"
     img = cv2.imread(img_path)
     #获取图片的宽和高
     width, height = img.shape[:2][::-1]

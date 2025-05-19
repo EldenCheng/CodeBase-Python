@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 if __name__ == '__main__':
-    img = cv2.imread('slidbar_authcode_pic5.PNG', -1)
+    img = cv2.imread('Pics/slidbar_authcode_pic5.PNG', -1)
 
     rgb_planes = cv2.split(img)
 
@@ -24,5 +24,5 @@ if __name__ == '__main__':
     result = cv2.merge(result_planes)
     result_norm = cv2.merge(result_norm_planes)
 
-    cv2.imwrite('shadows_out.png', result)
+    cv2.imwrite('Pics/shadows_out.png', result)
     # cv2.imwrite('shadows_out_norm.png', result_norm)

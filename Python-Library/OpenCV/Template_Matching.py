@@ -4,13 +4,13 @@ import numpy as np
 if __name__ == '__main__':
 
     # 读取目标图像并将其转换成灰度图
-    img = cv2.imread("./target.jpg", 1)
-    img2 = cv2.imread("./target.jpg", 1)
-    img3 = cv2.imread("./target.jpg", 1)
+    img = cv2.imread("Pics/target.JPG", 1)
+    img2 = cv2.imread("Pics/target.JPG", 1)
+    img3 = cv2.imread("Pics/target.JPG", 1)
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # 读取要查找的子图像并且获取子图像的长度与高度
-    template = cv2.imread('./tem.jpg', 0)
+    template = cv2.imread('Pics/tem.JPG', 0)
     w, h = template.shape[::-1]
 
     '''
