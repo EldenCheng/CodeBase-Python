@@ -1,7 +1,13 @@
 import os
 from pathlib import Path
 
-from ffmpeg.compress_cmd_define import video_specify_info, hdr, h265_compress_cmd, h264_compress_cmd
+from ffmpeg.compress_cmd_define import video_specify_info, h265_compress_cmd, h264_compress_cmd
+
+h265 = False
+encoder = 'cpu'
+convert_resolution = "1"
+multi_audio = True
+hdr = False
 
 
 def compress_video(vname):
@@ -20,9 +26,6 @@ def compress_video(vname):
         folder_path = Path(folder_name)
 
     all_files = list(folder_path.rglob(file_filter))  # 使用文件名去查找文件, rglob支持通配符, 能把符合条件的所有文件生成一个列表
-
-    h265 = False
-    encoder = 'cpu'
 
     for e in all_files:
         # print(e.absolute())

@@ -1,5 +1,6 @@
 import subprocess
 from pathlib import Path
+from compress import multi_audio, hdr, convert_resolution
 
 ffmpeg_install = True
 bit_rate = "400K"
@@ -7,9 +8,6 @@ cpu_crf = "29"  # 取值可以是0 ~ 51之间,  其中, 数值越小, 比特率�
 nv_pf = 15
 nv_cq = 38
 apple_m_cq = 38
-convert_resolution = "1"
-multi_audio = True
-hdr = False
 
 ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
 
