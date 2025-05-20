@@ -112,13 +112,13 @@ def capture_by_camera(camera: int=0, capture_file_path: str=None, img_show: bool
     ret, photo = cap.read()
     # 将图像传送至窗口
     if img_show:
-        cv2.imshow('Please Take Your Photo!!', photo)
+        cv2.imshow('The Photo You Take', photo)
 
-    if capture_file_path is not None:
+    if capture_file_path:
         filename = capture_file_path
     else:
-        filename = tempfile.NamedTemporaryFile(suffix='screenshot', prefix='png')
-    cv2.waitKey(waiting_time)
+        filename = tempfile.NamedTemporaryFile(prefix='screenshot_', suffix='.png').name
+    cv2.waitKey()
     cv2.imwrite(filename, photo)
     time.sleep(2)
     cap.release()
