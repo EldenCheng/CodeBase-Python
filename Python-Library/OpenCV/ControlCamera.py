@@ -96,18 +96,39 @@ class Camera(object):
                 self.cap.open()
 
 
-def capture_by_camera(camera: int=0, capture_file_path: str=None, img_show: bool=False, waiting_time: int=3):
+def capture_by_camera(camera: int=0, capture_file_path: str=None, adjust_setting = False, res = (0, 0), img_show: bool=False, waiting_time: int=3):
     """
     调用摄像头拍摄一张照片
     :param camera: 摄像头序列号,0表示系统默认的摄像头
     :param capture_file_path: 图片存放路径, 没有指定路径将会使用临时文件
+    :param adjust_setting: 是否需要自动曝光, 这里为了不多使用一个参数, 所以如果不使用自动曝光的话, 就需要把设定的曝光值写出来
+                          比如需要曝光值为-7的, 就直接在这里设置为-7 (效果好像不太好)
+    :param res: 捕捉图像的分辨率, (0, 0)表示原分辨率
     :param img_show: 捕捉后需不需要显示捕捉结果
     :param waiting_time: 捕捉前的等待时间, 一般来说设置一定的时长以免摄像头启动需要时间
     :return: 如果成功返回图片存放路径, 如果失败返回None
     """
 
     # 读取摄像头，0表示系统默认摄像头
-    cap = cv2.VideoCapture(camera)
+    if adjust_setting:
+        cap = cv2.VideoCapture(camera + cv2.CAP_DSHOW) # 很多摄像头要使用direct show来驱动摄像头才能调节大部分的参数
+        cap.set(cv2.CAP_PROP_SETTINGS, 1) # 弹出参数调节窗口, 因为修改的是操作系统里预定义的摄像头参数, 所以就算脚本运行完成, 参数也一直生效
+    else:
+        cap = cv2.VideoCapture(camera)
+    # if auto_exposure is not True:
+    #     # ret_val, cap_for_exposure = cap.read()
+    #     cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 3) # Turn on auto exposure
+    #     # cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 1) # Turn off auto exposure
+    #     # cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25) # Turn off auto exposure
+    #     cap.set(cv2.CAP_PROP_EXPOSURE, auto_exposure)
+    # else:
+    #     cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.75) # Turn on auto exposure
+    print(cap.get(cv2.CAP_PROP_AUTO_EXPOSURE))
+    print(cap.get(cv2.CAP_PROP_EXPOSURE))
+    if res[0] != 0: # 图片的大小, 注意同样也是修改操作系统预定义的摄像头参数, 就算脚本运行完成后, 图片大小也不会变回来
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    # cap.set(cv2.CAP_PROP_SETTINGS, 1)
     time.sleep(waiting_time)
     ret, photo = cap.read()
     # 将图像传送至窗口
@@ -129,5 +150,5 @@ def capture_by_camera(camera: int=0, capture_file_path: str=None, img_show: bool
 
 
 if __name__ == '__main__':
-    capture_by_camera(capture_file_path='./capture_example.png', img_show=True)
+    capture_by_camera(capture_file_path="Pics/not_adjust.png")
     # time.sleep(10)
