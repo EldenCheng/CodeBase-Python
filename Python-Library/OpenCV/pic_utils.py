@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 import time
 
 import pyguetzli
@@ -8,7 +9,7 @@ import mozjpeg_lossless_optimization
 class CompressImage:
 
     @staticmethod
-    def compress(pic_path: str, target_path: str, method: str = 'm', size: float = 0.5, quality: int = 50):
+    def compress(pic_path: str, target_path: str, chinese=False, method: str = 'm', size: float = 0.5, quality: int = 50):
         """
         使用Google的guetzli库来压缩图片, 注意这个库只支持jpeg并且比较慢
         :param pic_path: 相片的Path对象实例
@@ -18,10 +19,20 @@ class CompressImage:
         try:
             print("Reducing pic {0} size...".format(pic_path))
             begin_time = time.time()
-            pic = cv2.imread(pic_path)
+            # print("path: ", pic_path)
+            
+            if chinese:
+                pic = cv2.imdecode(np.fromfile(pic_path, dtype=np.uint8), -1)
+            else:
+                pic = cv2.imread(pic_path)
             height, width = pic.shape[:2]  # 获取原始分辨率
             resize_pic = cv2.resize(pic, (int(width * size), int(height * size)))  # 缩小图片
-            cv2.imwrite(target_path, resize_pic, [int(cv2.IMWRITE_JPEG_QUALITY), quality])  # 按照质量设置保存图片
+            
+            if chinese:
+                cv2.imencode(".jpg", resize_pic)[1].tofile(target_path)
+            else:
+                cv2.imwrite(target_path, resize_pic, [int(cv2.IMWRITE_JPEG_QUALITY), quality])  # 按照质量设置保存图片
+            # print("Reduce pic by opencv, used: ".format(pic_path), int(time.time() - begin_time))
             if method:  # 设置是否需要额外压缩
                 rb = open(str(target_path), 'rb').read()  # 压缩图片需要二进制数据
                 if method == "g":  # 使用google pyguetzli压缩, 效果大概可以压缩到原图1/4, 已经缩小并降低质量的图都要1分钟左右
