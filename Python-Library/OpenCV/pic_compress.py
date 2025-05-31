@@ -5,19 +5,19 @@ from pic_utils import CompressImage
 
 if __name__ == '__main__':
     # source_path = r"./Temp/*.jpg"
-    source_path = r"G:\Photo(JPG)\相册的相\2019\dali\*.jpg"
+    source_path = r"G:\Photo(JPG)\相册的相\2019\一家人的大理游\*.jpg"
     # source_path = r"H:\Download\Met-Art\Models\Nikky A\[Met-Art] - 2009-12-10 - Nikky A - Polerina (x125)/*.jpg"
     # target_path = "F:/JPG/"
     target_path = "D:/PhotoAlbum/JPG/"
     compress_temp_path = 'H:/Snaps/compress_temp/'
     thread_number = 10
     size = 50
-    quality = 50
+    quality = 60
     start_number = 0
-    end_number = 10
+    end_number = -1
     file_filter = None
     chinese_folder = True
-    shutdown = True
+    shutdown = False
 
     if source_path.find("*.jpg") != -1:
         folder_path = Path(source_path.split("*.jpg")[0])
@@ -43,10 +43,10 @@ if __name__ == '__main__':
         # print(e.name)
         source_file = str(e.absolute())
         # compress_temp_folder = Path(compress_temp_path)
-        if chinese_folder:
-            compress_temp_file = str(Path(compress_temp_path + e.name).absolute())
-            os.system(f'copy \"{source_file}\" {compress_temp_file}')
-            source_file = compress_temp_file
+        # if chinese_folder:
+        #     compress_temp_file = str(Path(compress_temp_path + e.name).absolute())
+        #     os.system(f'copy \"{source_file}\" {compress_temp_file}')
+        #     source_file = compress_temp_file
         desc_file = target_path + str(e.name).split(".")[0] + ".jpg"
         desc_file = desc_file.replace(" ", "")
         p.apply_async(CompressImage.compress, (source_file, desc_file, chinese_folder, 'g', size / 100, quality), )  # 多进程入

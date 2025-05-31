@@ -4,6 +4,7 @@ import time
 
 import pyguetzli
 import mozjpeg_lossless_optimization
+from PIL import Image
 
 
 class CompressImage:
@@ -22,16 +23,16 @@ class CompressImage:
             # print("path: ", pic_path)
             
             if chinese:
-                pic = cv2.imdecode(np.fromfile(pic_path, dtype=np.uint8), -1)
+                img = Image.open(pic_path)
+                (width, height) = img.size
+                resize_img = img.resize((int(width * size), int(height * size)))
+                resize_img.save(target_path, quality=quality)
             else:
                 pic = cv2.imread(pic_path)
-            height, width = pic.shape[:2]  # 获取原始分辨率
-            resize_pic = cv2.resize(pic, (int(width * size), int(height * size)))  # 缩小图片
-            
-            if chinese:
-                cv2.imencode(".jpg", resize_pic)[1].tofile(target_path)
-            else:
+                height, width = pic.shape[:2]  # 获取原始分辨率
+                resize_pic = cv2.resize(pic, (int(width * size), int(height * size)))  # 缩小图片
                 cv2.imwrite(target_path, resize_pic, [int(cv2.IMWRITE_JPEG_QUALITY), quality])  # 按照质量设置保存图片
+
             # print("Reduce pic by opencv, used: ".format(pic_path), int(time.time() - begin_time))
             if method:  # 设置是否需要额外压缩
                 rb = open(str(target_path), 'rb').read()  # 压缩图片需要二进制数据
