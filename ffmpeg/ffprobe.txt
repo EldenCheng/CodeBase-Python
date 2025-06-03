@@ -1,0 +1,13 @@
+ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets input.mp4
+
+ffprobe -show_streams -select_streams v:0 input.mp4
+
+查找当前视频码率
+ffprobe -v error -select_streams v:0 -show_entries stream=bit_rate -of csv=p=0 input.mp4
+
+ffprobe -v error -print_format csv -select_streams v -show_entries stream=bit_rate input.mp4
+
+查找当前视频是否hdr视频
+因为hdr视频的color space一般为bt2020nc, color_transfer一般为smpte2084, color_primaries一般为bt2020
+所以我们可以使用命令获取这三项然后判断就可以了
+ffprobe -v error -print_format csv -select_streams v -show_entries stream=color_space,color_transfer,color_primaries input.mp4
