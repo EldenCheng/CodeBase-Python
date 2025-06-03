@@ -1,0 +1,3560 @@
+{
+    "Basic": {
+        "Ui child profile (simple login)": {
+            "UI Child profile for existing old users - with child photo": {
+                "id": 3019633,
+                "bdd": [
+                    "When I sign in as existing user (old sproutling flow)",
+                    "And I have child photo",
+                    "And I go to Account Settings page of app",
+                    "And I tap Child Profile on Account Setting page",
+                    "Then I should see my child photo",
+                    "And I should see my child name",
+                    "And I should see Child's Name as field title",
+                    "And I should see Change Photo link under avatar",
+                    "And I should not see Baby's Gender",
+                    "And I should not see Baby's Birthday"
+                ],
+                "full auto": true
+            },
+            "UI Child profile for new users": {
+                "id": 3019635,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "And I go to Account Settings page of app",
+                    "And I tap Child Profile on Account Settings page",
+                    "Then I should see Default Avatar in orange color",
+                    "And I should see My Child as default name",
+                    "And I should see Child's Name as field title",
+                    "And I should see Change Photo link under avatar",
+                    "And I should not see Baby's Gender",
+                    "And I should not see Baby's Birthday"
+                ],
+                "full auto": true
+            },
+            "UI Child profile for existing old users - with no child photo": {
+                "id": 3019727,
+                "bdd": [
+                    "When I sign in as existing user (old sproutling flow)",
+                    "And i do not have child photo",
+                    "And I go to Account Settings page of app",
+                    "And I tap Child Profile on Account Setting page",
+                    "Then I should see Default Avatar in orange color",
+                    "And I should see current child name",
+                    "And I should see Child's Name as field title",
+                    "And I should see Change Photo link under avatar",
+                    "And I should not see Baby's Gender",
+                    "And I should not see Baby's Birthday"
+                ],
+                "full auto": true
+            }
+        },
+        "Miscellaneous features on child profile page": {
+            "Back button link - Account Settings": {
+                "id": 3022680,
+                "bdd": [
+                    "Given I sign in",
+                    "And I go to Account Settings page of app",
+                    "And I tap Child Profile Link",
+                    "Then I should see Child profile page",
+                    "When I tap Back button link",
+                    "Then I should see Account Settings Page"
+                ],
+                "full auto": true
+            },
+            "Back Button Link - Dashboard": {
+                "id": 3022695,
+                "bdd": [
+                    "Given I sign in",
+                    "And I tap pencil icon on top of Avatar on Dashboard page",
+                    "Then I should see Child Profile page",
+                    "When I tap Back button link on Child Profile page",
+                    "Then I should see Dashboard page",
+                    "And I tap Avatar/Child photo on Dashboard page",
+                    "Then I should see Child Profile page",
+                    "When I tap Back button link on Child Profile page",
+                    "Then I should see Dashboard page"
+                ],
+                "full auto": true
+            },
+            "Check required field": {
+                "id": 3026442,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap child avatar icon on dashboard page",
+                    "When i empty Child's Name",
+                    "And I tap Done",
+                    "Then I should see Child's Name is required"
+                ],
+                "full auto": true
+            },
+            "Verify the Child Photo after changing the Child name": {
+                "id": 4766112,
+                "bdd": [
+                    "Given I Sign In/ Sign Up the app",
+                    "And I navigate to Child Profile page",
+                    "And I Change the Child photo by taking a photo or choosing from library",
+                    "And I save the photo",
+                    "And I navigate to Child Profile page again",
+                    "And I change the child name and save",
+                    "And it should display correct Child Photo and Chile name",
+                    "And I Sign Out",
+                    "When I Sign In using the same Account",
+                    "Then Photo and child name should be shown correctly on dashboard and Child Profile page"
+                ],
+                "full auto": true
+            },
+            "Choose Avatar UI": {
+                "id": 3022754,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Child Avatar icon/ Photo on Dashboard page",
+                    "I tap Change Photo  on Child Profile page",
+                    "I select Choose an avatar inside Action Sheet",
+                    "Then I should see 5 different avatars to choose on Choose Avatar page"
+                ],
+                "full auto": true
+            }
+        },
+        "Authentication": {
+            "Sign out from Account settings page": {
+                "id": 2012157,
+                "bdd": [
+                    "When I sign out from Account Settings screen:",
+                    "Then I should see Logout modal",
+                    "When I tap Logout:",
+                    "Then I should see correct UI on Welcome screen"
+                ],
+                "full auto": true
+            },
+            "Sign in screen UI & behavior": {
+                "id": 3526323,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "And I log out",
+                    "Given I access Sign in Screen",
+                    "Then I should see Sign in Screen",
+                    "And I should see similar UI to https://app.zeplin.io/project/5c63153067d72e99ebb42dd3/screen/5d5c8f36b1beb630a2e828ee",
+                    "And I should see Bottom Toolbar > Back/Forward is inactive",
+                    "And I should see in-app browser should have locked url",
+                    "When I tap refresh icon",
+                    "Then I should see Sign up screen refresh",
+                    "When I tap Cancel",
+                    "Then I should see Welcome Screen"
+                ],
+                "full auto": true
+            },
+            "Sign in screen Error handling of required fields": {
+                "id": 3531252,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign in",
+                    "When I enter No characters into email address text box",
+                    "And I remove focus from email address text box",
+                    "Then I should see the error message: Email address cannot be empty",
+                    "When I enter No characters into Password text box",
+                    "And I remove focus from Password text box",
+                    "Then I should see the error message: Password cannot be empty",
+                    "When I enter Invalid email address into email address text box",
+                    "And I remove focus from email address text box",
+                    "Then I should see the error message: Invalid email address"
+                ],
+                "full auto": true
+            },
+            "Incorrect email / password combination - Attempted 5 times or less": {
+                "id": 3531273,
+                "bdd": [
+                    "Given I access sign in page",
+                    "When I tap Next button with incorrect email / password combination for 1 time",
+                    "Then I should see username and password do not match our records -  4 attempts remaining",
+                    "When I tap Next button with incorrect email / password combination for 2 time",
+                    "Then I should see username and password do not match our records -  3 attempts remaining",
+                    "When I tap Next button with incorrect email / password combination for 3 time",
+                    "Then I should see username and password do not match our records -  2 attempts remaining",
+                    "When I tap Next button with incorrect email / password combination for 4 time",
+                    "Then I should see username and password do not match our records -  1 attempts remaining"
+                ],
+                "full auto": true
+            },
+            "Incorrect email / password combination - After 5 failed attempts": {
+                "id": 3531790,
+                "bdd": [
+                    "Given I access sign in page",
+                    "When I tap Next button with incorrect email / password combination for 5 times or more",
+                    "Then I should see There have been too many failed attempts - please click \"forgot password\" or try again in 15 mins",
+                    "And I should not able to sign in unless 15 mins elapse or I click forgot password"
+                ],
+                "full auto": true
+            },
+            "Sign in to account with no smart connect products": {
+                "id": 2011657,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "And I log out",
+                    "Given I sign out from settings",
+                    "When I sign in",
+                    "Then I should see empty dashboard page with Add a product option"
+                ],
+                "full auto": true
+            }
+        },
+        "Installation": {
+            "Install the App and Launch": {
+                "id": 4764607,
+                "bdd": [
+                    "Given Mobile version should be below 11",
+                    "And I freshly install the App",
+                    "When I launch the App",
+                    "Then App will be showing Sign up/Sign in screen"
+                ],
+                "full auto": true
+            },
+            "Install and Press the Home button to Launch the App": {
+                "id": 4764608,
+                "bdd": [
+                    "Given Mobile version should be below 11",
+                    "And I freshly install the App",
+                    "And I launch the App",
+                    "And I press home button",
+                    "When I relaunch the App",
+                    "And it will not show the popover",
+                    "And I killed the App",
+                    "And I launch the App again",
+                    "Then App will be showing Sign up/Sign in screen"
+                ],
+                "full auto": true
+            },
+            "Install and Kill to Launch the App": {
+                "id": 4764615,
+                "bdd": [
+                    "Given Mobile version should be below 11",
+                    "When I freshly install the App",
+                    "And I launch the App",
+                    "And I kill the App and relaunch",
+                    "Then App should show Sign up/Sign in screen"
+                ],
+                "full auto": true
+            }
+        },
+        "Forgot password": {
+            "Password Reset via Email": {
+                "id": 3532008,
+                "bdd": [
+                    "Given I access Forgot Password screen",
+                    "And I enter valid & registered Mattel login email address into email address textbox",
+                    "Then I should see Mattel login Password reset email",
+                    "And I should be able to reset my mattel login password successfully",
+                    "And I should be able to login with the new credentials in the app"
+                ],
+                "full auto": true
+            },
+            "Password Reset Email Sent Screen": {
+                "id": 3532009,
+                "bdd": [
+                    "Given I access Forgot Password screen",
+                    "And I enter valid & registered Mattel login email address into email address textbox",
+                    "Then I should see Password reset email sent! screen",
+                    "When I reset password by email",
+                    "And I tap Sign in on Password reset email sent! screen inside app",
+                    "And I should be able to login with the new credentials in the app"
+                ],
+                "full auto": true
+            },
+            "Forget Password screen UI & behavior": {
+                "id": 3531851,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "When I tap Sign in",
+                    "And I tap Forgot your Password",
+                    "Then I should see Forgot Password screen",
+                    "And I should see Bottom Toolbar > Back/Forward is inactive",
+                    "And I should see in-app browser should have locked url",
+                    "When I tap refresh icon (TBD- Only added this since other mattel login screens has this required)",
+                    "Then I should see Sign up screen refresh",
+                    "When I tap Cancel (TBD- Only added this since other mattel login screens has this required)",
+                    "Then I should see Welcome Screen",
+                    ""
+                ],
+                "full auto": true
+            },
+            "Forgot Password - Check error handling of required fields": {
+                "id": 3531993,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I tap Sign in",
+                    "And I tap Forgot Password",
+                    "When I enter Invalid email address into email address text box",
+                    "And I remove focus from email address text box",
+                    "Then I should see the error message: Invalid email address",
+                    "When I enter No characters into email address text box",
+                    "And I remove focus from email address text box",
+                    "Then I should see the error message: Email address cannot be empty"
+                ],
+                "full auto": true
+            },
+            "Check \"Reset\" button behavior": {
+                "id": 3531994,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I tap Sign in",
+                    "And I tap Forgot Password",
+                    "Then I should see \"Reset\" button in disabled state",
+                    "When I provide all required information in Forgot Password screen",
+                    "Then I should see \"Reset\" button in enabled state",
+                    "When I don't provide all required information in Forgot Password screen",
+                    "Then I should see \"Reset\" button in disabled state"
+                ],
+                "full auto": true
+            },
+            "Forgot Password - Legal LINKS": {
+                "id": 3532006,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And region is US",
+                    "And I tap Sign in",
+                    "When I tap the link: Privacy Statement",
+                    "Then I should see correct Privacy Statement",
+                    "And I should see correct translated language based on region"
+                ],
+                "full auto": true
+            }
+        },
+        "Welcome screen": {
+            "Background Image Check": {
+                "id": 3515486,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I should see similar UI to https://app.zeplin.io/project/5c63153067d72e99ebb42dd3/screen/5d5c8dffd64a9e02dc696a41"
+                ],
+                "full auto": true
+            },
+            "Welcome Screen - Button / Links": {
+                "id": 3515488,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "When I tap Sign up with Mattel Login",
+                    "Then I should see Sign up screen",
+                    "When I tap Have an account? Sign in",
+                    "Then I should see Sign in screen"
+                ],
+                "full auto": true
+            }
+        },
+        "Sign up screen": {
+            "Sign up screen UI & behavior": {
+                "id": 3526271,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "When I tap Sign up with Mattel Login",
+                    "Then I should see Sign up screen",
+                    "And I should see similar UI to https://app.zeplin.io/project/5c63153067d72e99ebb42dd3/screen/5d5c8f385efca76a74cc1ad0",
+                    "And I should see Bottom Toolbar > Back/Forward is inactive",
+                    "And I should see in-app browser should have locked url",
+                    "When I tap refresh icon",
+                    "Then I should see Sign up screen refresh",
+                    "When I tap Cancel",
+                    "Then I should see Welcome Screen"
+                ],
+                "full auto": true
+            },
+            "Create new account with duplicate email": {
+                "id": 3526054,
+                "bdd": [
+                    "When  I create new account with email that exist already",
+                    "Then I should not be allowed to sign up",
+                    "And I should see Email address already exists, please Sign In"
+                ],
+                "full auto": true
+            },
+            "Sign up Screen - Legal LINKS": {
+                "id": 3526245,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And region is US",
+                    "And I tap Sign up with Mattel login",
+                    "When I tap the link: Privacy Statement",
+                    "Then I should see correct Privacy Statement",
+                    "And I should see correct translated language based on region (Note 9/18/19 -  Terms of Service copy is English",
+                    "When I tap the link: Terms and Conditions",
+                    "Then I should see correct Terms and Conditions",
+                    "And I should see correct translated language based on region (Note 9/18/19 -  Terms of Service copy is English"
+                ],
+                "full auto": true
+            },
+            "Sign up Screen - Modal & Screen LINKS": {
+                "id": 3526267,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "When I tap the link: What is Mattel Login?",
+                    "Then I should see Mattel login modal with information and close button",
+                    "And I back to Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "When I tap the link: Sign in",
+                    "Then I should see Sign in screen"
+                ],
+                "full auto": true
+            },
+            "Check error handling of required fields": {
+                "id": 2983896,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "When I enter Invalid email address into email address text box",
+                    "And I remove focus from email address text box",
+                    "Then I should see the error message: Invalid email address",
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "When I enter No characters into email address text box",
+                    "And I remove focus from email address text box",
+                    "Then I should see the error message: Email address cannot be empty",
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "When I enter Password characters less than 8 into Password text box",
+                    "And I remove focus from Password text box",
+                    "Then I should see the error message: Password must be at least 5 characters",
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "When I enter No characters into Password text box",
+                    "And I remove focus from Password text box",
+                    "Then I should see the error message: Password cannot be empty"
+                ],
+                "full auto": true
+            },
+            "Check required legal agreement check box": {
+                "id": 2983924,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "Then I should see legal checkbox in empty state",
+                    "And I should see Next button disabled",
+                    "When I tap checkbox",
+                    "Then I should see check box with check mark"
+                ],
+                "full auto": true
+            },
+            "Check \"Next\" button behavior": {
+                "id": 2984874,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "Then I should see \"Next\" button in disabled state",
+                    "When I provide all required information in Sign up screen",
+                    "Then I should see \"Next\" button in enabled state",
+                    "When I don't provide all required information in Sign up screen",
+                    "Then I should see \"Next\" button in disabled state"
+                ],
+                "full auto": true
+            }
+        },
+        "Account creation": {
+            "Create new account & skip setup": {
+                "id": 3532013,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "Then Dashboard should not display any smart connect product",
+                    "And I should see child name is My Child",
+                    "And I should see Default orange child avatar on dashboard page"
+                ],
+                "full auto": false
+            },
+            "Sign up with Bluetooth on": {
+                "id": 3008143,
+                "bdd": [
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "Then I should not see Bluetooth page",
+                    "And I should see empty dashboard page with Add a product option"
+                ],
+                "full auto": false
+            },
+            "Sign up with Bluetooth off": {
+                "id": 3008144,
+                "bdd": [
+                    "Given I turn off Bluetooth",
+                    "Given I access Welcome screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "Then I should see Bluetooth page asking to connect to bluetooth",
+                    "When I turn on Bluetooth",
+                    "And I go to dashboard page of app",
+                    "And I should see empty dashboard page with Add a product option"
+                ],
+                "full auto": false
+            }
+        },
+        "Dashboard notifications": {
+            "Bluetooth off No Products": {
+                "id": 1825449,
+                "bdd": [
+                    "Given Smart connect product is off",
+                    "And I turn off Bluetooth",
+                    "And I sign in",
+                    "When I go to dashboard page of app",
+                    "Then I should see Bluetooth is off. Tap to turn on"
+                ],
+                "full auto": false
+            }
+        }
+    },
+    "Bunny": {
+        "Status ui and behavior in different pages": {
+            "Connected UI": {
+                "id": 1892173,
+                "bdd": [
+                    "Given I have product which is connected",
+                    "When I check smart connect product connection status",
+                    "Then I should see Connected with correct UI on Dashboard page",
+                    "And I should see Connected with correct UI on Control page",
+                    "And I should see Connected with correct UI on Product Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Dashboard behavior": {
+            "Dashboard Scroll behavior": {
+                "id": 1825409,
+                "bdd": [
+                    "Given I have multiple smart connect products in dashboard",
+                    "When I scroll through devices",
+                    "Then I should see app UI respond correctly",
+                    "And I should see different smart connect device"
+                ],
+                "full auto": false
+            }
+        },
+        "Remove device from account": {
+            "Remove from dashboard": {
+                "id": 1984307,
+                "bdd": [
+                    "Given app is Connected with product",
+                    "When I access Product settings from control panel",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "Then I should not see on Account Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Authentication": {
+            "Sign in to account with smart connect products": {
+                "id": 2011656,
+                "bdd": [
+                    "Given I access Welcome Screen",
+                    "And I tap Sign up with Mattel login",
+                    "Enter unique email address",
+                    "Enter password (at least 8 characters)",
+                    "Tap & leave a check mark on the checkbox to agree to legal bindings",
+                    "Tap \"Next\" button:",
+                    "I should be able to sign up successfully",
+                    "I should receive Welcome to Mattel Login email",
+                    "I tap Add a Product",
+                    "And I select Bunny",
+                    "Then I should see the pairing instructions for Bunny",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with Bunny",
+                    "And I sign out from Mattel login via settings",
+                    "When I sign in",
+                    "Then I should see Re-Pair Modal on Dashboard Page",
+                    "And I should see Bunny in dashboard"
+                ],
+                "full auto": false
+            }
+        },
+        "Add product": {
+            "Add product page": {
+                "id": 1984570,
+                "bdd": [
+                    "Given I have not connected any smart connect product",
+                    "And I sign in",
+                    "When I go to dashboard page of app",
+                    "Then I should see empty dashboard page with Add a product option",
+                    "I tap Add a Product",
+                    "And I select Bunny",
+                    "Then I should see the pairing instructions for Bunny",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with Bunny",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should see Bunny controls"
+                ],
+                "full auto": false
+            },
+            "Add product page  - any product": {
+                "id": 4091032,
+                "bdd": [
+                    "Given I have not connected any smart connect product",
+                    "And I sign in",
+                    "When I go to dashboard page of app",
+                    "Then I should see empty dashboard page with Add a product option",
+                    "When I access Add a product screen via + button",
+                    "And I select any smart connect product",
+                    "Then I should see the pairing instructions for any smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with any smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully and control product"
+                ],
+                "full auto": false
+            },
+            "Dashboard page - Detected state": {
+                "id": 1984572,
+                "bdd": [
+                    "Given I turn on Bunny hardware",
+                    "And I sign in",
+                    "When I go to dashboard page of app",
+                    "Then I should see Bunny in dashboard",
+                    "When I select Bunny",
+                    "Then I should see the pairing instructions for Bunny",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with Bunny",
+                    "Then I should see Bunny controls"
+                ],
+                "full auto": false
+            },
+            "Setting page": {
+                "id": 1984574,
+                "bdd": [
+                    "Given I turn on Bunny hardware",
+                    "And I sign in",
+                    "When I go to Account Settings page of app",
+                    "I tap Add a Product",
+                    "And I select Bunny",
+                    "Then I should see the pairing instructions for Bunny",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with Bunny",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should see Bunny controls"
+                ],
+                "full auto": false
+            },
+            "Dashboard page - Detected state - any product": {
+                "id": 4091034,
+                "bdd": [
+                    "Given I turn on any smart connect product hardware",
+                    "And I sign in",
+                    "When I go to dashboard page of app",
+                    "Then I should see product detected in dashboard",
+                    "When I select the product detected",
+                    "Then I should see the pairing instructions for product",
+                    "When I follow pairing instructions",
+                    "Then I should be able to pair and control product"
+                ],
+                "full auto": false
+            }
+        },
+        "Pairing": {
+            "Re-pair with product after removing from account": {
+                "id": 4316607,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            },
+            "After removing product, logout / login and pair": {
+                "id": 4316695,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "And I sign out from account settings",
+                    "And I sign in with the same account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            },
+            "Pairing screen - Try to pair with Bluetooth off": {
+                "id": 4327611,
+                "bdd": [
+                    "Given I have not connected any smart connect product",
+                    "And I sign in",
+                    "And I access pairing screen for product",
+                    "When I turn off Bluetooth",
+                    "And I pair with product",
+                    "Then i should not be able to pair with product since bluetooth is off",
+                    "And I should see Bluetooth required information - TBD",
+                    "When I turn on Bluetooth",
+                    "And I pair with product",
+                    "Then I should be able to pair with product successfully"
+                ],
+                "full auto": false
+            },
+            "Pairing screen - Try to pair with wifi / data connectivity off": {
+                "id": 4327621,
+                "bdd": [
+                    "Given I have not connected any smart connect product",
+                    "And I sign in",
+                    "And I access pairing screen for product",
+                    "When I turn off phone data / internet connectivity",
+                    "And I pair with product",
+                    "Then i should not be able to pair with product since data is off",
+                    "And I should see internet connectivity modal informing user it's required - TBD",
+                    "When I turn on phone data / internet connectivity",
+                    "And I pair with product",
+                    "Then I should be able to pair with product successfully"
+                ],
+                "full auto": false
+            },
+            "Create account while Bluetooth is off": {
+                "id": 4333994,
+                "bdd": [
+                    "Given I turn off Bluetooth",
+                    "And I have not connected any smart connect product",
+                    "And I plugged in / turn on smart connect Product",
+                    "And I sign up / sign in",
+                    "When I go to dashboard page of app",
+                    "Then I should see Bluetooth off banner, informing the user that Bluetooth is required",
+                    "When I turn on Bluetooth",
+                    "Then I should see \"Detected\" product card  for smart connect product",
+                    "And I should be able to pair with the product via \"Detected \" product card"
+                ],
+                "full auto": false
+            }
+        },
+        "Dashboard product card": {
+            "Dashboard Product Card detection": {
+                "id": 4767122,
+                "bdd": [
+                    "Given I have signed up an account",
+                    "And I enter dashboard page",
+                    "And I power on any product",
+                    "And I enter Account Settings page/ Music On the Go page before the product is listed as detected in Dashboard page",
+                    "When I return back to Dashboard/ Add a Product page",
+                    "Then The product should be listed as detected in Dashboard/ Add a Product page"
+                ],
+                "full auto": false
+            }
+        },
+        "Dashboard notifications": {
+            "Bluetooth Off Product Added": {
+                "id": 1999110,
+                "bdd": [
+                    "Given app is Connected with Smart connect product",
+                    "And I turn off Bluetooth",
+                    "When I go to dashboard page of app",
+                    "Then I should see Bluetooth is off banner correctly in Dashboard, controls screen and product settings",
+                    "And I should be able to tap on the bluetooth banner & turn on bluetooth",
+                    "And I should see bluetooth banner close once bluetooth ON",
+                    "And I should see product connect back again with app"
+                ],
+                "full auto": false
+            }
+        },
+        "Bunny Control - R2R syncing": {
+            "Logout & Login account": {
+                "id": 4263632,
+                "bdd": [
+                    "Given phone/device settings is set to 12 hr format / 24 hr format",
+                    "And app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I log out",
+                    "And i sign in",
+                    "Product is broadcasting / available for pairing / power on",
+                    "Access Add a product screen in the app",
+                    "Select smart connect product",
+                    "Follow pairing instructions of smart connect product",
+                    "Then I should see Bunny's Ready to Rise(R2R) schedule added (TBD)"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - Add schedule": {
+            "R2R -  Save All button": {
+                "id": 4215557,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "When I access Add schedule screen - Saturday",
+                    "And I set different times on all days",
+                    "And I tap Save All",
+                    "Then I should be able to save the changes I've made"
+                ],
+                "full auto": true
+            },
+            "R2R -  Add schedule - Back button": {
+                "id": 4254762,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "When I access Add schedule screen - Everyday in turn",
+                    "And I tap back button at the upper left of screen without making any changes",
+                    "Then I should not see Edit confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020",
+                    "And I should see Bunny customize screen - Empty state"
+                ],
+                "full auto": true
+            },
+            "R2R - Add a schedule screen - Previous / Next buttons": {
+                "id": 4211400,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "When I access Everyday in turn in Add Ready to Rise Screen",
+                    "And I check the navigation",
+                    "Then I should see previous day button / next day button",
+                    "When I tap navigation button",
+                    "Then I should see previous day schedule / next day schedule",
+                    "And I should see previous navigation button as previous day",
+                    "And I should see the next navigation button as next day"
+                ],
+                "full auto": true
+            },
+            "Start time & End time modal UI": {
+                "id": 4215297,
+                "bdd": [
+                    "Given phone's settings is set to 12hr/24hr format",
+                    "And app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "And I access any day in Add Ready to Rise Screen",
+                    "When I tap time below \"Start time\"",
+                    "Then I should see Start time & PM labels & UI same with https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e3a03d5635a4ec81b05a109",
+                    "And default time is 8 pm or 20",
+                    "When I check Hours",
+                    "Then I should see 4, 5, 6, 7, 8, 9, 10, 11 or 16, 17, 18, 19, 20, 21, 22, 23",
+                    "When I check Minutes",
+                    "Then I should see 00, 05, 10, 15 etc to 55",
+                    "When I tap time below \"End time\"",
+                    "Then I should see End time & AM labels & UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e3a03d5635a4ec81b05a109",
+                    "And default time is 6 am",
+                    "When I check Hours",
+                    "Then I should see 4, 5, 6, 7, 8, 9, 10, 11",
+                    "When I check Minutes",
+                    "Then I should see 00, 05, 10, 15 etc to 55"
+                ],
+                "full auto": true
+            },
+            "Start time & End time - dismiss modal": {
+                "id": 4215368,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "And I access any day in Add Ready to Rise Screen",
+                    "When I select time section of Start time",
+                    "And I tap outside the bottom sheet",
+                    "Then I should see Bottom Sheet is dismissed and no changes are saved",
+                    "When I select time section of End Time",
+                    "And I tap outside the bottom sheet",
+                    "Then I should see Bottom Sheet is dismissed and no changes are saved"
+                ],
+                "full auto": true
+            },
+            "R2R -  Add - Back button - cancel": {
+                "id": 4359974,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "When I access Add schedule screen - of any day",
+                    "And I set different start / End time on the current day selected",
+                    "And I tap back button at the upper left of screen",
+                    "Then I should see  confirmation modal asking if I want to save the changes",
+                    "And I should see UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020/",
+                    "When I tap Don't Save",
+                    "Then I should see no changes made on the schedule"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - Edit schedule": {
+            "R2R -  Edit - Save All button": {
+                "id": 4218447,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And have Ready to Rise (R2R) schedule",
+                    "When I access Add schedule screen - Everyday in turn",
+                    "And I set different start / End time on Everyday in turn",
+                    "And I tap Save All",
+                    "Then I should be able to save the changes I've made",
+                    "And I should see Customize screen",
+                    "And I should see changes reflect on Bunny"
+                ],
+                "full auto": true
+            },
+            "R2R - Edit schedule screen - Previous / Next buttons": {
+                "id": 4218442,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access Everyday in turn in Add Ready to Rise Screen",
+                    "And I check the navigation",
+                    "Then I should see previous day and next day button",
+                    "When I tap navigation button",
+                    "Then I should see previous day or next day schedule (depending on what button I tap)"
+                ],
+                "full auto": true
+            },
+            "R2R -  Edit - Save All button - Disabled": {
+                "id": 4254713,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access Edit schedule screen - any day",
+                    "Then I should see Save all button disabled",
+                    "When I set different start / End time on any day",
+                    "Then I should see Save all button enabled"
+                ],
+                "full auto": true
+            },
+            "Edit Ready to Rise(R2R) - Start time & End time modal UI": {
+                "id": 4218443,
+                "bdd": [
+                    "Given phone's settings is set to 12hr/24hr format",
+                    "And app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "And I access any day in Add Ready to Rise Screen",
+                    "Then I should see similar UI to : https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec723cde97ff30febe3",
+                    "When I tap time below \"Start time\"",
+                    "Then I should see Start time & PM labels & UI same with https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e3a03d5635a4ec81b05a109",
+                    "When I check Hours",
+                    "Then I should see 4, 5, 6, 7, 8, 9, 10, 11 or 16, 17, 18, 19, 20, 21, 22, 23",
+                    "When I check Minutes",
+                    "Then I should see 00, 05, 10, 15 etc to 55",
+                    "When I tap time below \"End time\"",
+                    "Then I should see End time & AM labels & UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e3a03d5635a4ec81b05a109",
+                    "When I check Hours",
+                    "Then I should see 4, 5, 6, 7, 8, 9, 10, 11",
+                    "When I check Minutes",
+                    "Then I should see 00, 05, 10, 15 etc to 55"
+                ],
+                "full auto": true
+            },
+            "Edit Ready to Rise(R2R) - Start time & End time - dismiss modal": {
+                "id": 4218444,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "And I access any day in Edit Ready to Rise Screen",
+                    "Then I should see https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec723cde97ff30febe3",
+                    "When I select time section of Start time",
+                    "And I tap outside the bottom sheet",
+                    "Then I should see Bottom Sheet is dismissed and no changes are saved",
+                    "When I select time section of End Time",
+                    "And I tap outside the bottom sheet",
+                    "Then I should see Bottom Sheet is dismissed and no changes are saved"
+                ],
+                "full auto": true
+            },
+            "Edit Screen - Copy to all schedules": {
+                "id": 4218445,
+                "bdd": [
+                    "Given phone/device settings is set to 12 hr/24 hr format",
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access any day in Edit Ready to Rise Screen",
+                    "Then I should see correct schedule for the day",
+                    "When I change start time and end time on Edit ready to rise screen",
+                    "Then I should be able to change the schedule for the day",
+                    "When I select  Copy this schedule to all days of any day",
+                    "Then I should see confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e21f3ccc87d6a6e7b24a67b/",
+                    "When I tap Copy to All",
+                    "Then I should see the current schedule of the day copied to all days",
+                    "When I save schedule via top left back button or save all",
+                    "Then app should display the correct Ready to Rise schedule"
+                ],
+                "full auto": true
+            },
+            "Edit Screen - Copy to all schedules - Cancel": {
+                "id": 4218446,
+                "bdd": [
+                    "Given phone/device settings is set to any time format",
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access any day in Edit Ready to Rise Screen",
+                    "Then I should see correct schedule for the day",
+                    "When I change start time and end time on Edit ready to rise screen",
+                    "Then I should be able to change the schedule for the day",
+                    "When I select  Copy this schedule to all days of any day",
+                    "Then I should see confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e21f3ccc87d6a6e7b24a67b/",
+                    "When I tap Cancel",
+                    "Then I should see confirmation modal close",
+                    "And I should see app go back Edit schedule screen"
+                ],
+                "full auto": true
+            },
+            "R2R -  Edit - Back button - save changes": {
+                "id": 4231538,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "When I access Edit schedule screen - Everyday in turn",
+                    "And I set different start / End time on Everyday in turn",
+                    "And I tap back button at the upper left of screen",
+                    "Then I should see  confirmation modal asking if I want to save the changes",
+                    "And I should see UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020/",
+                    "When I tap Save and Continue",
+                    "Then I should be able to save the changes I've made",
+                    "And I should see changes reflect on Bunny"
+                ],
+                "full auto": true
+            },
+            "R2R -  Edit - Back button - cancel": {
+                "id": 4231864,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access Edit schedule screen - of any day",
+                    "And I set different start / End time on Everyday in turn",
+                    "And I tap back button at the upper left of screen",
+                    "Then I should see  confirmation modal asking if I want to save the changes",
+                    "And I should see UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020/",
+                    "When I tap Don't Save",
+                    "Then I should see no changes made on the schedule"
+                ],
+                "full auto": true
+            },
+            "R2R -  Edit - Back button - no changes made": {
+                "id": 4254727,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access Edit schedule screen - Everyday in turn",
+                    "And I tap back button at the upper left of screen without making any changes",
+                    "Then I should not see Edit confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020",
+                    "And I should see Bunny customize screen"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - Copy schedule": {
+            "Copy to all schedules - Copy to all": {
+                "id": 4215444,
+                "bdd": [
+                    "Given phone/device settings is set to 12 hr/24 hr format",
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "When I access Bunny control Panel",
+                    "And I tap Setup ready to rise button",
+                    "Then I should see Bunny - Ready to Rise - Customize Screen https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e20bc11a87828a8c7a8cdfc",
+                    "When I tap Add Ready to Rise Schedule",
+                    "Then I should be able to add schedule to any day",
+                    "When I select  Copy this schedule to all days of any day",
+                    "Then I should see confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e21f3ccc87d6a6e7b24a67b/",
+                    "When I tap Copy to All",
+                    "Then I should see the current schedule of the day copied to all days",
+                    "And I should see R2R - Add a Schedule Page with the new schedule copied to all days",
+                    "When I save schedule via top left back button or save all",
+                    "Then app should display the correct Ready to Rise schedule"
+                ],
+                "full auto": true
+            },
+            "Copy to all schedules - Cancel": {
+                "id": 4215464,
+                "bdd": [
+                    "Given phone/device settings is set to any time format",
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "When I access Bunny home",
+                    "And I tap Set up Sleep Trainer",
+                    "Then I should see Bunny - Ready to Rise - Customize Screen https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e20bc11a87828a8c7a8cdfc",
+                    "And I tap Add times",
+                    "Then I should be able to add schedule to any day",
+                    "When I select Copy this schedule to all days of any day",
+                    "Then I should see confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e21f3ccc87d6a6e7b24a67b/",
+                    "When I tap Cancel",
+                    "Then I should see confirmation modal close",
+                    "And I should see app go back Add schedule page"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - R2R back button": {
+            "R2R -  Add - Back button - save changes": {
+                "id": 4359973,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "When I access Add schedule screen - Everyday in turn",
+                    "And I set different start / End time on Everyday in turn",
+                    "And I tap back button at the upper left of screen",
+                    "Then I should see  confirmation modal asking if I want to save the changes",
+                    "And I should see UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020/",
+                    "When I tap Save and Continue",
+                    "Then I should be able to save the changes I've made",
+                    "And I should see changes reflect on Bunny"
+                ],
+                "full auto": true
+            },
+            "R2R -  Add - Back button - no changes made": {
+                "id": 4359975,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "When I access Edit schedule screen - Everyday in turn",
+                    "And I tap back button at the upper left of screen without making any changes",
+                    "Then I should not see Edit confirmation modal: https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020",
+                    "And I should see Bunny customize screen"
+                ],
+                "full auto": true
+            }
+        },
+        "Connection status feature": {
+            "Connection Status - After Navigate from Account settings / Music on the Go page": {
+                "id": 4771800,
+                "bdd": [
+                    "Given I have connected a product",
+                    "And I kill {}",
+                    "And I re-launch the app",
+                    "And I see product is Connecting",
+                    "And I enter Account Settings page / Music on the Go page during it is in Connecting status",
+                    "And I wait for ~10 seconds",
+                    "When I back to dashboard",
+                    "Then I should see the product re-connect to the app automatically",
+                    "And I should be the Connected status"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - Customize screen": {
+            "R2R - Customize screen - No Schedule UI & button": {
+                "id": 4210606,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I do not have Ready to Rise (R2R) schedule",
+                    "When I access Bunny control Panel",
+                    "And I tap Setup ready to rise button",
+                    "Then I should see Bunny - Ready to Rise - Customize Screen correct UI similar to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e20bc11a87828a8c7a8cdfc",
+                    "When I tap Back button",
+                    "Then I should be able to go to previous screen",
+                    "And I tap Setup ready to rise button",
+                    "When I tap Add Ready to Rise Schedule button",
+                    "Then I should be able to go to add a schedule screen"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - Remove schedule": {
+            "Remove All Ready to Rise Schedules - Confirm removal": {
+                "id": 4215740,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access Ready to Rise - Customize screen",
+                    "Then I should see correct Ready to Rise schedule",
+                    "When I tap Remove All Ready to Rise Schedules",
+                    "Then I should see remove R2R confirmation modal",
+                    "When I tap Remove all",
+                    "Then I should be able to remove the Ready to Rise(R2R) schedule",
+                    "And I should see R2R Customize Page - Empty State",
+                    "And I should see schedule remove in Bunny hardware"
+                ],
+                "full auto": true
+            },
+            "Remove All Ready to Rise Schedules - Cancel removal": {
+                "id": 4215757,
+                "bdd": [
+                    "Given app is Connected with Hoppy Dreams Soother (Bunny)",
+                    "And I have Ready to Rise (R2R) schedule",
+                    "When I access Ready to Rise - Customize screen",
+                    "Then I should see correct Ready to Rise schedule",
+                    "When I tap Remove All Ready to Rise Schedules",
+                    "Then I should see remove R2R confirmation modal",
+                    "When I tap Cancel",
+                    "Then I should be able to close the remove R2R confirmation modal",
+                    "And I should see R2R Customize Page - Filled State with correct schedule",
+                    "And I should not see any changes in the Bunny hardware"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny Control - Nap UI": {
+            "Nap time widget": {
+                "id": 4422427,
+                "bdd": [
+                    "Given app is Connected with Bunny",
+                    "And Bunny is in Nap time mode",
+                    "Then I should see https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e2b37382ee14d7ebec0f712/",
+                    "And Bunny Nap time - widget card in home should have content"
+                ],
+                "full auto": true
+            },
+            "Controls Unavailable UI - Cancel button": {
+                "id": 4430669,
+                "bdd": [
+                    "Given app is Connected with smart_connect_product",
+                    "And Bunny is in AWAKE mode",
+                    "Then I should see awake mode UI",
+                    "When I tap Edit Soother settings",
+                    "Then I should see controls unavailable modal",
+                    "When I tap Cancel on Controls Unavailable modal",
+                    "Then I should see modal close",
+                    "And i should not be able to access the Edit Soother Settings screen"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny status card": {
+            "Soother Status Card": {
+                "id": 4486003,
+                "bdd": [
+                    "Given the App connected to the Hoppy Dreams Soother",
+                    "Then I go to Customized R2R screen",
+                    "And the Set up sleep trainer is not set",
+                    "Then I go to Controls",
+                    "And select music and Lighs",
+                    "Then I go to Dashboard screen",
+                    "And notice Bunny connected",
+                    "And the Soother label should be display",
+                    "Then I should see a similar UI like: https://zpl.io/2GlvB0J",
+                    "And I should see action button Stop Soothing similar UI like: https://zpl.io/2GlvB0J"
+                ],
+                "full auto": true
+            },
+            "Daytime Status Card": {
+                "id": 4486004,
+                "bdd": [
+                    "Given the App connected to the Hoppy Dreams Soother",
+                    "And there is no Ready to Rise schedule",
+                    "Then I Set up Ready to Rise Schedule",
+                    "And I tap on Start Nap when on Daytime",
+                    "Then I select Nap time",
+                    "And I go back to Dashboard screen",
+                    "Then notice Bunny connected",
+                    "And the Awake time is already active",
+                    "Then the Naptime label should be display",
+                    "And I should see a similar UI like: https://zpl.io/2GlvB0J",
+                    "Then I should see action button Start Soothing similar UI like: https://zpl.io/2GlvB0J"
+                ],
+                "full auto": true
+            },
+            "Nap Status Card": {
+                "id": 4495011,
+                "bdd": [
+                    "Given the App connected to the Hoppy Dreams Soother",
+                    "And there is no Ready to Rise schedule",
+                    "Then I Set up Ready to Rise Schedule",
+                    "And Awake mode is Active",
+                    "Then I should see a UI similar like: https://zpl.io/aNMPGKe",
+                    "And I tap on Start Nap",
+                    "Then Nap time duration timers should be display",
+                    "And I select for example 15 minutes",
+                    "And then Naptime section should be display similar UI like: https://zpl.io/bzX7Rv3",
+                    "Then I tap on Start Soothing",
+                    "Then I tap on Home icon on left top corner",
+                    "And I should go to dashboard",
+                    "Then notice the Bunn connected",
+                    "And the Nap time is already active",
+                    "Then the Naptime label should be display",
+                    "And I should see similar UI like: https://zpl.io/adGlrXE",
+                    "Then I should see action button Stop Soothing similar UI like: https://zpl.io/2GlvB0J"
+                ],
+                "full auto": true
+            },
+            "Soother Status Card (1)": {
+                "id": 4505154,
+                "bdd": [
+                    "Given the App connected to the Hoppy Dreams Soother",
+                    "Then I go to Customized R2R screen",
+                    "And the Set up sleep trainer is not set",
+                    "Then I go to Dashboard screen",
+                    "And notice Bunny connected",
+                    "And the Soother label should be display",
+                    "Then I should see a similar UI like: https://zpl.io/adGlrXE",
+                    "And I should see action button Start Soothing similar UI like: https://zpl.io/adGlrXE"
+                ],
+                "full auto": true
+            },
+            "Daytime Status card (1)": {
+                "id": 4505155,
+                "bdd": [
+                    "Given the App connected to the Hoppy Dreams Soother",
+                    "And there is no Ready to Rise schedule",
+                    "Then I Set up Ready to Rise Schedule",
+                    "And I go back to Dashboard screen",
+                    "Then notice Bunny connected",
+                    "And the Awake time is already active",
+                    "Then the Daytime label should be display",
+                    "And I should see a similar UI like: https://zpl.io/adGlrXE",
+                    "Then I should see action button Start Nap similar UI like: https://zpl.io/adGlrXE"
+                ],
+                "full auto": true
+            },
+            "Nap Status Card (1)": {
+                "id": 4505159,
+                "bdd": [
+                    "Given the App connected to the Hoppy Dreams Soother",
+                    "And there is no Ready to Rise schedule",
+                    "Then I Set up Ready to Rise Schedule",
+                    "And Awake mode is Active",
+                    "Then I should see a UI similar like: https://zpl.io/aNMPGKe",
+                    "Then I tap on Home icon on left top corner",
+                    "And I should go to dashboard",
+                    "Then notice the Bunny connected",
+                    "And the Nap time is not active",
+                    "Then the Naptime label should not be display",
+                    "And I should see similar UI like: https://zpl.io/adGlrXE",
+                    "Then I should see action button Start Nap similar UI like: https://zpl.io/adGlrXE"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny - Tooltip UI": {
+            "Tooltip UI with no R2R set up": {
+                "id": 4506257,
+                "bdd": [
+                    "Given app is Connected with Bunny",
+                    "And there is no Ready to Rise schedule",
+                    "When I go to Bunny Home Page",
+                    "And I check Tooltip on the bottom of the page",
+                    "Then I should see https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e7293a2d94e4bb39977de47"
+                ],
+                "full auto": true
+            },
+            "No Tooltip with R2R Setup": {
+                "id": 4512790,
+                "bdd": [
+                    "Given app is Connected with Bunny",
+                    "And there is Ready to Rise schedule",
+                    "When I go to Bunny Home Page",
+                    "And I check the bottom of the bunny home page",
+                    "Then I should not see Bunny R2R Tooltip",
+                    "And I should see my R2R schedule correctly"
+                ],
+                "full auto": true
+            },
+            "Tool tip Learn More": {
+                "id": 4512813,
+                "bdd": [
+                    "Given app is Connected with",
+                    "And there is no Ready to Rise schedule",
+                    "And I go to Bunny Home page",
+                    "When I tap on Learn more in the tool tip https://zpl.io/aXN3l4E",
+                    "Then I should see Full page tutorial with 4 pages come up",
+                    "And I should be able to swipe right/left the page",
+                    "And I should see all pages UI correctly",
+                    "And I should see Done button on the last page of tutorial"
+                ],
+                "full auto": true
+            },
+            "Close Tutorial": {
+                "id": 4512846,
+                "bdd": [
+                    "Given app is Connected with",
+                    "And there is no Ready to Rise schedule",
+                    "And I go to Bunny Home page",
+                    "And I tap Learn more in the tooltip",
+                    "When I tap on Close (X) button on any pages of 4 page tutorial",
+                    "Then I should see Tutorial pages are closed",
+                    "And I am on the bunny home page with Tooltip (Learn more)"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny - Music and light": {
+            "Editing Custome Playlist - When music is OFF": {
+                "id": 4538171,
+                "bdd": [
+                    "Given the Bunny connected to the App",
+                    "And I go to Controls",
+                    "When music and Sound is TURN OFF",
+                    "Then I tap on Edit custom playlist",
+                    "And I edit Custome Playlist Ex. Deselect some song",
+                    "Then I tap on save with new song to play",
+                    "Then I should be able to save the song when music & sound is OFF",
+                    "And I should see music still OFF after costume list has been changed"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny - Ready settle sleep": {
+            "Exit the Ready Settle Sleep Modal": {
+                "id": 4620699,
+                "bdd": [
+                    "Given the App connected to the Bunny",
+                    "When I have the Ready Settle Sleep turn on",
+                    "And I tap on Customize",
+                    "Then I should see Exit Ready Settle Sleep modal UI should look like: https://zpl.io/bLQKZwY",
+                    "And I tap Exit",
+                    "Then I should see Ready Settle Sleep exit"
+                ],
+                "full auto": true
+            },
+            "\"Cancel\" Exit Ready Settle Sleep modal": {
+                "id": 4620707,
+                "bdd": [
+                    "Given the App connected to the Bunny",
+                    "When I have the Ready Settle Sleep turn on",
+                    "And I tap on Customize",
+                    "Then I should see Exit Ready Settle Sleep modal UI should look like: https://zpl.io/bLQKZwY",
+                    "And I tap on Cancel",
+                    "And I should see Ready Settle Sleep still ON"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny - Actions when rss is exited": {
+            "RSS Exit Actions": {
+                "id": 4620842,
+                "bdd": [
+                    "Given the App connected to the Bunny",
+                    "When I have the Ready Settle Sleep turn on",
+                    "And I tap on Customize",
+                    "Then I should see Ready Settle Sleep Exit modal",
+                    "And I tap on Exit",
+                    "Then I should see Ready Settle Sleep exit and move to Customize panel",
+                    "And I should see Music and Lights turn OFF"
+                ],
+                "full auto": true
+            }
+        },
+        "Bunny - Music and lights actions": {
+            "Lights selection when RSS is OFF": {
+                "id": 4636221,
+                "bdd": [
+                    "Given the App connected to the Bunny",
+                    "When I have the Ready Settle Sleep turn on",
+                    "Then I modify Brightness slider on Ready Settle Sleep",
+                    "And I turn OFF Ready Settle Sleep",
+                    "And I tap on Customize",
+                    "Then I see lights turn OFF UI look like: https://zpl.io/bA14nBB",
+                    "Then I should see Brightness slider configure same as it was on Ready Settle Sleep section"
+                ],
+                "full auto": true
+            },
+            "Music selection when RSS is OFF": {
+                "id": 4636334,
+                "bdd": [
+                    "Given the App connected to the Bunny",
+                    "When I have the Ready Settle Sleep turn on",
+                    "Then I modify Volume slider on Ready Settle Sleep",
+                    "And I turn OFF Ready Settle Sleep",
+                    "And I tap on Customize",
+                    "Then I see Music and Sound turn OFF UI look like: https://zpl.io/bA14nBB",
+                    "Then I should see Volume slider configure same as it was on Ready Settle Sleep section",
+                    "Then I should see Choose a playlist or Sound on default play selection look like: https://zpl.io/bA14nBB"
+                ],
+                "full auto": true
+            }
+        },
+        "Sanity - Product Control": {
+            "No R2R - Start/Stop Soothing - Bunny": {
+                "id": 5119282,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "And I access to Dashboard screen",
+                    "When I tap Start Soothing in Bunny product card",
+                    "Then I should see Bunny start soothing, and reflect on App and hardware product",
+                    "And The button name changes to Stop Soothing",
+                    "When I tap Stop Soothing",
+                    "Then I should see Bunny stop soothing, and reflect on App and hardware product",
+                    "And The button name resume to Start Soothing",
+                    "And I enter Bunny home page",
+                    "When I tap on 'Start Soothing' button",
+                    "Then I should see Bunny start soothing, and reflect on App and hardware product",
+                    "And The button name changes to Stop Soothing",
+                    "When I tap on 'Stop Soothing' button",
+                    "Then I should see Bunny stop soothing, and reflect on App and hardware product",
+                    "And The button name resume to Start Soothing"
+                ],
+                "full auto": true
+            },
+            "No R2R - Customize Your Soother - Customize Tab - Lights - Bunny": {
+                "id": 5119294,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "And I access to Bunny Control Panel - Customize tab",
+                    "And I toggle ON Lights",
+                    "Then I should see Bunny turn on Light, and reflect on App and hardware product",
+                    "And I toggle OFF Lights",
+                    "Then I should see Bunny turn off Light, and reflect on App and hardware product",
+                    "When I select different Light color",
+                    "Then I should see Bunny turn on corresponding Light color, and reflect on App and hardware product",
+                    "When I slide the brightness bar to adjust light brightness",
+                    "Then I can adjust the light Brightness, and reflect on App and hardware product",
+                    "When I tap any dot of brightness bar to adjust light brightness",
+                    "Then I can adjust the light Brightness, and reflect on App and hardware product"
+                ],
+                "full auto": true
+            },
+            "No R2R - Customize Your Soother - Customize Tab - Music & Sound - Bunny": {
+                "id": 5119303,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "And I access to Bunny Control Panel - Customize tab",
+                    "And I toggle ON Music & Sound",
+                    "Then I should see Bunny turn on Music & Sound, and reflect on App and hardware product",
+                    "And I toggle OFF Music & Sound",
+                    "Then I should see Bunny turn off Music & Sound, and reflect on App and hardware product",
+                    "When I tap Choose a playlist or sound to select a music/sound to play",
+                    "Then The selected Music / Sound can be played normally",
+                    "And I tap 'Edit Custom Playlist' to edit the custom playlist",
+                    "And I save the Custom Playlist after editing",
+                    "When I select the custom playlist to play",
+                    "Then The saved Custom Playlist can be played correctly",
+                    "When I slide the volume bar to adjust the volume to any position",
+                    "Then I can adjust the volume, and reflect on App and hardware product",
+                    "When I tap any dot of volume bar to adjust volume",
+                    "Then I can adjust the volume, and reflect on App and hardware product"
+                ],
+                "full auto": true
+            },
+            "No R2R - Customize Your Soother - Customize Tab - Timer - Bunny": {
+                "id": 5119308,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "And I access to Bunny Control panel - Customize tab",
+                    "When I toggle on Light or Music or both",
+                    "Then I should see Timer highlight blue color",
+                    "And I can set all Timers normally",
+                    "When I select one Timer (e.g. 5 mins)",
+                    "Then The Light and Music should turn off after 5 mins"
+                ],
+                "full auto": true
+            },
+            "No R2R - Customize Your Soother - RSS Tab - Bunny": {
+                "id": 5124144,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "And I access to Bunny Control Panel - RSS tab",
+                    "When I toggle ON RSS",
+                    "Then I should see Bunny turn on RSS, and reflect on App and hardware product",
+                    "When I toggle OFF RSS",
+                    "Then I should see Bunny is turned off, and reflect on App and hardware product",
+                    "And I toggle ON RSS again",
+                    "When I slide the light Brightness bar to adjust the Brightness to any position",
+                    "Then I can adjust the light brightness, and reflect on App and hardware product",
+                    "When I tap any dot of light brightness bar to adjust brightness",
+                    "Then I can adjust the light brightness, and reflect on App and hardware product",
+                    "When I slide the volume bar to adjust the volume to any position",
+                    "Then I can adjust the volume, and reflect on App and hardware product",
+                    "When I tap any dot of volume bar to adjust volume",
+                    "Then I can adjust the volume, and reflect on App and hardware product",
+                    "When I tap 'Customize' tab while playing RSS",
+                    "Then It will show the Exit RSS modal",
+                    "And I can exit RSS normally"
+                ],
+                "full auto": true
+            },
+            "No R2R - Bunny home - Learn more - Bunny": {
+                "id": 5119340,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "When I access to Bunny home page",
+                    "Then The UI is similar to https://zpl.io/bozGeek",
+                    "When I tap Learn more button",
+                    "Then I should see the Tooltip normally",
+                    "And UI is similar to https://zpl.io/VDZd9Zl, https://zpl.io/2vpoepY, https://zpl.io/brQp6QD, https://zpl.io/bzo7z3E",
+                    "When I tap X or Done button on Tooltip",
+                    "Then I should return to Bunny home screen"
+                ],
+                "full auto": true
+            },
+            "No R2R - Add Schedule - Bunny": {
+                "id": 5119363,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I haven't set up Sleep Trainer",
+                    "When I access to Bunny home page",
+                    "Then The UI is similar to https://zpl.io/bozGeek",
+                    "And I tap Set up Sleep Trainer",
+                    "And I tap Add Times",
+                    "And I set Sleep & Wake Time for Su-Sa",
+                    "When I tap Save All or back button('<') to save schedule",
+                    "Then I can save the Schedule normally"
+                ],
+                "full auto": true
+            },
+            "Have R2R - Start/Stop Soothing - Bunny": {
+                "id": 5119476,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I have set up Sleep Trainer",
+                    "And Bunny is in Naptime/Nighttime mode",
+                    "And I access to Dashboard",
+                    "When I tap Start Soothing in Bunny product card",
+                    "Then I should see Bunny play VSFX_Yawn + Solid Red Light for 10 seconds, followed by Activation: currently set Music Playlist & Lights & Duration",
+                    "And The button name changes to Stop Soothing",
+                    "When I tap Stop Soothing",
+                    "Then I should see Bunny stop soothing normally",
+                    "And The button name will resume to Start Soothing",
+                    "And I enter Bunny home page",
+                    "When I tap on 'Start Soothing' button",
+                    "Then I should see Bunny play VSFX_Yawn + Solid Red Light for 10 seconds, followed by Activation: currently set Music Playlist & Lights & Duration",
+                    "And The button name changes to Stop Soothing",
+                    "When I tap on 'Stop Soothing' button",
+                    "Then I should see Bunny stop soothing normally",
+                    "And The button name resume to Start Soothing"
+                ],
+                "full auto": true
+            },
+            "Have R2R - Daytime - Start Nap - Bunny": {
+                "id": 5119369,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I have set up Sleep Trainer",
+                    "And Bunny is in Daytime mode",
+                    "And I access dashboard page",
+                    "And I press Start Nap button of bunny product card",
+                    "And Bunny will enter Naptime mode normally",
+                    "When I access to Bunny home page",
+                    "Then I should see bunny home page change to Naptime mode",
+                    "And I Finish Naptime mode",
+                    "When I tap Start Nap on bunny home page",
+                    "Then I should see Naptime Duration picker pop up",
+                    "When I select a Timer and tap Start Nap",
+                    "Then I should see Bunny enter Naptime mode normally",
+                    "And I switch back to Dashboard",
+                    "When I re-enter Bunny home screen",
+                    "Then I should see Bunny still in Naptime mode until naptime elapse"
+                ],
+                "full auto": true
+            },
+            "Have R2R - Daytime - Edit Schedule - Bunny": {
+                "id": 5119402,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I have set up Sleep Trainer",
+                    "And Bunny is in daytime mode",
+                    "And I access to Bunny home page",
+                    "When I tap Edit button",
+                    "Then I can access to Sleep Trainer page",
+                    "When I tap Edit button on Sleep Trainer page",
+                    "Then I can access to Edit Sleep Schedule",
+                    "And I change Sleep & Wake Time",
+                    "When I tap Save All or Back button('<') to save the schedule",
+                    "Then The schedule can be edited and saved successfully",
+                    "And The new schedule is reflected on app & Bunny"
+                ],
+                "full auto": true
+            },
+            "Have R2R - Daytime - Remove Sleep Trainer Schedule - Bunny": {
+                "id": 5119412,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I have set up Sleep Trainer",
+                    "And Bunny is in daytime mode",
+                    "And I access to Bunny home page",
+                    "When I tap Edit button",
+                    "Then I can access to Sleep Trainer page",
+                    "When I tap Remove Sleep Trainer Schedule",
+                    "Then I should see Remove Sleep Trainer modal pop up",
+                    "When I select Cancel",
+                    "Then The schedule should not be removed",
+                    "When I select Remove",
+                    "Then The schedule will be removed successfully"
+                ],
+                "full auto": true
+            },
+            "Have R2R - Daytime - Start Nap - Sample check on Customize soother screen - Bunny": {
+                "id": 5119646,
+                "bdd": [
+                    "Given I have connected with Bunny",
+                    "And I access to Bunny product settings page",
+                    "And I turn off BLE / out of range / power off product",
+                    "Then I should see Bunny display Disconnected with red dot and disconnected message",
+                    "When I turn on BLE/In range/Power on product again",
+                    "And I should see Bunny display Connected with green dot",
+                    "When I tap Disconnect button",
+                    "Then I can see Bunny display Disconnect with yellow dot",
+                    "When I tap Connect button",
+                    "Then App can re-connect Bunny successfully",
+                    "And I can control product normally",
+                    "When I change the product name",
+                    "Then I can change Bunny name normally",
+                    "When I try to access the website link of product settings page",
+                    "Then I can access to Support page",
+                    "And I can access to Licensing Information",
+                    "When I try to remove Bunny from app",
+                    "Then I can remove Bunny normally"
+                ],
+                "full auto": true
+            }
+        },
+        "Music & Sound": {
+            "Turn on / off default music and sound": {
+                "id": 4364265,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And I pair with Bunny",
+                    "When I access Edit Soother settings screen",
+                    "And I check Music widget",
+                    "Then I should see \"Choose a song or sound\" as default text in music & sound dropdown",
+                    "When I turn on music & sound",
+                    "Then I should see Bunny hardware turn on music & sound",
+                    "And default Bunny music control should be correct",
+                    "When I turn off music & sound",
+                    "Then I should see music & sound turn off on Edit Soother settings screen",
+                    "When I access Bunny home",
+                    "Then I should see Start Soothing"
+                ],
+                "full auto": true
+            }
+        },
+        "Lights": {
+            "Turn on / off default Lights": {
+                "id": 4405307,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And I pair with Bunny",
+                    "When I access Edit Soother settings screen",
+                    "And I check Light widget",
+                    "Then I should see similar Lights UI to https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e2b6e4e99dafa5652cd776b",
+                    "When I turn on Lights",
+                    "Then I should see Bunny hardware turn on Lights",
+                    "And default Bunny light control should be correct",
+                    "When I turn off lights",
+                    "Then I should see lights turn off on Edit Soother settings screen & Bunny hardware",
+                    "And i should not be able to tap on any color wheel since it should be in inactive state",
+                    "When I access Bunny home",
+                    "Then I should see Start Soothing"
+                ],
+                "full auto": true
+            }
+        },
+        "Product settings information": {
+            "Product settings UI and information": {
+                "id": 1979789,
+                "bdd": [
+                    "Given app is Connected with product",
+                    "When I check UI and information in settings",
+                    "Then I should see correct UI and information"
+                ],
+                "full auto": true
+            }
+        }
+    },
+    "Seahorse": {
+        "Status ui and behavior in different pages": {
+            "Connected UI": {
+                "id": 1892173,
+                "bdd": [
+                    "Given I have product which is connected",
+                    "When I check smart connect product connection status",
+                    "Then I should see Connected with correct UI on Dashboard page",
+                    "And I should see Connected with correct UI on Control page",
+                    "And I should see Connected with correct UI on Product Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Dashboard behavior": {
+            "Dashboard Scroll behavior": {
+                "id": 1825409,
+                "bdd": [
+                    "Given I have multiple smart connect products in dashboard",
+                    "When I scroll through devices",
+                    "Then I should see app UI respond correctly",
+                    "And I should see different smart connect device"
+                ],
+                "full auto": false
+            }
+        },
+        "Remove device from account": {
+            "Remove from dashboard": {
+                "id": 1984307,
+                "bdd": [
+                    "Given app is Connected with product",
+                    "When I access Product settings from control panel",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "Then I should not see on Account Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Pairing": {
+            "Re-pair with product after removing from account": {
+                "id": 4316607,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            },
+            "After removing product, logout / login and pair": {
+                "id": 4316695,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "And I sign out from account settings",
+                    "And I sign in with the same account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            }
+        }
+    },
+    "Lumalou": {
+        "Status ui and behavior in different pages": {
+            "Connected UI": {
+                "id": 1892173,
+                "bdd": [
+                    "Given I have product which is connected",
+                    "When I check smart connect product connection status",
+                    "Then I should see Connected with correct UI on Dashboard page",
+                    "And I should see Connected with correct UI on Control page",
+                    "And I should see Connected with correct UI on Product Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Remove device from account": {
+            "Remove from dashboard": {
+                "id": 1984307,
+                "bdd": [
+                    "Given app is Connected with product",
+                    "When I access Product settings from control panel",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "Then I should not see on Account Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Pairing": {
+            "Re-pair with product after removing from account": {
+                "id": 4316607,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            },
+            "After removing product, logout / login and pair": {
+                "id": 4316695,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "And I sign out from account settings",
+                    "And I sign in with the same account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            }
+        },
+        "Lumalou - Home screen": {
+            "Routine assigned for today": {
+                "id": 4879504,
+                "bdd": [
+                    "Given phone/device settings is set to 24 hr format",
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have routine saved. Assigned day = any day, Time  = any time",
+                    "When today is the day that have routine assigned",
+                    "And I access Lumalou Homescreen",
+                    "Then UI should be similar to https://zpl.io/V0BNr7l",
+                    "And I should see Routine listed in correct day. Routine details(Name, task, start time) should be correct.",
+                    "And start card should display correct routine details (Routine name, start time). It should have \"Start button\"",
+                    "When I tap Start button",
+                    "And I tap the banner( https://zpl.io/Vk69MQG) to begin",
+                    "Then I should see Icon, correct routine name, start time"
+                ],
+                "full auto": true
+            }
+        },
+        "Lumalou - Add & edit routine": {
+            "Add tasks - With duplicates": {
+                "id": 4620887,
+                "bdd": [
+                    "Given I sign up / sign",
+                    "And app is Connected with Lumalou",
+                    "When I am in the Routine Management Page",
+                    "When I access Add/Edit routine screen (via selecting Add routine button in Customize screen)",
+                    "Then UI should be similar to https://zpl.io/VK8xLrq",
+                    "When I select Add Tasks",
+                    "Then I can add up to 12 tasks in my routine",
+                    "And the tasks can be duplicate",
+                    "And save the routine with the tasks that I have added"
+                ],
+                "full auto": true
+            },
+            "Day Override Error Message - Replace routine for a day": {
+                "id": 4663019,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to Monday",
+                    "When User creates a new routine (Routine B) and assigns to Monday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Monday highlighted",
+                    "When User de-selects Monday and re-selects Monday",
+                    "Then User will see override modal again because Routine A has not yet been un-assigned to Monday. Routine A only becomes un-assigned to Monday when Routine B is saved and changes are committed."
+                ],
+                "full auto": true
+            },
+            "Day Override Error Message - Replace routine for multiple days": {
+                "id": 4663155,
+                "bdd": [
+                    "Given I sign up / sign",
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to multiple days (e.g. weekdays)",
+                    "When User creates a new routine (Routine B) and assigns to Monday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Tuesday highlighted",
+                    "When User repeat selecting other days (e.g. other days of the week) and confirming override",
+                    "And User save routine",
+                    "Then Routine(Routine B) should display correct days assign",
+                    "And Routine (Routine A) should be updated with no assign days anymore since Routine B has override the days",
+                    "And routine is reflected on Lumalou and app with the correct task assigned to routine B"
+                ],
+                "full auto": true
+            },
+            "Add routine - Day Override Error Message - Do NOT save override": {
+                "id": 4663241,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to multiple days (e.g. Sunday , Monday)",
+                    "And User has a routine (Routine B) assigned to multiple days (e.g. Wednesday, Thursday)",
+                    "And User has a routine (Routine C) assigned to multiple days (e.g. Tuesday, Friday, Saturday)",
+                    "When User creates a new routine (Routine D) and assigns to Sunday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Sunday highlighted",
+                    "When User repeat selecting remaining days (e.g. Monday, Wednesday) and confirming override",
+                    "And User do NOT save routine",
+                    "Then No changes should be seen to Routine A, B, C. All days assigned should be the same"
+                ],
+                "full auto": true
+            },
+            "Edit Routine - Remove assigned routine for the day": {
+                "id": 4886598,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have routine saved. Assigned day = any day, Time  = any time",
+                    "When today is the day that have routine assigned",
+                    "And I access Edit routine screen of the routine that is assigned for today",
+                    "And I edit routine(remove the current day ) and save",
+                    "When I access Lumalou homescreen",
+                    "Then I should see routine list updated. Start routine card should not display since I don't have routine assigned for today anymore"
+                ],
+                "full auto": true
+            },
+            "More Action Sheet - Remove Routine": {
+                "id": 4723960,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have 1 or more routine/s saved",
+                    "When I access Customize screen",
+                    "Then UI should be similar to https://zpl.io/b6En7XW with the correct routine information for account",
+                    "When User taps on \"More\" icon / \"...\" button",
+                    "Then User will see Edit Routine, Duplicate Routine, Remove Routine,  Cancel Action Sheet",
+                    "When I select Remove Routine inside \"More\" action sheet",
+                    "Then I should see Remove Routine Confirmation Modal: https://zpl.io/aM0lkDo",
+                    "When I select Remove/Cancel inside Remove routine confirmation modal",
+                    "Then Routine will be removed/kept"
+                ],
+                "full auto": true
+            },
+            "Edit Routine Screen - Remove Routine": {
+                "id": 4679390,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have 1 or more routine/s saved",
+                    "When I access any routine's Edit routine screen",
+                    "Then UI should be similar to  https://zpl.io/VK87MoJ with correct routine details",
+                    "When I select Remove Routine inside Edit routine screen",
+                    "Then I should see Remove Routine Confirmation Modal: https://zpl.io/aM0lkDo",
+                    "When I select Remove/Cancel inside Remove routine confirmation modal",
+                    "Then Routine will be removed/kept"
+                ],
+                "full auto": true
+            },
+            "Remove all routines": {
+                "id": 4679529,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have 1 routine/s saved",
+                    "When I access any routine's Edit routine screen",
+                    "Then UI should be similar to  https://zpl.io/VK87MoJ with correct routine details",
+                    "When I select Remove Routine inside Edit routine screen",
+                    "Then I should see Remove Routine Confirmation Modal: https://zpl.io/aM0lkDo",
+                    "When I select Remove inside Remove routine confirmation modal",
+                    "Then Routine will be removed and no longer displaying in my routine list.",
+                    "And UI should be similar to Customize Page Empty State: https://zpl.io/ad5dwG7"
+                ],
+                "full auto": true
+            },
+            "Duplicate Routine - with days and / or start time": {
+                "id": 4673626,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine saved (at least ONE routine - with days and / or start time)",
+                    "When User access Customize screen",
+                    "And User taps on \"More\" icon / \"...\" button",
+                    "Then User will see Edit Routine, Duplicate Routine, Remove Routine,  Cancel Action Sheet",
+                    "And UI should be similar to https://zpl.io/aXA5DYP",
+                    "When User taps on Duplicate",
+                    "Then Routine will duplicate",
+                    "And UI should be similar to https://zpl.io/aM0xQ4K"
+                ],
+                "full auto": true
+            }
+        },
+        "Lumalou - Duplicate routine": {
+            "Duplicate Routine - no days and / or  no start time": {
+                "id": 4674377,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine saved (at least ONE routine - no days or no start time)",
+                    "When User access Customize screen",
+                    "And User taps on \"More\" icon / \"...\" button",
+                    "Then User will see Edit Routine, Duplicate Routine, Remove Routine,  Cancel Action Sheet",
+                    "And UI should be similar to https://zpl.io/aXA5DYP",
+                    "When User taps on Duplicate",
+                    "Then Routine will duplicate"
+                ],
+                "full auto": true
+            }
+        },
+        "Lumalou - Routine tooltips": {
+            "Lumalou Home page - Haven't set up Routines - Empty State+Tooltips": {
+                "id": 4916814,
+                "bdd": [
+                    "Given User has paired Lumalou to App",
+                    "Given User hasn't set up Lumalou Routines",
+                    "And User navigates to Homepage",
+                    "When User tap Routines Tab",
+                    "Then User will see Empty State + Toast Card which is like https://zpl.io/a79EGOE. If soother is active at this time, it shows the screen like https://zpl.io/2EJedye",
+                    "And Tool tips(Icon & Text) will be shown correctly at the bottom of screen",
+                    "When User tap Read more button",
+                    "Then User will see details of Routines Tool tips: https://zpl.io/bzgX8yl, https://zpl.io/2GKdEpY, https://zpl.io/2vJkMBY"
+                ],
+                "full auto": true
+            },
+            "Lumalou Home page - Remove all Routines - Empty State+Tooltips": {
+                "id": 4927277,
+                "bdd": [
+                    "Given User has paired Lumalou to App",
+                    "And User have set up some routines for luma",
+                    "And User remove all routines",
+                    "And User navigates to Homepage",
+                    "When User tap Routines Tab",
+                    "Then User will see Empty State + Toast Card which is like https://zpl.io/a79EGOE. If soother is active at this time, it shows the screen like https://zpl.io/2EJedye",
+                    "And Tool tips(Icon & Text) will be shown correctly at the bottom of screen",
+                    "When User tap Read more button",
+                    "Then User will see details of Routines Tool tips: https://zpl.io/bzgX8yl, https://zpl.io/2GKdEpY, https://zpl.io/2vJkMBY"
+                ],
+                "full auto": true
+            }
+        },
+        "Lumalou - Sleep trainer tooltips": {
+            "Lumalou Home page - Sleep Trainer - Haven't set up Sleep Trainer - Empty State": {
+                "id": 4916758,
+                "bdd": [
+                    "Given User has paired Lumalou to App",
+                    "Given User hasn't set up Lumalou Sleep Trainer",
+                    "And User navigates to Homepage",
+                    "When User tap Sleep Trainer Tab",
+                    "Then User will see Empty State + Toast Card which is like https://zpl.io/aNJoEB9",
+                    "And Tool tips(Icon & Text) will be shown correctly at the bottom of screen",
+                    "When User tap Read more button",
+                    "Then User will see details of Sleep Trainer Tool tips: https://zpl.io/V4mM0AQ, https://zpl.io/bPG7q4x, https://zpl.io/V4mM0PQ, https://zpl.io/bLzE4NQ"
+                ],
+                "full auto": true
+            },
+            "Lumalou Home page - Sleep Trainer - Remove Sleep Trainer - Empty State": {
+                "id": 4927406,
+                "bdd": [
+                    "Given User has paired Lumalou to App",
+                    "And User has set up Sleep Trainer for Luma",
+                    "And User remove the Sleep Trainer",
+                    "And User navigates to Homepage",
+                    "When User tap Sleep Trainer Tab",
+                    "Then User will see Empty State + Toast Card which is like https://zpl.io/aNJoEB9",
+                    "And Tool tips(Icon & Text) will be shown correctly at the bottom of screen",
+                    "When User tap Read more button",
+                    "Then User will see details of Sleep Trainer Tool tips: https://zpl.io/V4mM0AQ, https://zpl.io/bPG7q4x, https://zpl.io/V4mM0PQ, https://zpl.io/bLzE4NQ"
+                ],
+                "full auto": true
+            }
+        },
+        "Lumalou - Previous & Next button": {
+            "Routine in Progress Card - Task isn't ongoing - Previous and Next button": {
+                "id": 4927120,
+                "bdd": [
+                    "Given I have paired luma to app",
+                    "And I enter luma home page",
+                    "And I create a routine which assigned days include current day",
+                    "And I switch back to luma home page",
+                    "When I start routine",
+                    "Then Routine in progress card will be shown https://zpl.io/ag4N9YQ",
+                    "And Previous and Next buttons are disabled",
+                    ""
+                ],
+                "full auto": true
+            },
+            "Routine in Progress Card - Task is ongoing - One task - Previous and Next button": {
+                "id": 4929480,
+                "bdd": [
+                    "Given I have paired luma to app",
+                    "And I enter luma home page",
+                    "And I create a 1 task routine which assigned days include current day",
+                    "And I switch back to luma home page",
+                    "When I start routine",
+                    "Then Routine in progress card will be shown https://zpl.io/ag4N9YQ",
+                    "And I tap <Waiting for acceptance... or tap to start>/press remote control button to start to run the tasks",
+                    "Then Previous button will be disabled, and Next button will change to <Finish>"
+                ],
+                "full auto": true
+            },
+            "Routine in Progress Card - Task is ongoing - More than 1 task - Previous and Next button": {
+                "id": 4927230,
+                "bdd": [
+                    "Given I have paired luma to app",
+                    "And I enter luma home page",
+                    "And I create a more than 1 task routine which assigned days include current day",
+                    "And I switch back to luma home page",
+                    "When I start routine",
+                    "Then Routine in progress card will be shown https://zpl.io/ag4N10YQ",
+                    "And I tap <Waiting for acceptance... or tap to start>/press remote control button to start to run the tasks",
+                    "Then Routine in progress card will change to https://zpl.io/2jJm4Qp",
+                    "When I tap Previous button",
+                    "Then The previous task in the routine becomes highlighted",
+                    "And Previous button will be disabled if the running task is the first task of routine",
+                    "When I tap Next button",
+                    "Then It shows loading state (because reward will show on Luma before advancing to next task)https://zpl.io/2GK9rRJ, then Next task in routine becomes highlighted",
+                    "And Next button will change to <Finish> if the running task is the last task of routine https://zpl.io/bAoB9Ox"
+                ],
+                "full auto": true
+            },
+            "Routine in Progress Card - Task is ongoing -  Routine Finished Modal - Finish button": {
+                "id": 4927258,
+                "bdd": [
+                    "Given I have paired luma to app",
+                    "And I enter luma home page",
+                    "And I create a routine which assigned days include current day",
+                    "And I switch back to luma home page",
+                    "When I start routine",
+                    "Then Routine in progress card will be shown https://zpl.io/ag4N10YQ",
+                    "And I tap <Waiting for acceptance... or tap to start>/press remote control button to start to run the tasks",
+                    "Then Routine in progress card will change to https://zpl.io/2jJm4Qp",
+                    "And I switch to the last task of routine via pressing Next button in app or remote control",
+                    "Then Next button will change to <Finish> https://zpl.io/bAoB9Ox",
+                    "When I press Finish button",
+                    "Then I will show the popover https://zpl.io/beEAWyP"
+                ],
+                "full auto": true
+            }
+        },
+        "Remove sleep trainer schedule": {
+            "Remove Sleep trainer schedule - Confirm removal": {
+                "id": 4956474,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And I have Sleep trainer schedule",
+                    "When I access Sleep trainer - Customize screen",
+                    "Then I should see correct Sleep schedule, similar UI to https://zpl.io/Vk6ZGzG (12 hr) / https://zpl.io/2pGejlQ (24 hr)",
+                    "When I tap Remove Sleep trainer Schedule",
+                    "Then I should see  Remove Sleep trainer modal https://zpl.io/adJLpwe",
+                    "When I tap Remove",
+                    "Then I should be able to remove Sleep trainer Schedule",
+                    "And I should see Sleep trainer Customize Page - Empty State https://zpl.io/25B6Ox8",
+                    "And I should see schedule remove in Lumalou"
+                ],
+                "full auto": true
+            },
+            "Remove Sleep trainer schedule - Cancel removal": {
+                "id": 4966483,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And I have Sleep trainer schedule",
+                    "When I access Sleep trainer - Customize screen",
+                    "Then I should see correct Sleep schedule, similar UI to https://zpl.io/Vk6ZGzG (12 hr) / https://zpl.io/2pGejlQ (24 hr)",
+                    "When I tap Remove Sleep trainer Schedule",
+                    "Then I should see  Remove Sleep trainer modal https://zpl.io/adJLpwe",
+                    "When I tap Cancel",
+                    "And I should see Remove sleep trainer modal close. Sleep trainer Customize Page - Filled State should still display with correct schedule",
+                    "And UI should be similar to  https://zpl.io/Vk6ZGzG (12 hr) / https://zpl.io/2pGejlQ (24 hr)",
+                    "And I should not see any changes in Lumalou"
+                ],
+                "full auto": true
+            },
+            "Remove Sleep trainer schedule - Add new schedule afterwards": {
+                "id": 4966485,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And I have Sleep trainer schedule",
+                    "When I access Sleep trainer - Customize screen",
+                    "Then I should see correct Sleep schedule, similar UI to https://zpl.io/Vk6ZGzG (12 hr) / https://zpl.io/2pGejlQ (24 hr)",
+                    "When I tap Remove Sleep trainer Schedule",
+                    "Then I should see  Remove Sleep trainer modal https://zpl.io/adJLpwe",
+                    "When I tap Remove",
+                    "Then I should be able to remove Sleep trainer Schedule",
+                    "And I should see Sleep trainer Customize Page - Empty State https://zpl.io/25B6Ox8",
+                    "When I add new Sleep trainer schedule",
+                    "Then I should see new Sleep trainer schedule reflect on both app & Lumalou"
+                ],
+                "full auto": true
+            }
+        },
+        "Other features - must review as this is specifically for employee ihut feature": {
+            "Customize Screen": {
+                "id": 4724972,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have 1 or more r routine/s saved",
+                    "When I access routine home screen",
+                    "Then UI should be similar to https://zpl.io/2GJAkWE",
+                    "When I select Customize Routines inside Lumalou homescreen",
+                    "And I should be able to control the end routine via app whenever I want",
+                    "Then I should be able to go to customize routine screen with correct routine information",
+                    "And UI should be similar to https://zpl.io/VqjYZ5m"
+                ],
+                "full auto": true
+            }
+        },
+        "Music - edit custom playlist": {
+            "Custom Playlist - Select All": {
+                "id": 4861942,
+                "bdd": [
+                    "Given the connected App to the Lumaluo",
+                    "And I go to Controls",
+                    "Then I see Music and Sound",
+                    "And I tap on Edit costum playlist",
+                    "And I should see All songs selected",
+                    "Then I tap on Deselect All",
+                    "Then the button should change to Select All",
+                    "And I tap on Select All",
+                    "Then I should see All songs selected"
+                ],
+                "full auto": true
+            },
+            "Custom Playlist - Unselect All": {
+                "id": 4861943,
+                "bdd": [
+                    "Given the connected App to the Lumaluo",
+                    "And I go to Controls",
+                    "Then I see Music and Sound",
+                    "And I tap on Edit costum playlist",
+                    "And I should see Deselct All songs",
+                    "And I unselect all songs",
+                    "Then I should see no songs selected"
+                ],
+                "full auto": true
+            },
+            "Custom Playlist - Hold and drag": {
+                "id": 4861944,
+                "bdd": [
+                    "Given the connected App to the Lumaluo",
+                    "And I go to Controls",
+                    "Then I see Music and Sound",
+                    "And I tap on Edit costum playlist",
+                    "Then I should see Edit costum playlist screen UI look like: https://zpl.io/boz0x0G",
+                    "And I tap and hold the left icon of any sound",
+                    "Then I should be able to move the song of place, up or down"
+                ],
+                "full auto": true
+            },
+            "Costum Playlist - Reset to old values": {
+                "id": 4861945,
+                "bdd": [
+                    "Given the connected App to the Lumaluo",
+                    "And I go to Controls",
+                    "Then I see Music and Sound",
+                    "And I tap on Edit costum playlist",
+                    "Then I should see Edit costum playlist screen UI look like: https://zpl.io/boz0x0G",
+                    "And I deselect some songs to change the playlist",
+                    "Then I should see Reset button",
+                    "Then I tap on the Reset button",
+                    "And I should see values reset to old ones"
+                ],
+                "full auto": true
+            },
+            "Costum Playlist - No songs selected modal": {
+                "id": 4861955,
+                "bdd": [
+                    "Given the connected App to the Lumaluo",
+                    "And I go to Controls",
+                    "Then I see Music and Sound",
+                    "And I tap on Edit costum playlist",
+                    "Then I should see Edit costum playlist screen UI look like: https://zpl.io/boz0x0G",
+                    "And I tap on Deselect All songs",
+                    "Then I should see save button enable",
+                    "And I tap on save",
+                    "Then I should see No songs selected modal UI look like: https://zpl.io/bzNnylM",
+                    "And I tap on Got it",
+                    "Then no songs modal should be dismissed"
+                ],
+                "full auto": true
+            }
+        },
+        "Unsaved changes dialog": {
+            "Don't save changes": {
+                "id": 4890851,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "When I access <Entry> screen",
+                    "And I provide all required information in <Entry> screen",
+                    "And I tap back button at the upper left of screen",
+                    "Then I should see Unsaved Changes Dialog: https://zpl.io/aMgzMyR / https://app.zeplin.io/project/5e20b640f736f3a88c31c83a/screen/5e289ec8dd640e53da0a7020/ (background should be the current screen)",
+                    "When I tap Don't save",
+                    "And I should see changes are NOT saved and it should continue to last screen visited"
+                ],
+                "full auto": true
+            }
+        },
+        "ready/settle/sleep": {
+            "Turn ON/OFF Ready Settle Sleep": {
+                "id": 4925044,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I go to Controls",
+                    "Then I turn on Ready Settle Sleep",
+                    "And I should see Music and Lights turn ON UI look like  https://zpl.io/2Glx4r4",
+                    "Then I turn OFF Ready Settle Sleep",
+                    "And I should see Music and Lights turn OFF UI look like https://zpl.io/VqjKEKG",
+                    "Then I tap on any of the RSS stages"
+                ],
+                "full auto": true
+            },
+            "Exit Ready Settle Sleep - Lumaluo": {
+                "id": 4925046,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "And I tap on Customize",
+                    "Then I should see Exit Ready Settle Sleep modal UI look like: https://zpl.io/2Glx4r4",
+                    "And I tap on Exit",
+                    "Then I should see Ready Settle Sleep exit"
+                ],
+                "full auto": true
+            },
+            "Cancel Ready Settle Sleep - Lumaluo": {
+                "id": 4925047,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "And I tap on Customize",
+                    "Then I should see Exit Ready Settle Sleep modal UI look like: https://zpl.io/2Glx4r4",
+                    "And I tap on Cancel",
+                    "Then I should see Ready Settle Sleep still ON"
+                ],
+                "full auto": true
+            }
+        },
+        "Music and lights actions": {
+            "Lights when RSS has been turned OFF": {
+                "id": 4925172,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "Then I modify Brightness slider on Ready Settle Sleep",
+                    "And I turn OFF Ready Settle Sleep",
+                    "And I tap on Customize",
+                    "Then I see lights turn OFF UI look like: https://zpl.io/bA1XXpn",
+                    "Then I should see Brightness slider configure same as it was on Ready Settle Sleep section"
+                ],
+                "full auto": true
+            },
+            "Music when RSS has been turned OFF": {
+                "id": 4925173,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "Then I modify volume slider on Ready Settle Sleep",
+                    "And I turn OFF Ready Settle Sleep",
+                    "And I tap on Customize",
+                    "And I should see Music and Sound turn OFF UI look like: https://zpl.io/bA1XXpn",
+                    "Then I should see volume slider configure same as it was on Ready Settle Sleep action"
+                ],
+                "full auto": true
+            },
+            "Lights when RSS is turned OFF": {
+                "id": 4925174,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "Then I turn OFF Ready Settle Sleep",
+                    "And I go to Customize",
+                    "Then I should see lights turn OFF",
+                    "And I turn ON Lights",
+                    "Then I should see default option selected correctly",
+                    "And I should see UI look like: https://zpl.io/amAeOZm",
+                    "And I should see Music and Sound remain as OFF"
+                ],
+                "full auto": true
+            },
+            "Music when RSS was turned OFF": {
+                "id": 4925176,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "Then I turn OFF Ready Settle Sleep",
+                    "And I go to Customize",
+                    "Then I should see Music and Sound turn OFF",
+                    "And I turn on Music and Sound",
+                    "Then I should see default selected correctly",
+                    "And I should see Music and SOund UI look like: https://zpl.io/amAeOZm",
+                    "And I should see Lights remain OFF"
+                ],
+                "full auto": true
+            }
+        },
+        "Actions when rss is exited": {
+            "RSS Exit Actions - Lumaluo": {
+                "id": 4928449,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "When I have Ready Settle Sleep turn ON",
+                    "And I tap on Customize",
+                    "Then I should see Ready Settle Sleep Exit Modal",
+                    "And d I tap on Exit",
+                    "Then I should see Ready Settle Sleep exit and move to Customize Panel",
+                    "And I should see Music and Lights turn OFF"
+                ],
+                "full auto": true
+            }
+        },
+        "What is ready settle sleep? tutorial - lumaluo": {
+            "What is Ready Settle Sleep? Screens -Lumaluo": {
+                "id": 4928923,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I to to Ready Settle SLeep section",
+                    "Then I should see under stages icons the text What is Ready Settle Sleep",
+                    "And I tap on What is Ready Settle Sleep?",
+                    "Then I should see What is Ready Settle Sleep UI look like: https://zpl.io/bl0DxNvv",
+                    "And I swipe to the rigth to the next card",
+                    "Then I should see \"First stage: Ready\" UI look like: https://zpl.io/bAy7JQ6",
+                    "And I swipe to the right to the next card",
+                    "Then I should see  Second stage: Settle UI look like: https://zpl.io/2ZKrWkJ",
+                    "And I swipe to the right to the next card",
+                    "Then I should Third stage:Sleep UI look like: https://zpl.io/aMGWO9z"
+                ],
+                "full auto": true
+            },
+            "Close \"What is Ready Settle Sleep?\" - Lumaluo": {
+                "id": 4928946,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I tap on What is REady Settle SLeep",
+                    "Then I should see What is Ready Setle Sleep? correct information pup-up",
+                    "And I tap on Close",
+                    "Then I should see What is Ready Settle SLeep pop-up dismiss",
+                    "And I should see Close button on each tutorial page",
+                    "Then I should be able to close What is Ready Settle Sleep? from any of the modals tutorial"
+                ],
+                "full auto": true
+            }
+        },
+        "Routines": {
+            "No Routine - Product Card": {
+                "id": 4971020,
+                "bdd": [
+                    "Given I enter the pairing instructions",
+                    "And I successfully pair with the Lumaluo",
+                    "When I am connected",
+                    "And I have no routine set up",
+                    "Then I should see Luma dashboard UI look like: https://zpl.io/ag4q4n1",
+                    "And I tap on Luma Product",
+                    "Then I should go to Luma's home and no other action should happend"
+                ],
+                "full auto": true
+            },
+            "Stop Routine - Product Card": {
+                "id": 4971437,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I have no routine(s) set up",
+                    "Then I set up a routine",
+                    "And I add new tasks",
+                    "Then select the days it's going to happened",
+                    "And I choose Time",
+                    "Then I tap on Save",
+                    "And I should see new Routine added on Luma's home",
+                    "Then I should see routine Start button UI look like: https://zpl.io/VKZlEQX",
+                    "And I tap on Start",
+                    "Then I go to Product card dashboard",
+                    "And I should see dashboard UI look like: https://zpl.io/ag4q4n1",
+                    "Then I tap on Stop Routine",
+                    "And I should see Exit modal display UI look like: https://zpl.io/bPj0YPD",
+                    "Then I tap on Exit",
+                    "Then I should see Luma and App exit routine and go back to normal state"
+                ],
+                "full auto": true
+            },
+            "Start Routine - Luma's Home": {
+                "id": 4976878,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I have no routine(s) set up",
+                    "And I see that the Routine Time start is as it was selected",
+                    "Then I should see routine  Start  button UI look like: https://zpl.io/VKZlEQX",
+                    "And I go back to Product card dashboard",
+                    "And I should see dashboard UI look like: https://zpl.io/ag4q4n1",
+                    "Then I tap on  Start Routine",
+                    "And I should see App and Bunny start routine",
+                    "Then I should see Start Routine change to Stop Routine  UI look like: zpl.io/ag4q4n1"
+                ],
+                "full auto": true
+            },
+            "Stop Routine - Cancel Modal - Product Card": {
+                "id": 4993423,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I have a routine(s) set up",
+                    "Then I should see routine  Start  button UI look like: https://zpl.io/VKZlEQX",
+                    "And I tap on Start",
+                    "Then I go to Product card dashboard",
+                    "And I should see dashboard UI look like: https://zpl.io/ag4q4n1",
+                    "Then I tap on  Stop Routine",
+                    "And I should see Exit modal display UI look like: https://zpl.io/bPj0YPD",
+                    "Then I tap on Cancel",
+                    "Then I should see Stop Routine text remain",
+                    "And I should see Routine keep on going"
+                ],
+                "full auto": true
+            }
+        },
+        "Disable routines": {
+            "Disable Routines - Home Page": {
+                "id": 4970990,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I already have a routine(s) set up",
+                    "Then I tap on Edit on the Routine",
+                    "And I go to Customize page",
+                    "And The I tap on Disable Routine button",
+                    "Then I should see disable Routine modal",
+                    "And I tap on Disable",
+                    "Then I should see Routines disable on Customize",
+                    "And I tap on back arrow, to go to homme",
+                    "Then I should see Routines panel disable  UI look like: https://zpl.io/ag4woyD",
+                    "And I should see blue banner with Routines disable text",
+                    "Then I tap on blue banner",
+                    "And I should not be able to do any action when tapping on Blue banner"
+                ],
+                "full auto": true
+            },
+            "Disable Routines - Cancel Modal - Customize": {
+                "id": 4982442,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I already have a routine(s) set up",
+                    "Then I tap on Edit on the Routine",
+                    "And I should see Customize page display",
+                    "And I should see button  Disable Routines  UI look like: https://zpl.io/aR8KBKK",
+                    "Then I tap on  Disable Routines",
+                    "And I should see  Disable Routines  modal UI look like: https://zpl.io/bl0g6qX",
+                    "Then I tap on cancel",
+                    "Then Disable Modal should be dismissed"
+                ],
+                "full auto": true
+            }
+        },
+        "Disable routine components": {
+            "Components disabled - Customize": {
+                "id": 4982324,
+                "bdd": [
+                    "Given the connected App to the Lumaluo",
+                    "And I already have a routine(s) set up",
+                    "Then I tap on edit on the Routine",
+                    "And I should see Customize page display",
+                    "And I should see button  Disable Routines  UI look like: https://zpl.io/aR8KBKK",
+                    "Then I tap on Disable Routines",
+                    "And I should see  Disable Routines  modal UI look like: https://zpl.io/bl0g6qX",
+                    "And I tap on  Disable",
+                    "Then I should see Add Routines disable",
+                    "And I try to tap on Add Routines",
+                    "Then I shouldn't be able to do an action when tapping on Add Routines",
+                    "And I should see Reward Music disable",
+                    "Then I try to turn on Reward Music",
+                    "And I shouldn't be able to do any action when trying to turn on reward Music",
+                    "Then I should see Task Music disable",
+                    "And I try to turn on Task Music",
+                    "Then I shouldn't be able to do any action when trying to turn on Task Music",
+                    "And I should see ... disable",
+                    "Then I try to tap on ...",
+                    "And I shouldn't be able to do any action when trying to turn on ...",
+                    "And I should not be able to do any action when Routines are disable, until you tap on Blue Banne to enable again the Routine"
+                ],
+                "full auto": true
+            }
+        },
+        "Enable routines": {
+            "Enable Routines - Customize": {
+                "id": 4971152,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I have a Routine set up",
+                    "Then I tap on Edit",
+                    "And I go to Customize Routine",
+                    "And I tap on Disable Routine",
+                    "And Disable routine when Disable routine modal is shown",
+                    "Then I should see blue banner UI look like: https://zpl.io/ag07ENO",
+                    "And I tap on Blue banner",
+                    "Then Routines should be enable and UI look like: https://zpl.io/aR8KBKK",
+                    "And I verify that the previous Routine set is the same when it's enable again",
+                    "Then I go to Luma's home",
+                    "And I should see ROutine correctly added",
+                    "And I should see Start button",
+                    "Then I tap on Start routine",
+                    "And I should see Routine start correctly on Luma and the App"
+                ],
+                "full auto": true
+            },
+            "Enable Routines- Home Page": {
+                "id": 4971175,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I have a Routine set up",
+                    "When Routine are disable and we are on Customize page",
+                    "Then I go back to Luma's home",
+                    "And I should see Blue banner UI look like: https://zpl.io/ag4woyD",
+                    "Then I tap on Blue banner",
+                    "And I should not be able to do any action when tapping blue banner",
+                    "Then I tap on Edit",
+                    "And I should see blue banner UI look like on Customize: https://zpl.io/ag07ENO",
+                    "And I tap on Blue banner",
+                    "Then I should see Routines enabled"
+                ],
+                "full auto": true
+            }
+        },
+        "Sleep trainer": {
+            "Home - Empty State": {
+                "id": 4971218,
+                "bdd": [
+                    "Given I enter the pairing instructions",
+                    "Then I successfully pair with the Lumaluo",
+                    "When I have no Sleep trainer set up",
+                    "And I navigate to Lumaluos' home",
+                    "Then I should see Set up Sleep Trainer",
+                    "And I should see Sleep Trainer Read More tutorial",
+                    "Then I tap on Read more",
+                    "And I should be able to navigate through the tutorial"
+                ],
+                "full auto": true
+            },
+            "Home - Sleep Trainer Set": {
+                "id": 4971440,
+                "bdd": [
+                    "Given the App connected to the Lumaluo",
+                    "And I go to Luma's home",
+                    "Then I tap on Sleep Trainer",
+                    "And I tap on Set up Sleep Trainer",
+                    "And I add the time from start and end of sleep",
+                    "And I set up the days when it will happend",
+                    "Then I tap on Save All",
+                    "And I should go back to customize Scree",
+                    "And I go back to luma's home",
+                    "Then I should see schedules display",
+                    "And I should not see Sleep Trainer Read More tutorial display"
+                ],
+                "full auto": true
+            }
+        },
+        "Tooltips": {
+            "Homepage - Fill State - R2R Tooltips": {
+                "id": 4976842,
+                "bdd": [
+                    "Given I have a Lumalou with is connected",
+                    "And I go to homepage of Lumalou",
+                    "When I tap “Sleep Trainer”",
+                    "And I  have R2R schedules",
+                    "Then R2R Tooltips should not display on the homepage screen  https://zpl.io/a703JpM"
+                ],
+                "full auto": true
+            },
+            "Homepage - Empty State - Opening  R2R Tooltips": {
+                "id": 4976866,
+                "bdd": [
+                    "Given I have a Lumalou with is connected",
+                    "And I go to homepage of Lumalou",
+                    "When I tap Sleep Trainer",
+                    "And I do not have R2R schedules",
+                    "Then the R2R Tooltips should display on the bottom of the screenhttps://zpl.io/a703JpM",
+                    "And I tap R2R Tooltip",
+                    "Then the app should display the firs screen (Customize) of R2R Tooltips https://zpl.io/V4mM0AQ",
+                    "And I slide to right",
+                    "Then the app should display the second screen (Soothe on Demand ) of R2R Tooltips https://zpl.io/bPG7q4x",
+                    "And I slide to right",
+                    "Then the app should display the second screen (Sleep Trainer ) of R2R Tooltips https://zpl.io/V4mM0PQ",
+                    "When I slide to right",
+                    "Then the app should display the latest screen (How it works) of RtR Tooltips https://zpl.io/bLzE4NQ",
+                    "And I tap Done button",
+                    "Then R2R Tooltips should dismiss"
+                ],
+                "full auto": true
+            }
+        },
+        "R2r": {
+            "R2R Edit - Copy to all Schedules - Confirmation Modal": {
+                "id": 4976988,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap \"Edit\" on Sleep Schedules",
+                    "Then I should access to Customize page",
+                    "And I tap Edit",
+                    "Then I should access to the Edit Sleep Schedule page",
+                    "When I change start time and end time",
+                    "And I tap Copy this schedule to all days button",
+                    "Then I should see a confirmation modal: https://zpl.io/V1B6N5w",
+                    "When I tap Apply to All button",
+                    "And the confirmation modal closes",
+                    "Then the app  takes the user to last day(Saturday)"
+                ],
+                "full auto": true
+            },
+            "R2R Edit - Copy to all Schedules - Cancel": {
+                "id": 4977020,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap \"Edit\" on Sleep Schedules",
+                    "Then I should access to Customize page",
+                    "And I tap Edit",
+                    "Then I should access to the Edit Sleep Schedule page",
+                    "When I change start time and end time",
+                    "And I tap Copy this schedule to all days button",
+                    "Then I should see a confirmation modal: https://zpl.io/V1B6N5w",
+                    "When I tap Cancel",
+                    "Then the confirmation modal closes",
+                    "And I should  go back to Add Sleep Schedule page"
+                ],
+                "full auto": true
+            },
+            "R2R Add - Copy to all Schedules - Confirmation modal": {
+                "id": 4977346,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I do not have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Setup Sleep Trainer",
+                    "Then I should access to Customize page",
+                    "And I tap Add times",
+                    "Then I should access to the Add Sleep Schedule page",
+                    "When I change start time and end time",
+                    "And I tap Copy this schedule to all days button",
+                    "Then I should see a confirmation modal: https://zpl.io/V1B6N5w",
+                    "When I tap apply to All button",
+                    "And the confirmation modal closes",
+                    "Then the app takes the user to the last day (Saturday)"
+                ],
+                "full auto": true
+            },
+            "R2R Add - Copy to all Schedules - Cancel": {
+                "id": 4977347,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I do not have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Setup Sleep Trainer",
+                    "Then I should access to Customize page",
+                    "And I tap Add times",
+                    "Then I should access to the Add Sleep Schedule page",
+                    "When I change start time and end time",
+                    "And I tap Copy this schedule to all days button",
+                    "Then I should see a confirmation modal: https://zpl.io/V1B6N5w",
+                    "When I tap Cancel",
+                    "And the confirmation modal closes",
+                    "Then I should see go back to Add Sleep Schedule screen"
+                ],
+                "full auto": true
+            },
+            "R2R Add Schedule - Unsaved Changes Modal - Don't Save": {
+                "id": 4977368,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I do not have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Setup Sleep Trainer",
+                    "Then I should access to Customize page",
+                    "And I tap Add times",
+                    "Then I should access to the Add Sleep Schedule page",
+                    "When I change start time and end time for any day",
+                    "And I tap the back button",
+                    "Then I should see the confirmation modal: https://zpl.io/bzZBdD3",
+                    "When I hit Don't Save",
+                    "Then dismiss modal",
+                    "And no schedule page since there is no R2R set up and you Don't save in the modal"
+                ],
+                "full auto": true
+            },
+            "R2R Add Schedule - Unsaved Changes Modal - Save and Continue": {
+                "id": 4977369,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I do not have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Setup Sleep Trainer",
+                    "Then I should access to Customize page",
+                    "And I tap Add times",
+                    "Then I should access to the Add Sleep Schedule page",
+                    "When I change start time and end time for any day",
+                    "And I tap the back button",
+                    "Then I should see the confirmation modal: https://zpl.io/bzZBdD3",
+                    "When I tap \"Save and Continue\"",
+                    "Then dismiss modal",
+                    "And exit to Customize page on the second Sleep Trainer tab with the new Sleep Trainer schedule"
+                ],
+                "full auto": true
+            },
+            "R2R Edit Schedule - Unsaved Changes Modal - Don't Save": {
+                "id": 4980206,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Edit on Sleep schedules",
+                    "Then I should access to Customize page",
+                    "And I tap Edit",
+                    "Then I should access to Edit Sleep schedule page",
+                    "When I change start time and end time for any day",
+                    "And I tap the back button",
+                    "Then I should see the confirmation modal: https://zpl.io/bzZBdD3",
+                    "When I hit don't Save",
+                    "Then dismiss modal",
+                    "And exit to Customize page on the second Sleep Trainer tab with the current Sleep Trainer schedule"
+                ],
+                "full auto": true
+            },
+            "R2R Edit Schedule - Unsaved Changes Modal - Save and Continue": {
+                "id": 4980281,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Edit on Sleep schedules",
+                    "Then I should access to Customize page",
+                    "And I tap Edit",
+                    "Then I should access to Edit Sleep schedule page",
+                    "When I change start time and end time for any day",
+                    "And I tap the back button",
+                    "Then I should see the confirmation modal: https://zpl.io/bzZBdD3",
+                    "When I tap Save and Continue",
+                    "Then dismiss modal",
+                    "And exit to Customize page on the second Sleep Trainer tab with the new Sleep Trainer schedule"
+                ],
+                "full auto": true
+            },
+            "R2R Add Schedule - Unsaved Changes - Dismiss Bottom Sheet": {
+                "id": 4993310,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I do not have R2R scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Set up Sleep Trainer",
+                    "Then I should access to Customize page",
+                    "And I tap Add times",
+                    "Then I should access to Add Sleep Schedule page",
+                    "When I tap on start time or end time to",
+                    "Then a Botton sheet should be displayed: https://zpl.io/V1B6N5w",
+                    "When I choice any time",
+                    "And I tap outside the Bottom Sheet",
+                    "Then the Bottom sheet should dismiss",
+                    "And there should be no changes"
+                ],
+                "full auto": true
+            },
+            "R2R Edit Schedule - Unsaved Changes - Dismiss Bottom Sheet": {
+                "id": 4993325,
+                "bdd": [
+                    "Given app is connected with Lumalou",
+                    "And I have R2R Scheduled",
+                    "When I select Sleep Trainer tab",
+                    "And I tap Edit on Sleep Schedules",
+                    "Then I should access to Customize page",
+                    "And I tap Edit",
+                    "Then Should access to Edit Sleep Schedule page",
+                    "And I tap on start time or end time",
+                    "Then a Botton sheet should be displayed: https://zpl.io/V1B6N5w",
+                    "When I choice any time",
+                    "And I tap outside the Bottom Sheet",
+                    "Then the Bottom sheet should dismiss",
+                    "And there should be no changes"
+                ],
+                "full auto": true
+            }
+        },
+        "Routines - user behavior": {
+            "Add Tasks - Add all available task": {
+                "id": 4620903,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "When I access Add routine screen / Edit routine screen",
+                    "Then UI should be similar to https://zpl.io/VK8xLrq",
+                    "When I add routine tasks (all available routines (11 task right now))",
+                    "And I save routine",
+                    "Then routine is reflected on app & Lumalou with all task added"
+                ],
+                "full auto": true
+            },
+            "Re-order tasks - Save Routine": {
+                "id": 4621185,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I add routine tasks (2 or more task)",
+                    "When I access Add routine screen / Edit routine screen",
+                    "Then UI should be similar to https://zpl.io/VK8xLrq",
+                    "When I tap and hold the re-order icon (lines icon)",
+                    "Then I should be able to re-order icons and re-arrange the task for the routine",
+                    "When I tap Save Routine",
+                    "Then updated routine & it's task should be save",
+                    "And routine is reflected on Lumalou with the correct order"
+                ],
+                "full auto": true
+            },
+            "Add Routine - Remove task & save to Routine": {
+                "id": 4678350,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "When I access Add routine screen (via selecting Add routine button in Customize screen)",
+                    "And I add routine tasks (at least 2 or more)",
+                    "When I access Remove task feature",
+                    "Then UI should be similar to https://zpl.io/bepPqoz",
+                    "Then I should see Remove Task State. Everything else on the page is disabled. I should not be able to tap on anything else except removing task & done button",
+                    "And I can remove task/s by the trash icon",
+                    "And I should be able to remove task and changes reflected in Add routine screen",
+                    "When I save routine",
+                    "Then routine is reflected on app & Lumalou",
+                    "And task deleted should not show up in my routine both in app and Lumalou"
+                ],
+                "full auto": true
+            },
+            "Edit Routine - Remove task & save to Routine": {
+                "id": 4629660,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have routine saved.",
+                    "When I access the routine & Remove task feature",
+                    "Then UI should be similar to https://zpl.io/bepPqoz",
+                    "Then I should see Remove Task State. Everything else on the page is disabled. I should not be able to tap on anything else except removing task & done button",
+                    "And I can remove task/s by the trash icon",
+                    "And I should be able to remove task and changes reflected in Add routine screen",
+                    "When I save routine",
+                    "Then routine is reflected on app & Lumalou",
+                    "And task deleted should not show up in my routine both in app and Lumalou"
+                ],
+                "full auto": true
+            },
+            "Edit Routine - Change routine name": {
+                "id": 4651810,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is Connected with Lumalou",
+                    "And I have routine saved.",
+                    "When I access the routine - Edit routine screen",
+                    "Then UI should be similar to https://app.zeplin.io/project/5e5d597c8644f066cb700e4d/screen/5e5ec4cb490b0968893bb720/ with correct routine details",
+                    "When i change Routine name",
+                    "And I save routine",
+                    "Then routine is reflected on app & Lumalou"
+                ],
+                "full auto": true
+            }
+        },
+        "Assigned days": {
+            "Day Override Error Message - Replace multiple routines - All days": {
+                "id": 4663174,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to multiple days (e.g. Sunday , Monday)",
+                    "And User has a routine (Routine B) assigned to multiple days (e.g. Wednesday, Thursday)",
+                    "And User has a routine (Routine C) assigned to multiple days (e.g. Tuesday, Friday, Saturday)",
+                    "When User creates a new routine (Routine D) and assigns to Sunday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Sunday highlighted",
+                    "When User repeat selecting remaining days(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday) and confirming override",
+                    "And User save routine",
+                    "Then Routine(Routine D) should display correct days (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday) assign",
+                    "And Routine (Routine A) should be updated with no assign days anymore since Routine D has override the days",
+                    "And Routine (Routine B) should be updated with no assign days anymore since Routine D has override the days",
+                    "And Routine (Routine C) should be updated with no assign days anymore since Routine D has override the days",
+                    "And routine is reflected on Lumalou and app with the correct task assigned to routine D"
+                ],
+                "full auto": true
+            },
+            "Day Override Error Message - Replace routine days - with time partially": {
+                "id": 4663255,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to multiple days (e.g. Sunday , Monday) and the routine has start time",
+                    "And User has a routine (Routine B) assigned to multiple days (e.g. Wednesday, Thursday) and the routine has start time (e.g. 12pm)",
+                    "And User has a routine (Routine C) assigned to multiple days (e.g. Tuesday, Friday, Saturday) and the routine has start time",
+                    "When User creates a new routine (Routine D) and assigns to Sunday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Sunday highlighted",
+                    "When User repeat selecting remaining days (e.g. Monday, Wednesday) and confirming override",
+                    "And User configure routine Start time to any time (e.g. 8 pm)",
+                    "And User save routine",
+                    "Then Routine(Routine D) should display correct days (Sunday, Monday, Wednesday) assign",
+                    "And Routine (Routine A) should be updated with no assign days anymore since Routine D override both Sunday and Monday. Start time and other fields should not be impacted and should still be the same",
+                    "And Routine (Routine B) should be updated with only Thursday as it's schedule since Routine D override Wednesday. Start time and other fields should not be impacted and should still be the same",
+                    "And Routine (Routine C) should be updated with nothing & still keep Tuesday, Friday and Saturday as assigned day. Start time and other fields should not be impacted and should still be the same",
+                    "And routine is reflected on Lumalou and app with the correct routine for each day"
+                ],
+                "full auto": true
+            },
+            "Add routine - Day Override Error Message - Replace routine days partially": {
+                "id": 4663228,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to multiple days (e.g. Sunday , Monday)",
+                    "And User has a routine (Routine B) assigned to multiple days (e.g. Wednesday, Thursday)",
+                    "And User has a routine (Routine C) assigned to multiple days (e.g. Tuesday, Friday, Saturday)",
+                    "When User creates a new routine (Routine D) and assigns to Sunday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Sunday highlighted",
+                    "When User repeat selecting remaining days (e.g. Monday, Wednesday) and confirming override",
+                    "And User save routine",
+                    "Then Routine(Routine D) should display correct days (Sunday, Monday, Wednesday) assign",
+                    "And Routine (Routine A) should be updated with no assign days anymore since Routine D override both Sunday and Monday",
+                    "And Routine (Routine B) should be updated with only Thursday as it's schedule since Routine D override Wednesday",
+                    "And Routine (Routine C) should be updated with nothing & still keep Tuesday, Friday and Saturday as assigned day",
+                    "And routine is reflected on Lumalou and app with the correct routine for each day"
+                ],
+                "full auto": true
+            },
+            "Edit routine - Day Override Error Message - Replace routine days partially": {
+                "id": 4679213,
+                "bdd": [
+                    "Given app is Connected with Lumalou",
+                    "And User has a routine (Routine A) assigned to multiple days (e.g. Sunday , Monday)",
+                    "And User has a routine (Routine B) assigned to multiple days (e.g. Wednesday, Thursday)",
+                    "And User has a routine (Routine C) assigned to multiple days (e.g. Tuesday, Friday, Saturday)",
+                    "When User access Edit routine screen for Routine B",
+                    "And User updates the routine (Routine B) and assigns to Sunday",
+                    "Then User will see override modal",
+                    "When User confirms override",
+                    "Then User will see Sunday highlighted",
+                    "When User repeat selecting other days(e.g. Monday, Tuesday) and confirming override",
+                    "And User save routine",
+                    "Then Routine (Routine B) should be updated with Sunday, Monday and Tuesday assigned",
+                    "And Routine (Routine A) should be updated with no assign days anymore since Routine B override both Sunday and Monday",
+                    "And Routine (Routine C) should be updated with  Friday and Saturday as assigned day since Routine B override Tuesday",
+                    "And routine is reflected on Lumalou and app with the correct routine for each day"
+                ],
+                "full auto": true
+            }
+        },
+        "Music": {
+            "Lumalou - Turn on / off default music": {
+                "id": 4703124,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is connected with Lumalou",
+                    "When I access Controls tab for Lumalou",
+                    "And I turn on music & sound",
+                    "Then I should see Lumalou hardware turn on music & sound",
+                    "And the default Music & Sound control should be correct",
+                    "When I turn off music & sound",
+                    "Then I should see Lumalou hardware turn off music & sound"
+                ],
+                "full auto": true
+            }
+        },
+        "Cloud backlight": {
+            "Lumalou - Turn on / off default Lights": {
+                "id": 4702984,
+                "bdd": [
+                    "Given I sign up / sign in",
+                    "And app is connected with Lumalou",
+                    "When I access Controls tab for Lumalou",
+                    "And I check Light widget",
+                    "Then I should see similar Lights UI to https://zpl.io/VxeJveR",
+                    "When I turn on Lights",
+                    "Then I should see Lumalou hardware turn on Lights",
+                    "And default Lumalou light control should be correct",
+                    "When I turn off lights",
+                    "Then I should see lights turn off on App and Lumalou hardware",
+                    "When I access Lumalou home",
+                    "Then I should see Start Soothing"
+                ],
+                "full auto": true
+            }
+        },
+        "Product settings information": {
+            "Product settings UI and information": {
+                "id": 1979789,
+                "bdd": [
+                    "Given app is Connected with product",
+                    "When I check UI and information in settings",
+                    "Then I should see correct UI and information"
+                ],
+                "full auto": true
+            }
+        }
+    },
+    "Soother": {
+        "Status ui and behavior in different pages": {
+            "Connected UI": {
+                "id": 1892173,
+                "bdd": [
+                    "Given I have product which is connected",
+                    "When I check smart connect product connection status",
+                    "Then I should see Connected with correct UI on Dashboard page",
+                    "And I should see Connected with correct UI on Control page",
+                    "And I should see Connected with correct UI on Product Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Remove device from account": {
+            "Remove from dashboard": {
+                "id": 1984307,
+                "bdd": [
+                    "Given app is Connected with product",
+                    "When I access Product settings from control panel",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "Then I should not see on Account Settings"
+                ],
+                "full auto": false
+            }
+        },
+        "Pairing": {
+            "Re-pair with product after removing from account": {
+                "id": 4316607,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            },
+            "After removing product, logout / login and pair": {
+                "id": 4316695,
+                "bdd": [
+                    "Given I sign in",
+                    "I tap Add a Product",
+                    "And I select smart connect product",
+                    "Then I should see the pairing instructions for smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "I tap \"Remove this device from my account\"",
+                    "I should see Remove Product from account confirmation",
+                    "I tap Yes, Remove",
+                    "Smart connect product hardware unpaired with account",
+                    "And I sign out from account settings",
+                    "And I sign in with the same account",
+                    "I tap Add a Product",
+                    "And I select same smart connect product",
+                    "Then I should see the pairing instructions for same smart connect product",
+                    "When I follow pairing instructions",
+                    "Then app should be connected with smart connect product",
+                    "and pairing time shouldn't take long (less than 3-15 seconds - TBD - Dependent on product )",
+                    "Then I should be able to add product successfully again and control product"
+                ],
+                "full auto": false
+            }
+        },
+        "Sanity - Product Control": {
+            "General Control & Sync - Global Play button - ON/OFF - Soother": {
+                "id": 5119747,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Dashboard page",
+                    "When I tap Global ON/OFF button to turn on Soother",
+                    "Then I should see Soother is turned on normally",
+                    "When I tap Global ON/OFF button to turn off Soother",
+                    "Then I should see Soother is turned off normally",
+                    "And I access Soother control panel",
+                    "When I tap Global ON/OFF button to turn on Soother",
+                    "Then I should see Soother is turned on normally",
+                    "When I tap Global ON/OFF button to turn off Soother",
+                    "Then I should see Soother is turned off normally"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control tab - Star Projection - Soother": {
+                "id": 5119760,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "When I toggle ON Star Projection",
+                    "Then I should see Soother turn on star projection",
+                    "When I toggle OFF Star Projection",
+                    "Then I should see Soother turn off star projection",
+                    "When I select different light color of star projection",
+                    "Then I should see Soother turn on corresponding star projection color",
+                    "And I tap '+' to customize the star projection color",
+                    "Then I can save the customized star projection color",
+                    "When I select the customized star projection color to play",
+                    "Then Soother should turn on star projection with customized color",
+                    "When I slide the brightness bar to adjust star projection brightness",
+                    "Then I can adjust the star projection Brightness, and reflect on App and hardware product",
+                    "When I tap any dot of brightness bar to adjust star projection brightness",
+                    "Then I can adjust the star projection Brightness, and reflect on App and hardware product",
+                    "When I select the Light Speed: Slow/Normal/Fast",
+                    "Then Soother will switch the light color with corresponding light speed"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control tab - Animal Projection - Soother": {
+                "id": 5119779,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "When I toggle ON Animal Projection",
+                    "Then I should see Soother turns on Animal Projection",
+                    "When I toggle OFF Animal Projection",
+                    "Then I should see Soother turns off Animal Projection",
+                    "When I slide the brightness bar to adjust Animal projection brightness",
+                    "Then I can adjust the Animal projection Brightness, and reflect on App and hardware product",
+                    "When I tap any dot of brightness bar to adjust Animal projection brightness",
+                    "Then I can adjust the Animal projection Brightness, and reflect on App and hardware product"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control tab - Night Light - Soother": {
+                "id": 5119898,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "When I toggle ON Night Light",
+                    "Then I should see Soother turns on Night Light",
+                    "When I toggle OFF Night Light",
+                    "Then I should see Soother turns off Night Light",
+                    "When I slide the brightness bar to adjust Night Light brightness",
+                    "Then I can adjust the Night Light Brightness, and reflect on App and hardware product",
+                    "When I tap any dot of brightness bar to adjust Night Light brightness",
+                    "Then I can adjust the Night Light Brightness, and reflect on App and hardware product"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control tab - Music & Sound - Soother": {
+                "id": 5119901,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "When I tap Play button to turn on Music & Sound",
+                    "Then I should see Soother turns on Music & Sound, and reflect on App and hardware product",
+                    "When I tap Pause button to turn off Music & Sound",
+                    "Then I should see Soother turns off Music & Sound, and reflect on App and hardware product",
+                    "When I tap 'Choose a song or sound' to select a music/sound to play",
+                    "Then The selected Music / Sound can be played normally",
+                    "When I tap 'Choose a song or sound' again",
+                    "Then The pre-select Music/sound should be current playing",
+                    "And I tap 'Edit Music Playlist' to edit the Music playlist",
+                    "And I save the Music Playlist after editing",
+                    "When I tap Play button to turn on Music & Sound",
+                    "Then Soother will only play the saved musics on Edit music playlist page",
+                    "And I tap 'Choose a song or sound' to open Music & Sound modal",
+                    "Then Only the saved Musics on Edit Music Playlist page will be shown on Settling/Soothing tab",
+                    "When I select the saved music on Edit Music Playlist page to play",
+                    "Then The saved Music can be played correctly",
+                    "When I slide the volume bar to adjust the volume to any position",
+                    "Then I can adjust the volume, and reflect on App and hardware product",
+                    "When I tap any dot of volume bar to adjust volume",
+                    "Then I can adjust the volume, and reflect on App and hardware product"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control Tab - Projection & Light Timer + Smart message - Soother": {
+                "id": 5119990,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "When I toggle on Star Projection / Animal Projection / Night Light",
+                    "Then I should see Projection & Light timer highlights blue",
+                    "When I tap on Projection & Light Timer",
+                    "Then I should see Timer picker pop up",
+                    "And I can select and save each Timer normally",
+                    "And I switch to Soother Product settings page",
+                    "And I toggle on 'Allow Notification' - Projection & Lights Timer",
+                    "And I switch back to Soother Control panel",
+                    "And I set  any Projection & Light Timer",
+                    "When I background the app",
+                    "Then Smart message of Projection & Light will pop up before auto turning off Projection/Light",
+                    "When The set Timer elapses",
+                    "Then The projection/Light should turn off"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control Tab - Music & Sound Timer + Smart message - Soother": {
+                "id": 5119997,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "When I toggle on Music & Sound",
+                    "Then I should see Music & Sound timer highlights blue",
+                    "When I tap on Music & Sound Timer",
+                    "Then I should see Timer picker pop up",
+                    "And I can select and save each Timer normally",
+                    "And I switch to Soother Product settings page",
+                    "And I toggle on 'Allow Notification' - Music & Sound Timer",
+                    "And I switch back to Soother Control panel",
+                    "And I set  any Music & Sound Timer",
+                    "When I background the app",
+                    "Then Smart message of Music & Sound will pop up before auto turning off Music/Sound",
+                    "When The set Timer elapses",
+                    "Then The Music & Sound should turn off"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Control Tab - Preset - Soother": {
+                "id": 5120008,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access to Soother control panel",
+                    "When I toggle on any settings",
+                    "And I save as Preset 1",
+                    "And I change opening settings to be different from preset 1",
+                    "And I save as Preset 2",
+                    "And I change the opening settings to be different from preset 1 and 2",
+                    "When I save as Preset 1 or 2",
+                    "Then App shows the 'Replace Previous Preset' modal",
+                    "And I can replace the previous preset successfully",
+                    "When I tap on Preset 1",
+                    "Then I should see Soother play the settings of preset 1 and highlight preset 1",
+                    "And The status of each settings will show on the soother product card of dashboard correctly",
+                    "When I tap on Preset 2",
+                    "Then I should see Soother play the settings of preset 2 and highlight preset 2",
+                    "And The status of each settings will show on the soother product card of dashboard correctly",
+                    "When I select Preset 1/2 on soother product card of dashboard",
+                    "Then I should see Soother play the settings of corresponding preset",
+                    "And The status of each settings will show on the soother product card of dashboard correctly"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Sleep Stages - Soother": {
+                "id": 5125279,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel - Sleep Stages",
+                    "And I set the timer for Settle/Soothe/Sleep stage",
+                    "When I toggle on Sleep Stages",
+                    "Then Soother will turn on sleep stages and reflect to app(start from Settle stage)",
+                    "And Soother will play Settle/Soothe/Sleep stage according to the set timer",
+                    "When I toggle off Sleep stages",
+                    "Then Soother will turn off sleep stages and reflect to app",
+                    "And I tap settle stage",
+                    "Then App will highlight Settle stage",
+                    "When I select any timer of Settle stage",
+                    "Then All Settle Timers can be selected and saved",
+                    "And I tap Soothe stage",
+                    "Then App will highlight Soothe stage",
+                    "When I select any timer of Soothe stage",
+                    "Then All Soothe Timers can be selected and saved",
+                    "And I tap Sleep stage",
+                    "Then App will highlight Sleep stage",
+                    "When I select any timer of Sleep stage",
+                    "Then All Sleep Timers can be selected and saved",
+                    "When I tap on 'What is sleep stage?'",
+                    "Then All pages of 'What is sleep stage?' are shown correctly"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Sleep Stages - Save as Preset - Soother": {
+                "id": 5120047,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "And I switch to Sleep Stages tab",
+                    "When I toggle on Sleep States - Settle",
+                    "And I access to Controls tab and save as Preset 1",
+                    "And I exit Sleep Stages",
+                    "When I tap Preset 1",
+                    "Then I should Soother play Sleep Stages - Settle, and highlight preset 1",
+                    "And I toggle on Sleep Stages - Soothe",
+                    "And I access to Controls tab and save as Preset 2",
+                    "And I exit Sleep Stages",
+                    "When I tap on Preset 2",
+                    "Then I should see Soother play Sleep Stages - Soothe, and highlight preset 2",
+                    "And I toggle on Sleep Stages - Sleep",
+                    "And I access to Controls tab and save as Preset 2",
+                    "And I exit Sleep Stages",
+                    "When I tap on Preset 2",
+                    "Then I should see Soother play Sleep Stages - Sleep, and highlight preset 2",
+                    "When I tap on Preset 1",
+                    "Then I should Soother play Sleep Stages - Settle, and highlight preset 1"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Sleep Stages - Exit Sleep Stages - Soother": {
+                "id": 5120072,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel - Control tab",
+                    "And I toggle on any settings",
+                    "And I save as Preset 1",
+                    "And I access Soother control panel - Sleep Stages",
+                    "And I toggle on Sleep Stages",
+                    "And I save as Preset 2",
+                    "And I access to Controls tab",
+                    "When I tap on any setting or preset 1",
+                    "And I should see app pop up Exit_Sleep_Stage confirmation modal",
+                    "When I confirm Exit",
+                    "Then I should soother exit Sleep Stages and play Controls settings"
+                ],
+                "full auto": true
+            },
+            "General Control & Sync - Reset All Settings - Soother": {
+                "id": 5120104,
+                "bdd": [
+                    "Given I have connected with Soother",
+                    "And I access Soother control panel",
+                    "And I toggle on any settings",
+                    "And I save the presets",
+                    "And I tap Reset All Settings",
+                    "Then I should see Reset All Settings modal pop up",
+                    "When I tap 'Yes, Reset' to confirm",
+                    "Then All settings should be reset to default",
+                    "When I tap Global ON/OFF button",
+                    "Then I should see Soother plays default settings"
+                ],
+                "full auto": true
+            }
+        }
+    }
+}
