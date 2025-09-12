@@ -11,3 +11,10 @@ ffprobe -v error -print_format csv -select_streams v -show_entries stream=bit_ra
 因为hdr视频的color space一般为bt2020nc, color_transfer一般为smpte2084, color_primaries一般为bt2020
 所以我们可以使用命令获取这三项然后判断就可以了
 ffprobe -v error -print_format csv -select_streams v -show_entries stream=color_space,color_transfer,color_primaries input.mp4
+
+查找当前视频是否为dolby vision(要将ffmpeg升级到7.1.1以上)
+因为dolby vision通常都会有dovi profile, 可以尝试判断是否有这个
+ffprobe -show_streams -select_streams v:0 VID20250911111421.mp4 | findstr "dv_profile"
+
+又或者color space一般为bt2020nc, color_transfer一般为arib-std-b67, color_primaries一般为bt2020可以尝试获取三项然后判断
+ffprobe -v error -print_format csv -select_streams v -show_entries stream=color_space,color_transfer,color_primaries input.mp4

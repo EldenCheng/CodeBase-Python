@@ -1,6 +1,12 @@
 import subprocess
 from pathlib import Path
-from compress import multi_audio, hdr, convert_resolution
+# from compress import multi_audio, hdr, convert_resolution
+
+h265 = True
+encoder = 'nv'
+convert_resolution = "1"
+multi_audio = True
+hdr = False
 
 ffmpeg_install = True
 bit_rate = "400K"
@@ -42,6 +48,9 @@ h265_compress_cmd = {
                   desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {cpu_crf} {stream_map} {hdr_setting} {resolution[convert_resolution]} "{desc_file}"',
     "cpu_hdr": lambda source_file,
                       desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {cpu_crf} {stream_map} -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
+
+    "cpu_dolby": lambda source_file,
+                      desc_file: f'{ffmpeg_path} -i "{source_file}" -dolbyvision 1 -movflags use_metadata_tags -map_metadata 0 -vcodec libx265 -crf {cpu_crf} {stream_map} -x265-params vbv-maxrate=30000:vbv-bufsize=30000 -strict unofficial -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
 }
 
 # H264命令定义

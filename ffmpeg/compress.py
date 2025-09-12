@@ -1,13 +1,7 @@
 import os
 from pathlib import Path
 
-from ffmpeg.compress_cmd_define import video_specify_info, h265_compress_cmd, h264_compress_cmd
-
-h265 = False
-encoder = 'cpu'
-convert_resolution = "1"
-multi_audio = True
-hdr = False
+from ffmpeg.compress_cmd_define import video_specify_info, h265_compress_cmd, h264_compress_cmd, h265, hdr, encoder
 
 
 def compress_video(vname):
@@ -25,7 +19,10 @@ def compress_video(vname):
         file_filter = path_string[0]
         folder_path = Path(folder_name)
 
-    all_files = list(folder_path.rglob(file_filter))  # 使用文件名去查找文件, rglob支持通配符, 能把符合条件的所有文件生成一个列表
+    if file_filter.find('*.') != -1:
+        all_files = list(folder_path.rglob(file_filter))  # 使用文件名去查找文件, rglob支持通配符, 能把符合条件的所有文件生成一个列表
+    else:
+        all_files = [Path(vname)]
 
     for e in all_files:
         # print(e.absolute())
@@ -40,7 +37,10 @@ def compress_video(vname):
             # 尝试能识别到视频名字中有HDR字样的, 自动使用hdr设置进行压缩
             if video_specify_info("color_space", source_file).find('bt2020nc') != -1 or source_file.lower().find(
                     "hdr") != -1 or hdr:
-                cmd = h265_compress_cmd['cpu_hdr'](source_file, desc_file)
+                if video_specify_info("color_transfer", source_file).find('arib-std-b67') != -1:
+                    cmd = h265_compress_cmd['cpu_dolby'](source_file, desc_file)
+                else:
+                    cmd = h265_compress_cmd['cpu_hdr'](source_file, desc_file)
             else:
                 cmd = h265_compress_cmd[encoder](source_file, desc_file)
         else:
@@ -53,5 +53,5 @@ def compress_video(vname):
 
 
 if __name__ == '__main__':
-    video_name = r"./*.mp4"
+    video_name = r"D:\PhotoAlbum\PhotoAlbum51\HDR测试\VID20250911111421.mp4"
     compress_video(video_name)
