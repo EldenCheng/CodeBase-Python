@@ -1,19 +1,9 @@
 import subprocess
-from pathlib import Path
-# from compress import multi_audio, hdr, convert_resolution
+from compress_options import *
 
-h265 = True
-encoder = 'nv'
-convert_resolution = "1"
-multi_audio = True
-hdr = False
-
-ffmpeg_install = True
-bit_rate = "400K"
-cpu_crf = "29"  # 取值可以是0 ~ 51之间,  其中, 数值越小, 比特率越高, H264默认是23, 推荐值是18 ~ 28, H265默认值是28, 推荐为31
-nv_pf = 15
-nv_cq = 38
-apple_m_cq = 38
+# 最简单的ffmpeg视频压缩命令
+# cmd = '{0} -i "{1}" -b:v 500k -s  "{2}"'.format(ffmpeg_path, source_file, desc_file)
+# cmd = '{0} -i "{1}" -c:v hevc_nvenc -b:v 1000k -s 1280X720 "{2}"'.format(ffmpeg_path, source_file, desc_file)
 
 ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
 
@@ -30,19 +20,16 @@ stream_map = "-map 0:v -map 0:a" if multi_audio else ""  # 有些字幕ffmpeg不
 # 比较经典的HDR Color设定
 hdr_setting = "-color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le" if hdr else ""
 
-# 最简单的ffmpeg视频压缩命令
-# cmd = '{0} -i "{1}" -b:v 500k -s  "{2}"'.format(ffmpeg_path, source_file, desc_file)
-# cmd = '{0} -i "{1}" -c:v hevc_nvenc -b:v 1000k -s 1280X720 "{2}"'.format(ffmpeg_path, source_file, desc_file)
 
 # H265命令定义
 h265_compress_cmd = {
     "nv": lambda source_file,
-                 desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -preset {nv_pf} -cq {nv_cq} {stream_map}  {resolution[convert_resolution]} "{desc_file}"',
+                 desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -preset {nv_ps} -rc vbr -cq {nv_cq} {stream_map}  {resolution[convert_resolution]} "{desc_file}"',
     "nv_hdr": lambda source_file,
-                      desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -preset {nv_pf} -cq {nv_cq} {stream_map} -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
+                      desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -preset {nv_ps} -rc vbr -cq {nv_cq} {stream_map} -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
 
     "nv_dolby": lambda source_file,
-                      desc_file: f'{ffmpeg_path} -i "{source_file}" -dolbyvision 1 -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -preset {nv_pf} -cq {nv_cq} {stream_map} -x265-params vbv-maxrate=30000:vbv-bufsize=30000 -strict unofficial -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
+                      desc_file: f'{ffmpeg_path} -i "{source_file}" -dolbyvision 1 -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_nvenc -preset {nv_ps} -rc vbr -cq {nv_cq} {stream_map} -x265-params vbv-maxrate=30000:vbv-bufsize=30000 -strict unofficial -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc -profile:v main10 -pix_fmt yuv420p10le {resolution[convert_resolution]} "{desc_file}"',
 
     "apple": lambda source_file,
                     desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec hevc_videotoolbox -b:v {bit_rate} {stream_map} {resolution[convert_resolution]} "{desc_file}"',
@@ -62,7 +49,7 @@ h265_compress_cmd = {
 # H264命令定义
 h264_compress_cmd = {
     "nv": lambda source_file,
-                 desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec h264_nvenc -preset {nv_pf} -cq {nv_cq} {stream_map}  {resolution[convert_resolution]} "{desc_file}"',
+                 desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec h264_nvenc -preset {nv_ps} -cq {nv_cq} {stream_map}  {resolution[convert_resolution]} "{desc_file}"',
     "apple": lambda source_file,
                     desc_file: f'{ffmpeg_path} -i "{source_file}" -movflags use_metadata_tags -map_metadata 0 -vcodec h264_videotoolbox -b:v {bit_rate} {stream_map} {resolution[convert_resolution]} "{desc_file}"',
     "apple_m": lambda source_file,
