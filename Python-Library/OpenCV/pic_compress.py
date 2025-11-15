@@ -1,18 +1,23 @@
+import time
 from multiprocessing import Pool
+import threading
+import concurrent.futures
 import os
 from pathlib import Path
 from pic_utils import CompressImage
 
 if __name__ == '__main__':
-    # source_path = r"./Temp/*.jpg"
-    source_path = r"G:\Photo(JPG)\相册的相\2019\一家人的大理游\*.jpg"
-    # source_path = r"H:\Download\Met-Art\Models\Nikky A\[Met-Art] - 2009-12-10 - Nikky A - Polerina (x125)/*.jpg"
+    # source_path = r"H:\Snaps\Temp\*.jpg"
+    source_path = r"F:\EMU\NS\citron(yuzu fork)\user\screenshots\*.png" # PNG需要把method改成None
+    # source_path = r"H:\Snaps\OG传说/*.jpg"
     # target_path = "F:/JPG/"
     target_path = "D:/PhotoAlbum/JPG/"
     compress_temp_path = 'H:/Snaps/compress_temp/'
-    thread_number = 10
-    size = 50
-    quality = 60
+    thread_number = 64
+    # pool_number = 15
+    method = None
+    size = 25
+    quality = 40
     start_number = 0
     end_number = -1
     file_filter = None
@@ -37,7 +42,9 @@ if __name__ == '__main__':
     all_files.sort()
     all_files = all_files[start_number:end_number]  # 因为压缩有时需要的时间比较长, 有可能先指定压缩一部分图片
     
-    p = Pool(thread_number)  # 打开进程池
+    # p = Pool(pool_number)  # 打开进程池
+    start_time = time.time()
+    thread_pool = concurrent.futures.ThreadPoolExecutor(max_workers=thread_number)
     for e in all_files:
         # print(e.absolute())
         # print(e.name)
@@ -49,13 +56,17 @@ if __name__ == '__main__':
         #     source_file = compress_temp_file
         desc_file = target_path + str(e.name).split(".")[0] + ".jpg"
         desc_file = desc_file.replace(" ", "")
-        p.apply_async(CompressImage.compress, (source_file, desc_file, chinese_folder, 'g', size / 100, quality), )  # 多进程入
+        # p.apply_async(CompressImage.compress, (source_file, desc_file, chinese_folder, method, size / 100, quality), )  # 多进程入
+        thread_pool.submit(CompressImage.compress, source_file, desc_file, chinese_folder, method, size / 100, quality)
     
-    p.close()
-    p.join()
+    # p.close()
+    # p.join()
+    # thread_pool.shutdown(wait=True)
     del_cmd = r'del /q compress_temp\*.*'
     os.system(del_cmd)
     if shutdown:
         os.system("shutdown /s")
+    total_time = time.time() - start_time
+    print("Total time: ", int(total_time))
 
 
