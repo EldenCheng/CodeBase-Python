@@ -53,5 +53,8 @@ def compress_video(vname):
 
 
 if __name__ == '__main__':
-    video_name = r"C:\Users\Elden\Videos\Captures/*.mp4"
+    shutdown = True
+    video_name = r"W:\新建文件夹/*.mkv"
     compress_video(video_name)
+    if shutdown:
+        os.system("shutdown /s")
