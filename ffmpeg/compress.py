@@ -38,9 +38,9 @@ def compress_video(vname):
             if video_specify_info("color_space", source_file).find('bt2020nc') != -1 or source_file.lower().find(
                     "hdr") != -1 or hdr:
                 if video_specify_info("color_transfer", source_file).find('arib-std-b67') != -1:
-                    cmd = h265_compress_cmd['cpu_dolby'](source_file, desc_file)
+                    cmd = h265_compress_cmd['nv_dolby'](source_file, desc_file)
                 else:
-                    cmd = h265_compress_cmd['cpu_hdr'](source_file, desc_file)
+                    cmd = h265_compress_cmd['nv_hdr'](source_file, desc_file)
             else:
                 cmd = h265_compress_cmd[encoder](source_file, desc_file)
         else:
@@ -53,5 +53,8 @@ def compress_video(vname):
 
 
 if __name__ == '__main__':
-    video_name = r"D:\PhotoAlbum\PhotoAlbum51\HDR测试\VID20250911111421.mp4"
+    shutdown = True
+    video_name = r"W:\新建文件夹/*.mkv"
     compress_video(video_name)
+    if shutdown:
+        os.system("shutdown /s")

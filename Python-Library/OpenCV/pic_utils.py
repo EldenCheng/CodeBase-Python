@@ -1,4 +1,4 @@
-import cv2
+# import cv2
 import numpy as np
 import time
 
@@ -28,12 +28,12 @@ class CompressImage:
                 resize_img = img.resize((int(width * size), int(height * size)))
                 resize_img.save(target_path, quality=quality)
             else:
-                pic = cv2.imread(pic_path)
-                height, width = pic.shape[:2]  # 获取原始分辨率
-                resize_pic = cv2.resize(pic, (int(width * size), int(height * size)))  # 缩小图片
-                cv2.imwrite(target_path, resize_pic, [int(cv2.IMWRITE_JPEG_QUALITY), quality])  # 按照质量设置保存图片
+                pass
+                # pic = cv2.imread(pic_path)
+                # height, width = pic.shape[:2]  # 获取原始分辨率
+                # resize_pic = cv2.resize(pic, (int(width * size), int(height * size)))  # 缩小图片
+                # cv2.imwrite(target_path, resize_pic, [int(cv2.IMWRITE_JPEG_QUALITY), quality])  # 按照质量设置保存图片
 
-            # print("Reduce pic by opencv, used: ".format(pic_path), int(time.time() - begin_time))
             if method:  # 设置是否需要额外压缩
                 rb = open(str(target_path), 'rb').read()  # 压缩图片需要二进制数据
                 if method == "g":  # 使用google pyguetzli压缩, 效果大概可以压缩到原图1/4, 已经缩小并降低质量的图都要1分钟左右
