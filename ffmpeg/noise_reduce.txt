@@ -1,0 +1,94 @@
+FFmpeg 降噪主要通过音频和视频滤镜实现。音频常用 afftdn（基于FFT的频域降噪）移除背景噪声，命令如 ffmpeg -i input.mp3 -af "afftdn=nf=-25" output.mp3。
+视频降噪可使用 hqdn3d 滤镜，适用于减少录制带来的颗粒感噪声
+
+FFmpeg 提供了基于快速傅里叶变换的 afftdn 滤镜，无需噪声特征文件即可有效减少稳态背景噪音
+
+ffmpeg -i input.mp3 -af "afftdn" output.mp3
+
+调整降噪力度（建议）：
+nf (noise floor) 参数表示噪声底阈值，默认是 -20。数值越低，降噪力度越强。通常设置 -25 到 -30 效果较好。
+
+ffmpeg -i input.mp3 -af "afftdn=nf=-25" output.mp3
+
+更多参数： nr (噪声减少量，默认12), om (输出模式: o-处理后的音频, n-仅噪音)。
+
+下面的参数来源: https://github.com/ikigai-kevin-k/ffmpeg-sound
+
+FFmpeg 內建音訊降噪濾鏡
+1. afftdn (FFT Denoise)
+用途: 使用快速傅立葉變換進行音訊降噪
+適用場景: 一般性背景噪聲、持續性噪音
+推薦度: ⭐⭐⭐⭐⭐ (最適合輪盤遊戲)
+
+# 基本使用
+ffmpeg -i input.wav -af "afftdn" output.wav
+
+# 調整參數
+ffmpeg -i input.wav -af "afftdn=nr=10:nf=-25" output.wav
+
+參數說明:
+
+nr: 噪聲減少強度 (0-30, 預設10)
+nf: 噪聲因子 (-50 to 0, 預設-25)
+tn: 跟蹤噪聲 (true/false, 預設false)
+
+2. anlmdn (Non-local Means Denoise)
+用途: 非局部均值演算法降噪
+適用場景: 寬頻噪聲、保持音訊品質
+推薦度: ⭐⭐⭐⭐
+
+# 基本使用
+ffmpeg -i input.wav -af "anlmdn" output.wav
+
+# 調整參數
+ffmpeg -i input.wav -af "anlmdn=s=4:p=6:r=0.01" output.wav
+
+參數說明:
+
+s: 搜尋範圍 (1-32, 預設4)
+p: 補丁大小 (1-32, 預設6)
+r: 減少因子 (0.001-1.0, 預設0.01)
+
+3. arnndn (RNN Denoise)
+用途: 遞歸神經網路降噪
+適用場景: 語音降噪、需要預訓練模型
+推薦度: ⭐⭐⭐ (需要額外模型檔案)
+
+# 需要下載模型檔案
+ffmpeg -i input.wav -af "arnndn=model=model.rnnn" output.wav
+
+推薦降噪策略
+
+方案一: 多層降噪 (推薦)
+# 結合頻率濾波和 FFT 降噪
+ffmpeg -i input.wav -af "highpass=f=80,lowpass=f=8000,afftdn=nr=15:nf=-20" output.wav
+
+方案三: 保守降噪 (保持音質)
+# 輕度降噪，保持輪盤音效
+ffmpeg -i input.wav -af "anlmdn=s=2:p=4:r=0.005,afftdn=nr=8:nf=-25" output.wav
+
+方案四: 強力降噪 (噪音嚴重時)
+# 多階段降噪處理
+ffmpeg -i input.wav -af "highpass=f=60,lowpass=f=10000,afftdn=nr=25:nf=-10,anlmdn=s=6:p=8:r=0.02" output.wav
+
+頻率濾波器說明
+highpass (高通濾波器)
+去除低頻噪音 (如飛機引擎聲)
+建議頻率: 60-120Hz
+保留輪盤音效的中高頻部分
+lowpass (低通濾波器)
+去除高頻噪音 (如電流聲)
+建議頻率: 8000-12000Hz
+避免過度切除輪盤音效
+bandpass (帶通濾波器)
+
+實用參數組合
+輕度噪音
+ffmpeg -i input.wav -af "highpass=f=100,afftdn=nr=10" output.wav
+
+中度噪音
+ffmpeg -i input.wav -af "highpass=f=80,afftdn=nr=15:nf=-20,lowpass=f=10000" output.wav
+
+重度噪音
+ffmpeg -i input.wav -af "highpass=f=60,afftdn=nr=25:nf=-10,anlmdn=s=4:p=6:r=0.015" output.wav
+

@@ -32,10 +32,12 @@ if __name__ == '__main__':
 
             source_file = str(e.absolute())
             # desc_file = str(e.name)
-            pure_vname = e.name.split(".")[0]
+            sufix = e.name.split(".")[-1]
+            pure_vname = e.name.split("." + sufix)[0]
 
             ffmpeg_install = True
             operation = 'sound_only'
+            reduce_noise = False
             final_convert_mp4 = True
             ffmpeg_path = "ffmpeg" if ffmpeg_install else str(Path('../ffmpeg/bin/').absolute()) + '/ffmpeg.exe'
 
@@ -45,10 +47,15 @@ if __name__ == '__main__':
                 'sound_only': f'{ffmpeg_path} -i "{source_file}" -c copy -map 0:a:0 "{pure_vname}.m4a"',
             }
 
+            reduce_noise_operation = f'{ffmpeg_path} -i "{pure_vname}.m4a" -af "highpass=f=80,lowpass=f=8000,afftdn=nr=15:nf=-20" {pure_vname}_rn.m4a'
+
             # cmd = '{0} -i "{1}.mp4" -i "{1}.m4a" -c copy -map 0:v:0 -map 1:a:0 "mixed_{1}.mkv"'.format(ffmpeg_path, vname)
             cmd = sound_track_operation[operation]
 
             os.system(cmd)
+
+            if reduce_noise:
+                os.system(reduce_noise_operation)
 
             if final_convert_mp4 and operation != 'sound_only':
                 cmd = '{0} -i "mixed_{1}.mkv" -y -vcodec copy -acodec copy "Mixed_{1}.mp4"'.format(
