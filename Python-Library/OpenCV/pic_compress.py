@@ -7,24 +7,52 @@ from pathlib import Path
 from pic_utils import CompressImage
 
 if __name__ == '__main__':
+
+    profile = "srwy"
+    profile_setting = {
+        "srwy": {
+            "source_sufix": ".png",
+            "source_folder": r"F:\EMU\NS\citron(yuzu fork)\user\screenshots",
+            "target_path": "D:/PhotoAlbum/JPG/",
+            "size": 80,
+            "quality": 30,
+            "chinese_folder": True
+        },
+        "skyrim":{
+            "source_sufix": ".png",
+            "source_folder": r"C:\Users\Elden\Videos\NVIDIA",
+            "target_path": "D:/PhotoAlbum/JPG/",
+            "size": 50,
+            "quality": 30,
+            "chinese_folder": True
+        },
+    }
     # source_path = r"H:\Snaps\Temp\*.jpg"
-    source_folder = r"C:\Users\Elden\Videos\NVIDIA"
-    source_sufix = ".png"
+    # source_folder = r"C:\Users\Elden\Videos\NVIDIA"
+    # source_folder = r"F:\EMU\NS\citron(yuzu fork)\user\screenshots"
+    source_folder = profile_setting[profile]["source_folder"]
+    # source_sufix = ".png"
+    source_sufix = profile_setting[profile]["source_sufix"]
     source_path = source_folder + "\\*" + source_sufix
     # source_path = r"C:\Users\Elden\Videos\NVIDIA\*.png" # PNG需要把method改成None
     # source_path = r"H:\Snaps\OG传说/*.jpg"
     # target_path = "F:/JPG/"
-    target_path = "D:/PhotoAlbum/JPG/"
+    # target_path = "D:/PhotoAlbum/JPG/"
+    target_path = profile_setting[profile]["target_path"]
     compress_temp_path = 'H:/Snaps/compress_temp/'
     thread_number = 48
     # pool_number = 15
     method = None
-    size = 50
-    quality = 40
+    # size = 80
+    # size =50
+    size = profile_setting[profile]["size"]
+    # quality = 30
+    quality = profile_setting[profile]["quality"]
     start_number = 0
     end_number = -1
     all_files = None
-    chinese_folder = True
+    # chinese_folder = True
+    chinese_folder = profile_setting[profile]["chinese_folder"]
     shutdown = False
 
     file_suffix = ("*.jpg", "*.JPG", "*.jpeg", "*.png", "*.PNG")
