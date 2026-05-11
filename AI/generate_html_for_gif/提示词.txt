@@ -1,0 +1,6 @@
+为下面的过程生成python脚本, 要求如下
+1. 分析本目录下所有的gif文件, 从命名格式中的{character}_{action}.gif中找到所有character的名字
+2. 然后使用各个character的名字作为关键字, 查找所有包含这个名字的gif文件名,然后每个character 生成一个html文件
+3. 每个html文件里能显示所有使用对应character名字搜索出的gif, 并且打开这个html文件后, 显示对应character的所有gif图片, gif图片本身会放大到200%显示(而不是包含gif图片的那个div放大到200%), 并能自动播放, 每个gif动画下面显示动画的名字
+4. 脚本要适当模块化, 将比较独立的功能与html模板分开成为独立的python模块
+5. 在脚本开头提供一个列表可以让用户自己把character的名字输入, 如果这个列表为空, python脚本就自动分析所有gif文件查找character的名字, 如果不为空, 则按照列表的元素, 逐一查找对应character名字的gif动画
