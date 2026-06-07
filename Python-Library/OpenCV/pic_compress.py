@@ -13,7 +13,6 @@ if __name__ == '__main__':
             "target_path": "H:/Snaps/SRWY/Temp/",
             "size": 80,
             "quality": 30,
-            "chinese_folder": True
         },
         "skyrim":{
             "source_sufix": ".png",
@@ -21,7 +20,6 @@ if __name__ == '__main__':
             "target_path": "H:/Snaps/Skyrim/Temp/",
             "size": 50,
             "quality": 30,
-            "chinese_folder": True
         },
     }
 
@@ -38,7 +36,7 @@ if __name__ == '__main__':
     target_path = profile_setting[profile]["target_path"] if profile_setting.get(profile) else "D:/PhotoAlbum/JPG/"
     size = profile_setting[profile]["size"] if profile_setting.get(profile) else 50
     quality = profile_setting[profile]["quality"] if profile_setting.get(profile) else 50
-    chinese_folder = profile_setting[profile]["chinese_folder"] if profile_setting.get(profile) else True
+    # chinese_folder = profile_setting[profile]["chinese_folder"] if profile_setting.get(profile) else True
 
     compress_temp_path = 'H:/Snaps/compress_temp/'
 
@@ -62,7 +60,7 @@ if __name__ == '__main__':
             desc_file = desc_file[:-3] + "jpg"
         else:
             desc_file = desc_file[:-4] + "jpg"
-        thread_pool.submit(CompressImage.compress, source_file, desc_file, chinese_folder, method, size / 100, quality)
+        thread_pool.submit(CompressImage.compress, source_file, desc_file, method, size / 100, quality)
         # CompressImage.compress(source_file, desc_file, chinese_folder, method, size / 100, quality)
     thread_pool.shutdown(wait=True)
 
